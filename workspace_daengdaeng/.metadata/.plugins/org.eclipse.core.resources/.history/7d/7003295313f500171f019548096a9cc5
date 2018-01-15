@@ -1,0 +1,13 @@
+@charset "EUC-KR";
+
+#logo_img{
+	margin-top:1em;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+
+}
+
+div .main{
+	background-image: url("images/header.jpg");
+}

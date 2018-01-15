@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="#main" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="#main"/>
+			<item value="main"/>
+			<item value="btn"/>
+			<item value="bnt_sm"/>
+			<item value="nav"/>
+			<item value="ul li"/>
+			<item value="submenu"/>
+			<item value="join_login"/>
+			<item value="btn_sm"/>
+			<item value="font-family"/>
+			<item value="font-fam"/>
+			<item value="logo_img"/>
+			<item value="Button"/>
+			<item value="button"/>
+			<item value="padding"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="288" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="390" key="DIALOG_HEIGHT"/>
+		<item value="552" key="DIALOG_X_ORIGIN"/>
+		<item value="460" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

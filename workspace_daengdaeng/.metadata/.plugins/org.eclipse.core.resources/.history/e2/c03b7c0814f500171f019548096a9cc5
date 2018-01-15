@@ -1,0 +1,15 @@
+@charset "EUC-KR";
+
+#logo_img{
+	margin-top:1em;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+
+}
+
+#top2{
+	background-color:black;
+	height: 5em;
+	padding:0px 0 0 0px;
+}
