@@ -17,6 +17,14 @@
 	<link rel="stylesheet" href="assets/css/joinin.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollzer.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/ie/respond.min.js"></script>
+	<script src="assets/js/main.js"></script> 
 
 </head>
 <%
@@ -47,7 +55,7 @@
 		</li>
 		<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><img src="icons/dog_gray.png"/>댕댕이 커뮤티니</a>
 		<ul id="subMenu">
-			<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="icons/chat_gray.png"/>정보공유</a></li>
+			<li><a href="board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="icons/chat_gray.png"/>정보공유</a></li>
 			<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="icons/location_gray.png"/>유기견정보</a><li>
 		</ul>
 		</li>
@@ -62,7 +70,7 @@
 <!-- Main -->
 <div id="main">
 	
-	<%=	session.getAttribute("cname")%>님의 회원정보 수정이 정상 처리되었습니다.<br>
+	<%=	session.getAttribute("cid")%>님의 회원정보 수정이 정상 처리되었습니다.<br>
 	<a href="logout.jsp"><button class="btn_sm">로그아웃</button></a>&nbsp;&nbsp; <a href="modify.jsp"><button class="btn_sm">회원정보 수정</button></a>
 	<a href="home.jsp"><button class="btn_sm">홈으로</button></a>
 
@@ -78,16 +86,5 @@
 
 			</div>
 
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollzer.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
 </body>
-
-
 </html>

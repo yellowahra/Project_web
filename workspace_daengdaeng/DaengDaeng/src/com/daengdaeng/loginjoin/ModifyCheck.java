@@ -1,4 +1,4 @@
-package com.loginjoin;
+package com.daengdaeng.loginjoin;
 
 import java.io.IOException;
 import java.sql.Connection;

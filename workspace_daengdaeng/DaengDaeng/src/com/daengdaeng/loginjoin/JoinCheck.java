@@ -1,9 +1,8 @@
-package com.loginjoin;
+package com.daengdaeng.loginjoin;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.Statement;
 
 import javax.servlet.ServletException;
@@ -11,26 +10,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class LoginCheck
+ * Servlet implementation class JoinCheck
  */
-@WebServlet("/LoginCheck")
-public class LoginCheck extends HttpServlet {
+@WebServlet("/JoinCheck")
+public class JoinCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private Connection connection;
 	private Statement stmt;
-	private ResultSet resultSet;
 	
-	private String cname, cid, cpw;
-	private String cemail;
+	private String cname, cid, cpw, cemail;
+	
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginCheck() {
+    public JoinCheck() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -55,49 +52,45 @@ public class LoginCheck extends HttpServlet {
 		actionCheck(request, response);
 	}
 	
-	protected void actionCheck(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void actionCheck(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		request.setCharacterEncoding("EUC-KR");
 		
+		cname = request.getParameter("cname");
 		cid = request.getParameter("cid");
 		cpw = request.getParameter("cpw");
+		cemail = request.getParameter("cemail");
 		
-		String query = "SELECT * FROM customer WHERE cid='"+cid+"' AND cpw='" + cpw +"'";
+		String query = "INSERT INTO customer VALUES('"
+				+ cid + "', '" + cpw +"', '" + cname + "', '"
+			 + cemail + "')";
 		
 		try {
 			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", 
+			
+			connection = DriverManager.getConnection(
+					"jdbc:oracle:thin:@localhost:1521:orcl", 
 					"daengdaeng", "oracle_11g");
+			
 			stmt = connection.createStatement();
-			resultSet = stmt.executeQuery(query);
 			
-			
-			while(resultSet.next()) {
-				cname = resultSet.getString("cname");
-				cid = resultSet.getString("cid");
-				cpw = resultSet.getString("cpw");
-				cemail =  resultSet.getString("cemail");
+			int i = stmt.executeUpdate(query);
+			if(i==1) {
+				System.out.println("INSERT SUCESS");
+				response.sendRedirect("home/joinResult.jsp");
+			}else {
+				System.out.println("INSERT FAIL");
+				response.sendRedirect("home/join.html");
 			}
-			
-			HttpSession httpSession = request.getSession();
-			
-			httpSession.setAttribute("cname", cname);
-			httpSession.setAttribute("cid", cid);
-			httpSession.setAttribute("cpw", cpw);
-			
-			response.sendRedirect("home/loginResult.jsp");
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
 			try {
-				if(resultSet!=null) resultSet.close();
-				if(stmt != null) stmt.close();
-				if(connection !=null) connection.close();
-				
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
+				if(stmt!=null) stmt.close();
+				if(connection!=null) connection.close();
+			}catch(Exception e) { e.printStackTrace(); }
 		}
 		
 	}

@@ -15,14 +15,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 
 <link rel="daengdaeng icon" href="images/favicon.ico" type="image/x-icon" />
-	<title>댕댕이 노트</title>
+	<title>댕대이 노트 - 회원정보 수정</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="stylesheet" href="assets/css/joinin.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-<title>댕대이 노트 - 회원정보 수정</title>
+		
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollzer.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/ie/respond.min.js"></script>
+	<script src="assets/js/main.js"></script> 
+
 </head>
 <body>
 <%
@@ -66,7 +75,7 @@
 		</li>
 		<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><img src="icons/dog_gray.png"/>댕댕이 커뮤티니</a>
 		<ul id="subMenu">
-			<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="icons/chat_gray.png"/>정보공유</a></li>
+			<li><a href="board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="icons/chat_gray.png"/>정보공유</a></li>
 			<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="icons/location_gray.png"/>유기견정보</a><li>
 		</ul>
 		</li>
@@ -103,17 +112,6 @@
 					</ul>
 
 			</div>
-
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollzer.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
 
 </body>
 </html>
