@@ -41,8 +41,10 @@
 	  margin-left: auto;
 	  margin-right: auto;
 	  padding-top: 3em;
-	  padding-left: 10em;
+	  padding-left: 15em;
+	
 	}
+	
 	.window{
 	  display: none;
 	  position:absolute;  
@@ -52,7 +54,8 @@
 	}
 	.window .close{
 	
-		margin-top: 18em;
+		margin-top: 20em;
+		margin-left: 30em;
 	}
 	</style>
 	<script src="https://code.jquery.com/jquery-latest.js"></script> 
@@ -82,18 +85,18 @@
 			e.preventDefault();
 			wrapWindowByMask();
 		});
-		$("#mask").append("유기견을 입양하고 싶어요!: 반려견을 사지 말고 유기견 입양으로 사랑을 나눠요!<br>"+
-				"유기동물 발견 후 공고를 통해 10일이 지나도 주인을 찾지 못한 경우,<br> "+
-				"해당 시, 군, 구 등이 소유권을 갖게 되어 개인에게 기증/분양할 수있습니다.<br>"+
-				"1. 목록 중 입양을 원하시는 유기동물이 있는 곳으로 직접 전화를 걸어 입양 안내를 받으시기 바랍니다.<br>"+
-				"2. 입양 보호시설에 미리 전화로 문의하시고, 담당자의 안내에 따라 방문 일시 등을 예약합니다.<br>"+
-				"3. 입양 시 신분증 복사본 2장과 개집, 개줄, 목걸이 등 필요한 물픔을 준비하고 보호시설을 방문해 <br>"+
-					"입양계약서를 작서해야 합니다.<br>"+
-				"4. 입양 보호시설에는 신청자 본인이 직접 방문해야 합니다.<br>"+
-				"5. 미성년자에게는 반려동물을 분양하지 않습니다. <Br>"+
-					"분양을 원하는 미성년자는 부모님의 허락을 얻어 반드시 부모님과 함께 방문해야 합니다.<br>"+
-				"6. 입양은 무료이나 동물의 무분별한 번식을 막고 분실 시 자연번식 방지를 위한 <br>"+
-					"중성화 수술비용 등 일부 경비가 청수될 수 있습니다.<br>"
+		$("#mask").append("&nbsp; &nbsp;&nbsp; &nbsp;유기견을 입양하고 싶어요!: 반려견을 사지 말고 유기견 입양으로 사랑을 나눠요!<br><br><br>");
+		$("#mask").append("&nbsp; &nbsp;유기동물 발견 후 공고를 통해 10일이 지나도 주인을 찾지 못한 경우,<br> "+
+				"&nbsp; &nbsp;해당 시, 군, 구 등이 소유권을 갖게 되어 개인에게 기증/분양할 수있습니다.<br>"+
+				"1.&nbsp; 목록 중 입양을 원하시는 유기동물이 있는 곳으로 직접 전화를 걸어 입양 안내를 받으시기 바랍니다.<br>"+
+				"2.&nbsp; 입양 보호시설에 미리 전화로 문의하시고, 담당자의 안내에 따라 방문 일시 등을 예약합니다.<br>"+
+				"3.&nbsp; 입양 시 신분증 복사본 2장과 개집, 개줄, 목걸이 등 필요한 물픔을 준비하고 보호시설을 방문해 <br>"+
+				"&nbsp; &nbsp; &nbsp;&nbsp;입양계약서를 작서해야 합니다.<br>"+
+				"4.&nbsp; 입양 보호시설에는 신청자 본인이 직접 방문해야 합니다.<br>"+
+				"5.&nbsp; 미성년자에게는 반려동물을 분양하지 않습니다. <Br>"+
+				"&nbsp; &nbsp; &nbsp;&nbsp;분양을 원하는 미성년자는 부모님의 허락을 얻어 반드시 부모님과 함께 방문해야 합니다.<br>"+
+				"6.&nbsp; 입양은 무료이나 동물의 무분별한 번식을 막고 분실 시 자연번식 방지를 위한 <br>"+
+				"&nbsp; &nbsp; &nbsp;&nbsp;중성화 수술비용 등 일부 경비가 청수될 수 있습니다.<br>"
 		
 		);
 		
@@ -186,6 +189,7 @@ color: white;
 	<a href="#portfolio" ><img src="../icons/location_gray.png"/>실종정보</a>
 	<a href="#portfolio" ><img src="../icons/location_gray.png"/>유기견정보</a>
 	<br>
+	
 	<div id="mask"></div>
 		<div class="window">
 			<input type="button" href="#" class="close" value="닫기"/>
