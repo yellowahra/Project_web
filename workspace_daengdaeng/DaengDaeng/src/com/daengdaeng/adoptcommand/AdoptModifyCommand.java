@@ -15,8 +15,9 @@ public class AdoptModifyCommand implements AdoptCommand{
 		String aage = request.getParameter("aage");
 		String agender = request.getParameter("agender");
 		String alocation = request.getParameter("alocation");
+		String filename = request.getParameter("filename");
 		AdoptDao dao = new AdoptDao();
-		dao.amodify(aId, cid, abreed, aage, agender, alocation);
+		dao.amodify(aId, cid, abreed, aage, agender, alocation, filename);
 		
 	}
 	

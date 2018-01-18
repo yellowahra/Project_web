@@ -9,14 +9,14 @@ public class AdoptDto {
 	String aage;
 	String agender;
 	String alocation;
+	String filename;
 	Timestamp aDate;
 	int aHit;
 	int aGroup;
 	int aStep;
 	int aIndent;
-	public AdoptDto(int aId, String cid, String abreed, String aage, String agender, String alocation,
-			Timestamp aDate, int aHit, int aGroup, int aStep,	
-			int aIndent) {
+	public AdoptDto(int aId, String cid, String abreed, String aage, String agender, String alocation, String filename,
+			Timestamp aDate, int aHit, int aGroup, int aStep, int aIndent) {
 
 		this.aId = aId;
 		this.cid = cid;
@@ -24,6 +24,7 @@ public class AdoptDto {
 		this.aage = aage;
 		this.agender = agender;
 		this.alocation = alocation;
+		this.filename = filename;
 		this.aDate = aDate;
 		this.aHit = aHit;
 		this.aGroup = aGroup;
@@ -67,7 +68,12 @@ public class AdoptDto {
 	public void setalocation(String alocation) {
 		this.alocation = alocation;
 	}
-		
+	public String getfilename() {
+		return filename;
+	}
+	public void setfilename(String filename) {
+		this.filename = filename;
+	}
 	public Timestamp getaDate() {
 		return aDate;
 	}

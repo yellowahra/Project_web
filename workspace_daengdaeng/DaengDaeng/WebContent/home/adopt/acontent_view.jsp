@@ -63,7 +63,7 @@
 		</li>
 		<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
 		<ul id="subMenu">
-			<li><a href="list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
+			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
 			<li><a href="alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>유기견정보</a><li>
 		</ul>
 		</li>
@@ -86,12 +86,12 @@
 				<td>${content_view.aId}</td>
 			</tr>
 			<tr>
-				<td id="head">조회수</td>
-				<td>${content_view.aHit}</td>
-			</tr>
-			<tr>
 				<td id="head">이름</td>
 				<td><input type="text" name="cid" value="${content_view.cid}" ></td>
+			</tr>
+			<tr>
+				<td id="head">사진</td>
+				<td><input type="text" name="filename" value="${content_view.filename}"></td>
 			</tr>
 			<tr>
 				<td id="head">품종</td>

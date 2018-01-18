@@ -13,9 +13,9 @@ public class AdoptWriteCommand implements AdoptCommand {
 		String aage = request.getParameter("aage");
 		String agender = request.getParameter("agender");
 		String alocation = request.getParameter("alocation");
-		
+		String filename = request.getParameter("filename");
 		AdoptDao dao = new AdoptDao();
-		dao.awrite(cid, abreed, aage, agender, alocation);
+		dao.awrite(cid, abreed, aage, agender, alocation, filename);
 	}
 
 

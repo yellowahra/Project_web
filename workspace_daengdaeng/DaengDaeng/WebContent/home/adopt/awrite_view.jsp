@@ -1,5 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+ <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%-- <%@ page import= "com.oreilly.servlet.MultipartRequest" %>
+<%@ page import= "com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
+<%@ page import= "java.util.Enumeration" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.io.*" %>
+<!-- 파일 업로드 처리를 위한 MultipartRequest 객체를 임포트 -->
+<%@ page import="com.oreilly.servlet.MultipartRequest" %>  --%>
  <%!
 	String cname, cid, cpw;
 %>
@@ -59,7 +66,7 @@
 		</li>
 		<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
 		<ul id="subMenu">
-			<li><a href="list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
+			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
 			<li><a href="alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>유기견정보</a><li>
 		</ul>
 		</li>
@@ -96,15 +103,23 @@
 				<td id="head"> 위치</td>
 				<td><input type="text" name="alocation" size="40"></td>
 			</tr>
-			
+			<tr>
+				<td id="head"> 파일</td>
+				<td><input type="file" name="filename"></td>
+			</tr>
+		
 			<tr>
 				<td colspan="2">
-				<input type="submit" value="입력"> &nbsp; &nbsp; &nbsp; <a href="alist.doa">목록보기</a>
+				<input type="submit" value="입력"> &nbsp; &nbsp; &nbsp;
 				</td>
 			</tr>
 		</form>
 	
+
+			
+	</form>
 	</table>
+	 <a href="alist.doa"><center>목록보기</center></a>
 </div>
 
 		<!-- Footer -->

@@ -26,7 +26,7 @@ public class AdoptDao {
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", 
 						"daengdaeng", "oracle_11g");
 			
-			String query = "SELECT aId, cid, abreed, aage, agender, alocation, aDate, aHit, aGroup, aStep, aIndent "
+			String query = "SELECT aId, cid, abreed, aage, agender, alocation, filename, aDate, aHit, aGroup, aStep, aIndent "
 					+ "FROM adopt ORDER BY aGroup DESC, aStep ASC";
 			
 			preparedStatement = connection.prepareStatement(query);
@@ -39,14 +39,15 @@ public class AdoptDao {
 				String aage = resultSet.getString("aage");
 				String agender = resultSet.getString("agender");
 				String alocation = resultSet.getString("alocation");
+				String filename = resultSet.getString("filename");
 				Timestamp aDate = resultSet.getTimestamp("aDate");
 				int aHit = resultSet.getInt("aHit");
 				int aGroup = resultSet.getInt("aGroup");
 				int aStep = resultSet.getInt("aStep");
 				int aIndent = resultSet.getInt("aIndent");
 				
-				AdoptDto dto = new AdoptDto(aId, cid, abreed, aage, agender, alocation, aDate, 
-						aHit, aGroup, aStep, aIndent);
+				AdoptDto dto = new AdoptDto(aId, cid, abreed, aage, agender, alocation, filename,
+						aDate, aHit, aGroup, aStep, aIndent);
 				
 				dtos.add(dto);
 				
@@ -68,7 +69,7 @@ public class AdoptDao {
 		return dtos;
 	} // list()
 	
-	public void awrite(String cid, String abreed, String aage, String agender, String alocation) {
+	public void awrite(String cid, String abreed, String aage, String agender, String alocation, String filename) {
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -80,15 +81,16 @@ public class AdoptDao {
 						"daengdaeng", "oracle_11g");
 			
 			
-			String query = "INSERT INTO adopt (aId, cid, abreed, aage, agender, alocation, "
+			String query = "INSERT INTO adopt (aId, cid, abreed, aage, agender, alocation, filename, "
 					+ "aHit, aGroup, aStep, aIndent) "
-					+ "VALUES (adopt_seq.nextval, ?, ?, ?, ?, ?, 0, adopt_seq.currval, 0, 0)";
+					+ "VALUES (adopt_seq.nextval, ?, ?, ?, ?, ?, ?, 0, adopt_seq.currval, 0, 0)";
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, cid);
 			preparedStatement.setString(2, abreed);
 			preparedStatement.setString(3, aage);
 			preparedStatement.setString(4, agender);
 			preparedStatement.setString(5, alocation);	
+			preparedStatement.setString(6, filename);	
 			int rn = preparedStatement.executeUpdate();
 			
 		}catch(Exception e) {
@@ -132,13 +134,14 @@ public class AdoptDao {
 				String aage = resultSet.getString("aage");
 				String agender = resultSet.getString("agender");
 				String alocation = resultSet.getString("alocation");
+				String filename = resultSet.getString("filename");
 				Timestamp aDate = resultSet.getTimestamp("aDate");
 				int aHit = resultSet.getInt("aHit");
 				int aGroup = resultSet.getInt("aGroup");
 				int aStep = resultSet.getInt("aStep");
 				int aIndent = resultSet.getInt("aIndent");
 				
-				dto = new AdoptDto(aId, cid, abreed, aage, agender, alocation, aDate, aHit, aGroup, aStep, aIndent);
+				dto = new AdoptDto(aId, cid, abreed, aage, agender, alocation, filename, aDate, aHit, aGroup, aStep, aIndent);
 			}
 			
 		}catch(Exception e) {
@@ -193,7 +196,7 @@ public class AdoptDao {
 	
 	
 	public void amodify(String aId, String cid, 
-			String abreed, String aage, String agender, String alocation) {
+			String abreed, String aage, String agender, String alocation, String filename) {
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -203,7 +206,7 @@ public class AdoptDao {
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", 
 						"daengdaeng", "oracle_11g");
 			
-			String query = "UPDATE adopt SET cID=?, abreed=?, aage=?, agender=?, alocation=? "
+			String query = "UPDATE adopt SET cID=?, abreed=?, aage=?, agender=?, alocation=?, filename=?"
 					+ "WHERE aId=?";
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, cid);
@@ -211,7 +214,8 @@ public class AdoptDao {
 			preparedStatement.setString(3, aage);
 			preparedStatement.setString(4, agender);
 			preparedStatement.setString(5, alocation);
-			preparedStatement.setInt(6,  Integer.parseInt(aId) );
+			preparedStatement.setString(6, filename);
+			preparedStatement.setInt(7,  Integer.parseInt(aId) );
 			
 			int rn = preparedStatement.executeUpdate();
 			
@@ -287,13 +291,14 @@ public class AdoptDao {
 				String aage = resultSet.getString("aage");
 				String agender = resultSet.getString("agender");
 				String alocation = resultSet.getString("alocation");
+				String filename = resultSet.getString("filename");
 				Timestamp aDate = resultSet.getTimestamp("aDate");
 				int aHit = resultSet.getInt("aHit");
 				int aGroup = resultSet.getInt("aGroup");
 				int aStep = resultSet.getInt("aStep");
 				int aIndent = resultSet.getInt("aIndent");
 				
-				dto = new AdoptDto(aId, cid, abreed, aage, agender, alocation, aDate, aHit, aGroup, aStep, aIndent);
+				dto = new AdoptDto(aId, cid, abreed, aage, agender, alocation, filename, aDate, aHit, aGroup, aStep, aIndent);
 			}
 						
 		}catch(Exception e) {
@@ -314,7 +319,7 @@ public class AdoptDao {
 	} // reply_view()
 	
 	public void areply(String aId, String cid, String abreed, String aage, String agender, 
-			String alocation, String aGroup, String aStep, String aIndent) {
+			String alocation, String filename, String aGroup, String aStep, String aIndent) {
 		
 		areplyShape(aGroup, aStep);
 		
@@ -328,17 +333,18 @@ public class AdoptDao {
 						"daengdaeng", "oracle_11g");
 			
 			String query = "INSERT INTO adopt "
-					+"(aId, cid, abreed, aage, agender, alocation, aGroup, aStep, aIndent) "
-					+"VALUES (mvcboard_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?)";
+					+"(aId, cid, abreed, aage, agender, alocation, filename, aGroup, aStep, aIndent) "
+					+"VALUES (mvcboard_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, cid);
 			preparedStatement.setString(2, abreed);
 			preparedStatement.setString(3, aage);
 			preparedStatement.setString(4, agender);
 			preparedStatement.setString(5, alocation);
-			preparedStatement.setInt(4, Integer.parseInt(aGroup) );
-			preparedStatement.setInt(5, Integer.parseInt(aStep)+1 );
-			preparedStatement.setInt(6, Integer.parseInt(aIndent)+1 );
+			preparedStatement.setString(6, filename);
+			preparedStatement.setInt(7, Integer.parseInt(aGroup) );
+			preparedStatement.setInt(8, Integer.parseInt(aStep)+1 );
+			preparedStatement.setInt(9, Integer.parseInt(aIndent)+1 );
 			
 			int rn = preparedStatement.executeUpdate();
 			

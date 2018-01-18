@@ -16,12 +16,13 @@ public class AdoptReplyCommand implements AdoptCommand {
 		String aage = request.getParameter("aage");
 		String agender = request.getParameter("agender");
 		String alocation = request.getParameter("alocation");
+		String filename = request.getParameter("filename");
 		String bGroup = request.getParameter("bGroup");
 		String bStep = request.getParameter("bStep");
 		String bIndent = request.getParameter("bIndent");
 		
 		AdoptDao dao = new AdoptDao();
-		dao.areply(aId, cid, abreed, aage, agender, alocation, bGroup, bStep, bIndent);
+		dao.areply(aId, cid, abreed, aage, agender, alocation, filename, bGroup, bStep, bIndent);
 		
 	}
 

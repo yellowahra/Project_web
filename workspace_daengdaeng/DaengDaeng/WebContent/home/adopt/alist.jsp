@@ -30,7 +30,7 @@
 
 </script> -->
 	<style>
-	#mask {  
+	#mask, #mask2 {  
 	  position:absolute;  
 	  z-index:9000;  
 	  background-color:#000;  
@@ -45,7 +45,7 @@
 	
 	}
 	
-	.window{
+	.window, .window2{
 	  display: none;
 	  position:absolute;  
 	  margin-left:auto;
@@ -54,9 +54,16 @@
 	}
 	.window .close{
 	
-		margin-top: 20em;
+		margin-top: 30em;
 		margin-left: 30em;
+		font-size: 10pt;
 	}
+	#main{
+		
+		padding-top: 3em;
+		padding-left: 3em;
+	}
+
 	</style>
 	<script src="https://code.jquery.com/jquery-latest.js"></script> 
 	<script>
@@ -71,12 +78,10 @@
 		//애니메이션 효과 - 일단 1초동안 까맣게 됐다가 80% 불투명도로 간다.
 		$('#mask').fadeIn(1000);      
 		$('#mask').fadeTo("slow",0.9);    
-	
-		
+			
 		//윈도우 같은 거 띄운다.
 		$('.window').show();
-		
-		
+			
 	}
 
 	$(document).ready(function(){
@@ -84,22 +89,21 @@
 		$('.openMask').click(function(e){
 			e.preventDefault();
 			wrapWindowByMask();
+			$("#mask").append("&nbsp; &nbsp;&nbsp; &nbsp;유기견을 입양하고 싶어요!: 반려견을 사지 말고 유기견 입양으로 사랑을 나눠요!<br><br><br>");
+			$("#mask").append("&nbsp; &nbsp;유기동물 발견 후 공고를 통해 10일이 지나도 주인을 찾지 못한 경우,<br> "+
+					"&nbsp; &nbsp;해당 시, 군, 구 등이 소유권을 갖게 되어 개인에게 기증/분양할 수있습니다.<br>"+
+					"1.&nbsp; 목록 중 입양을 원하시는 유기동물이 있는 곳으로 직접 전화를 걸어 입양 안내를 받으시기 바랍니다.<br>"+
+					"2.&nbsp; 입양 보호시설에 미리 전화로 문의하시고, 담당자의 안내에 따라 방문 일시 등을 예약합니다.<br>"+
+					"3.&nbsp; 입양 시 신분증 복사본 2장과 개집, 개줄, 목걸이 등 필요한 물픔을 준비하고 보호시설을 방문해 <br>"+
+					"&nbsp; &nbsp; &nbsp;&nbsp;입양계약서를 작서해야 합니다.<br>"+
+					"4.&nbsp; 입양 보호시설에는 신청자 본인이 직접 방문해야 합니다.<br>"+
+					"5.&nbsp; 미성년자에게는 반려동물을 분양하지 않습니다. <Br>"+
+					"&nbsp; &nbsp; &nbsp;&nbsp;분양을 원하는 미성년자는 부모님의 허락을 얻어 반드시 부모님과 함께 방문해야 합니다.<br>"+
+					"6.&nbsp; 입양은 무료이나 동물의 무분별한 번식을 막고 분실 시 자연번식 방지를 위한 <br>"+
+					"&nbsp; &nbsp; &nbsp;&nbsp;중성화 수술비용 등 일부 경비가 청수될 수 있습니다."
+			);
 		});
-		$("#mask").append("&nbsp; &nbsp;&nbsp; &nbsp;유기견을 입양하고 싶어요!: 반려견을 사지 말고 유기견 입양으로 사랑을 나눠요!<br><br><br>");
-		$("#mask").append("&nbsp; &nbsp;유기동물 발견 후 공고를 통해 10일이 지나도 주인을 찾지 못한 경우,<br> "+
-				"&nbsp; &nbsp;해당 시, 군, 구 등이 소유권을 갖게 되어 개인에게 기증/분양할 수있습니다.<br>"+
-				"1.&nbsp; 목록 중 입양을 원하시는 유기동물이 있는 곳으로 직접 전화를 걸어 입양 안내를 받으시기 바랍니다.<br>"+
-				"2.&nbsp; 입양 보호시설에 미리 전화로 문의하시고, 담당자의 안내에 따라 방문 일시 등을 예약합니다.<br>"+
-				"3.&nbsp; 입양 시 신분증 복사본 2장과 개집, 개줄, 목걸이 등 필요한 물픔을 준비하고 보호시설을 방문해 <br>"+
-				"&nbsp; &nbsp; &nbsp;&nbsp;입양계약서를 작서해야 합니다.<br>"+
-				"4.&nbsp; 입양 보호시설에는 신청자 본인이 직접 방문해야 합니다.<br>"+
-				"5.&nbsp; 미성년자에게는 반려동물을 분양하지 않습니다. <Br>"+
-				"&nbsp; &nbsp; &nbsp;&nbsp;분양을 원하는 미성년자는 부모님의 허락을 얻어 반드시 부모님과 함께 방문해야 합니다.<br>"+
-				"6.&nbsp; 입양은 무료이나 동물의 무분별한 번식을 막고 분실 시 자연번식 방지를 위한 <br>"+
-				"&nbsp; &nbsp; &nbsp;&nbsp;중성화 수술비용 등 일부 경비가 청수될 수 있습니다.<br>"
-		
-		);
-		
+
 		//닫기 버튼을 눌렀을 때
 		$('.window .close').click(function (e) {  
 		    //링크 기본동작은 작동하지 않도록 한다.
@@ -113,13 +117,14 @@
 		    $('.window').hide();  
 		});      
 	});
+
 	</script>
 <style type="text/css">
 .button {
 background-color: white;
 color: black;
 border: 2px solid #4CAF50;
-padding: 10px 20px;
+padding: 10px 10px;
 text-align: center;
 text-decoration: none;
 display: inline-block;
@@ -171,7 +176,7 @@ color: white;
 		</li>
 		<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
 		<ul id="subMenu">
-			<li><a href="list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
+			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
 			<li><a href="alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>유기견정보</a><li>
 		</ul>
 		</li>
@@ -185,19 +190,23 @@ color: white;
 	
 <!-- Main -->
 <div id="main">
-	<a href="alist.doa" ><img src="../icons/location_gray.png"/>입양정보</a>
-	<a href="#portfolio" ><img src="../icons/location_gray.png"/>실종정보</a>
-	<a href="#portfolio" ><img src="../icons/location_gray.png"/>유기견정보</a>
+	
+	<a href="alist.doa" style="color: red;"><img src="../icons/home.png">입양정보</a>
+	<a href="#portfolio" ><img src="../icons/lost.png"/>실종정보</a>
+	<a href="#portfolio" ><img src="../icons/watch.png"/>유기견정보</a>
 	<br>
 	
 	<div id="mask"></div>
 		<div class="window">
 			<input type="button" href="#" class="close" value="닫기"/>
 		</div>
-	<a href="#" class="openMask">입양관련 주의사항</a>
-
+	<a href="#" class="openMask"><img src="../icons/info.png"/>입양관련 주의사항</a>
+	
+	<div>
+	
 	<c:forEach items="${alist}" var="dto">
 	<table class="alist" cellpadding="0" cellspacing="0"  style="width:350px">
+
 		<tr align="center" >
 			<td width="100px">번호</td>
 			<td align="center" width="100px">${dto.aId}</td>
@@ -205,6 +214,11 @@ color: white;
 		<tr align="center">
 			<td width="100px">이름</td>
 			<td width="100px">${dto.cid}</td>
+		</tr>
+
+		<tr align="center">			
+			<td width="100px">사진</td>
+			<td width="100px"><img src='../adoptimage/${dto.filename}' width='100px'></td>
 		</tr>
 		<tr align="center">			
 			<td width="100px">품종</td>
@@ -226,10 +240,6 @@ color: white;
 			<td width="100px">날짜</td>
 			<td width="100px">${dto.aDate}</td>	
 		</tr>
-		<tr align="center">
-			<td width="100px">조회수</td>
-			<td width="100px">${dto.aHit}</td>	
-		</tr>
 		</table>
 	</c:forEach>
 	
@@ -237,15 +247,17 @@ color: white;
 		<% if(session.getAttribute("cid")!=null){ %>
 		<tr id="link">
 	
-			<td colspan="5" align="center"><a href="write_view.do" class="button">글작성</a></td>
+			<td colspan="5" align="center"><a href="awrite_view.doa" class="button">글작성</a></td>
+			<td colspan="5" align="center"><a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=400 height=710'); return false">입양문의</a></td>
 		</tr>
 	<% } else{ %>
 		<tr id="link">
 
 		<td colspan="5" align="center">글쓰기를 위해 <a href="../login.html" class="button">로그인</a></td>
+			<td colspan="5" align="center"><a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=400 height=710'); return false">입양문의</a></td>
 	</tr>
 	<%} %>
-
+	</div>
 </div>
 		<!-- Footer -->
 			<div id="footer">
