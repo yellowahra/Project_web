@@ -159,7 +159,7 @@
 		<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
 		<ul id="subMenu">
 			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
-			<li><a href="alist.jsp" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>유기견정보</a><li>
+			<li><a href="alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>유기견정보</a><li>
 		</ul>
 		</li>
 	</ul>
@@ -232,19 +232,19 @@
 		</tr>
 
 		<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
-		<% if(session.getAttribute("cid")!="null"){ %>
-		<tr align="center">
-			<td colspan="4">
-				<a href="#" onclick="window.open('info2.html', 'name', 'resizable= no width=430px height=750px'); return false">게시물관련 문의</a>&nbsp; &nbsp;
-				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">입양문의</a>
-			</td>
-		</tr>
-	<% } else if(session.getAttribute("cid").equals("master")){ %>
+		<% if(session.getAttribute("cid").equals("master")){ %>
 		<tr align="center">
 				<td  colspan="4">	
 				<a href="adelete.doa?aId=${dto.aId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
 				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">입양문의</a>
 				</td>
+		</tr>
+	<% }else if(session.getAttribute("cid")!="null"){ %>
+		<tr align="center">
+			<td colspan="4">
+				<a href="#" onclick="window.open('info2.html', 'name', 'resizable= no width=430px height=750px'); return false">게시물관련 문의</a>&nbsp; &nbsp;
+				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">입양문의</a>
+			</td>
 		</tr>
 	<%} else{ %>
 			<tr align="center">

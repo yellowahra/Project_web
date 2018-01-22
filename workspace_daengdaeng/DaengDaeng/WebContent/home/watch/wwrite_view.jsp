@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+ <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
  <%!
 	String cname, cid, cpw;
 %>
@@ -8,20 +8,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <link rel="daengdaeng icon" href="../images/favicon.ico" type="image/x-icon" />
 	<title>댕댕이 노트 - 글쓰기</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="../assets/css/main.css" />
-	<!-- <link rel="stylesheet" href="../assets/css/joinin.css" /> -->
 	<link rel="stylesheet" href="board.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/jquery.scrolly.min.js"></script>
+	<script src="../assets/js/jquery.scrollzer.min.js"></script>
+	<script src="../assets/js/skel.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/ie/respond.min.js"></script>
+	<script src="../assets/js/main.js"></script> 
+	
 	<style>
-	#mask{  
+	#mask, #mask2 {  
 	  position:absolute;  
 	  z-index:9000;  
 	  background-color:#000;  
@@ -31,12 +36,12 @@
 	  font-color:white;
 	  margin-left: auto;
 	  margin-right: auto;
-	  padding-top: 5em;
+	  padding-top: 3em;
 	  padding-left: 15em;
 	
 	}
 	
-	.window{
+	.window, .window2{
 	  display: none;
 	  position:absolute;  
 	  margin-left:auto;
@@ -72,31 +77,29 @@
 			
 		//윈도우 같은 거 띄운다.
 		$('.window').show();
-		
-
 			
 	}
+
 	$(document).ready(function(){
-	
-		$('#mask').append("&nbsp; &nbsp;&nbsp; &nbsp;반려견이 실종됐어요!: 먼저 당황하지 마시고 침찾하게 하나씩 따라해보세요!<br><br><br>"
+
+		$('#mask').append("&nbsp; &nbsp;&nbsp; &nbsp;유기견을 발견했어요!: 버려지거나 주인을 잃은 동물을 발견하면 신고해 주세요.<br><br><br>"
 				+
 				
-				"1.&nbsp; 최초 실종된 장소를 기점으로 주변을 찾아보세요<br>"+
-				"&nbsp;&nbsp;&nbsp; 처음부터 먼 거리를 이동하지는 않아요. 시간이 흐름에 따라 범위를 차츰 확대해 나가세요.<br>"+
-				"2.&nbsp; 주변 유기 동물 보호소에 연락 및 전다지를 만들어 배포해 보세요. <br>"+
-				"3.&nbsp; 잘 알수 있는 사진과 연락처를 기재한 전다지를 제작하여 주변 관공서 및 동물변원, 애견샵 등과 잘 보이는 곳에 배포해 보세요.<br>"+
-				"4.&nbsp; 또한 전국에 구조된 동물들을 유기견정보나 동물보호관리시스템의 홈페이지등에서 매일 확인해 보세요<Br>"+
-		
-				"5.&nbsp; 인터넷을 최대한 이용해 다양한 경로로 알리세요. <br>"+
-				"&nbsp; &nbsp; &nbsp;&nbsp;페이스북, 트위터등 여러 SNS를 통해 위에 작업한 전단지를 퍼트리고 각 동호회 및 카페 등에도 알려보세요!"
+				"1.&nbsp; 공공장소를 떠돌거나 버려진 동물을 발견한 경우<br>"+
+				"&nbsp;&nbsp;&nbsp; 관할 시, 군, 구청과 해당 유기동물 보호시설에 신고해야합니다. (동물보호관리시스템 1577-0954)<br>"+
+				"2.&nbsp; 유기견을 주인 없는 동물이라 여겨 마음대로 잡거나 팔거나 죽이면 <br>"+
+				"&nbsp;&nbsp;&nbsp; 500만원 이하의 벌금을 내게 됩니다.<br>"+
+				"3.&nbsp; 시장, 군수, 구청장은 관내에서 발견되는 유기동물이 보호받을 수 있도록 필요한 조치를 해야하며, <br>"+
+				"&nbsp;&nbsp;&nbsp; 주인을 찾을 수 있도록 그 사실을 7일 이상 공고해야 합니다.<br>"+
+				"4.&nbsp; 공고 후 10일이 지나도 주인을 찾지 못한 경우, <Br>"+
+				"&nbsp;&nbsp;&nbsp; 해당 시, 구, 구 등이 동물의 소유권을 갖게 되어 개인에게 기증하거나 분양할 수있습니다.<br>"
 		);
 		//검은 막 띄우기
 		$('.openMask').click(function(e){
-
 			e.preventDefault();
 			wrapWindowByMask();
 		});
-		
+
 		//닫기 버튼을 눌렀을 때
 		$('.window .close').click(function (e) {  
 		    //링크 기본동작은 작동하지 않도록 한다.
@@ -108,10 +111,11 @@
 		$('#mask').click(function () {  
 		    $(this).hide();  
 		    $('.window').hide();  
-		});     
+		});      
 	});
 
 	</script>
+
 </head>
 <body>
 <%
@@ -121,7 +125,6 @@
 
 %>
 <!-- Header -->
-
 <div id="header">
 		<div class="top">
 	<% if(session.getAttribute("cid")!=null){ %>
@@ -136,7 +139,6 @@
 		<a href="../login.html"><button class="btn_sm">로그인</button></a>
 	</nav>
 	<%} %>
-		
 	<!-- Nav -->
 	<nav id="nav">
 	<ul>
@@ -167,112 +169,71 @@
 	
 	<a href="../adopt/alist.doa" ><img src="../icons/home.png">입양정보</a>
 	<a href="llist.dol" style="color: red;"><img src="../icons/lost.png"/>실종정보</a>
-	<a href="../watch/wlist.dow" ><img src="../icons/watch.png"/>유기견정보</a>
+	<a href="wlist.dow" ><img src="../icons/watch.png"/>유기견정보</a>
 	<br>
-		<div id="mask"></div>
-	<div class="window">
-		<input type="button" href="#" class="close" value="닫기"/>
-	</div>
-	<a href="#" class="openMask"><img src="../icons/info.png"/>반려견을 잃어버렸을 때 주의사항</a>
 	
-		
-		<% if(session.getAttribute("cid")!=null){ %>
-		<p id="link">
-	
-			<a href="lwrite_view.dol" class="button">글작성</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-		</p>
-	<% } else{ %>
-		<p id="link">
-
-		<a href="../login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-	</p>
-	<%} %>
+	<div id="mask"></div>
+		<div class="window">
+			<input type="button" class="close" value="닫기"/>
+		</div>
+	<a href="#" class="openMask"><img src="../icons/info.png"/>유기견을 발견했을 때 주의사항</a> <br>
+		 <a href="wlist.dow" class="button"><center>목록보기</center></a>
 	<div>
-	
-	<c:forEach items="${llist}" var="dto">
-	<table class="llist" cellpadding="0" cellspacing="0"  style="width:350px">
-	
-		<tr align="center">			
-			<td colspan="4"><img src='lostimage/${dto.lfilename}' width='300px'></td>
-			
-		</tr>
-		<tr align="center" >
-			<td width="50px">번호</td>
-			<td align="center" width="50px">${dto.lId}</td>
-			<td width="50px">이름</td>
-			<td width="200px">${dto.cid}</td>
-		</tr>
-		<tr align="center">
-			<td width="50px">나이</td>
-			<td width="50px">${dto.lage}</td>
-			<td width="50px">품종</td>
-			<td width="200px">${dto.lbreed}</td>
-			
-		</tr>
-
-		<tr align="center">
-			<td width="50px">성별</td>
-			<td width="50px">${dto.lgender}</td>
-			<td width="50px">위치</td>
-			<td width="200px">${dto.llocation}</td>
-		</tr>
-		<tr align="center">
-			<td width="50px">주인정보</td>
-			<td width="50px" colspan="3">${dto.lcontact}</td>
-
-		</tr>
-		<tr align="center">
-			<td width="50px">특이사항</td>
-			<td width="50px" colspan="3">${dto.lmemo}</td>
-
-		</tr>
-		<tr align="center">
-			<td  colspan="2">날짜</td>
-			<td colspan="2">${dto.lDate}</td>	
-		</tr>
-		
-		<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
-		<% if(session.getAttribute("cid").equals("master")){ %>
-			<tr align="center">
-					<td  colspan="4">	<a href="ldelete.dol?lId=${dto.lId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
-					
-					</td>
-				
+	<table class="wwrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 50%;" >
+		<form action="wwrite.dow" method="post">
+			<tr>
+				<td id="head"  >이름</td>
+				<td><input type="text" name="cid" value=<%=cid %> size="40"></td>
 			</tr>
-		<% } else if(session.getAttribute("cid")!="null"){ %>
-		<tr align="center">
-			<td colspan="4">
-				<a href="#" onclick="window.open('info2.html', 'name', 'resizable= no width=430px height=750px'); return false">게시물관련 문의</a>&nbsp; &nbsp; &nbsp;
-				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">이 아이 본적있어요!</a>
-			</td>
-		</tr>
-	<% } else{ %>
-		<tr align="center">
-			<td colspan="4">
-				<a href="#" onclick="window.open('info2.html', 'name', 'resizable= no width=430px height=750px'); return false">게시물관련 문의</a>&nbsp; &nbsp; &nbsp;
-				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">이 아이 본적있어요!</a>
-			</td>
-		</tr>
-	<%} %>
-		
-		</table>
-	</c:forEach>
-		
+			<tr>
+				<td id="head" >품종</td>
+				<td><input type="text" name="wbreed" size="40"></td>
+			</tr>
+			<tr>
+				<td id="head">나이</td>
+				<td><input type="text" name="wage" size="40"></td>
+			</tr>
+			<tr>
+				<td id="head">성별</td>
+				<td><input type="text" name="wgender" size="40"></td>
+			</tr>
+			
+			<tr>
+				<td id="head" >위치</td>
+				<td><input type="text" name="wlocation" size="40"></td>
+			</tr>
+			<tr>
+				<td id="head"> 파일</td>
+				<td><input type="file" name="wfilename"></td>
+			</tr>
+			<tr>
+				<td id="head">연락처</td>
+				<td><input type="text" name="wcontact" size="40"></td>
+			</tr>
+			<tr>
+				<td id="head"> 특이사항</td>
+				<td><textarea name="wmemo" cols="40"></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+				<center><input type="submit" value="입력"></center>
+				</td>
+			</tr>
+		</form>
+
+	</table>
 	</div>
+
 </div>
+
 		<!-- Footer -->
 			<div id="footer">
+
 				<!-- Copyright -->
 					<ul class="copyright">
 						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
+
 			</div>
 </body>
-	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/jquery.scrolly.min.js"></script>
-	<script src="../assets/js/jquery.scrollzer.min.js"></script>
-	<script src="../assets/js/skel.min.js"></script>
-	<script src="../assets/js/util.js"></script>
-	<script src="../assets/js/ie/respond.min.js"></script>
-	<script src="../assets/js/main.js"></script> 
 </html>
