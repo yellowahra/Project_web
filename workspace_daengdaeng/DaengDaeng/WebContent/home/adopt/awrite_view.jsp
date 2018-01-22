@@ -169,7 +169,7 @@
 	
 	<a href="alist.doa" style="color: red;"><img src="../icons/home.png">입양정보</a>
 	<a href="../lost/llist.dol" ><img src="../icons/lost.png"/>실종정보</a>
-	<a href="#portfolio" ><img src="../icons/watch.png"/>유기견정보</a>
+	<a href="../watch/wlist.dow" ><img src="../icons/watch.png"/>유기견정보</a>
 	<br>
 	
 	<div id="mask"></div>

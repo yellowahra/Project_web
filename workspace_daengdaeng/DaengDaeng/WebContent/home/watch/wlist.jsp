@@ -45,7 +45,7 @@
 	}
 	.window .close{
 	
-		margin-top: 40em;
+		margin-top: 30em;
 		margin-left: 60em;
 		font-size: 10pt;
 	}
@@ -78,17 +78,17 @@
 	}
 	$(document).ready(function(){
 	
-		$('#mask').append("&nbsp; &nbsp;&nbsp; &nbsp;반려견이 실종됐어요!: 먼저 당황하지 마시고 침찾하게 하나씩 따라해보세요!<br><br><br>"
+		$('#mask').append("&nbsp; &nbsp;&nbsp; &nbsp;유기견을 발견했어요!: 버려지거나 주인을 잃은 동물을 발견하면 신고해 주세요.<br><br><br>"
 				+
 				
-				"1.&nbsp; 최초 실종된 장소를 기점으로 주변을 찾아보세요<br>"+
-				"&nbsp;&nbsp;&nbsp; 처음부터 먼 거리를 이동하지는 않아요. 시간이 흐름에 따라 범위를 차츰 확대해 나가세요.<br>"+
-				"2.&nbsp; 주변 유기 동물 보호소에 연락 및 전다지를 만들어 배포해 보세요. <br>"+
-				"3.&nbsp; 잘 알수 있는 사진과 연락처를 기재한 전다지를 제작하여 주변 관공서 및 동물변원, 애견샵 등과 잘 보이는 곳에 배포해 보세요.<br>"+
-				"4.&nbsp; 또한 전국에 구조된 동물들을 유기견정보나 동물보호관리시스템의 홈페이지등에서 매일 확인해 보세요<Br>"+
-		
-				"5.&nbsp; 인터넷을 최대한 이용해 다양한 경로로 알리세요. <br>"+
-				"&nbsp; &nbsp; &nbsp;&nbsp;페이스북, 트위터등 여러 SNS를 통해 위에 작업한 전단지를 퍼트리고 각 동호회 및 카페 등에도 알려보세요!"
+				"1.&nbsp; 공공장소를 떠돌거나 버려진 동물을 발견한 경우<br>"+
+				"&nbsp;&nbsp;&nbsp; 관할 시, 군, 구청과 해당 유기동물 보호시설에 신고해야합니다. (동물보호관리시스템 1577-0954)<br>"+
+				"2.&nbsp; 유기견을 주인 없는 동물이라 여겨 마음대로 잡거나 팔거나 죽이면 <br>"+
+				"&nbsp;&nbsp;&nbsp; 500만원 이하의 벌금을 내게 됩니다.<br>"+
+				"3.&nbsp; 시장, 군수, 구청장은 관내에서 발견되는 유기동물이 보호받을 수 있도록 필요한 조치를 해야하며, <br>"+
+				"&nbsp;&nbsp;&nbsp; 주인을 찾을 수 있도록 그 사실을 7일 이상 공고해야 합니다.<br>"+
+				"4.&nbsp; 공고 후 10일이 지나도 주인을 찾지 못한 경우, <Br>"+
+				"&nbsp;&nbsp;&nbsp; 해당 시, 구, 구 등이 동물의 소유권을 갖게 되어 개인에게 기증하거나 분양할 수있습니다.<br>"
 		);
 		//검은 막 띄우기
 		$('.openMask').click(function(e){
@@ -166,14 +166,14 @@
 <div id="main">
 	
 	<a href="../adopt/alist.doa" ><img src="../icons/home.png">입양정보</a>
-	<a href="llist.dol" style="color: red;"><img src="../icons/lost.png"/>실종정보</a>
-	<a href="#portfolio" ><img src="../icons/watch.png"/>유기견정보</a>
+	<a href="../lost/llist.dol" ><img src="../icons/lost.png"/>실종정보</a>
+	<a href="wlist.dow" style="color: red;"><img src="../icons/watch.png"/>유기견정보</a>
 	<br>
 		<div id="mask"></div>
 	<div class="window">
 		<input type="button" href="#" class="close" value="닫기"/>
 	</div>
-	<a href="#" class="openMask"><img src="../icons/info.png"/>반려견을 잃어버렸을 때 주의사항</a>
+	<a href="#" class="openMask"><img src="../icons/info.png"/>유기견을 발견했을 때 주의사항</a>
 	
 		
 		<% if(session.getAttribute("cid")!=null){ %>
@@ -223,30 +223,37 @@
 		</tr>
 		<tr align="center">
 			<td width="50px">특이사항</td>
-			<td width="50px" colspan="3">${dto.lmemo}</td>
+			<td width="50px" colspan="3">${dto.wmemo}</td>
 
 		</tr>
 		<tr align="center">
 			<td  colspan="2">날짜</td>
-			<td colspan="2">${dto.lDate}</td>	
+			<td colspan="2">${dto.wDate}</td>	
 		</tr>
 		
-<%-- 		<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
-		<% if(session.getAttribute("cid").equals("master")){ %>
+	<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
+		<% if(session.getAttribute("cid")!="null"){ %>
+			<tr align="center">
+			<td colspan="4">
+				<a href="#" onclick="window.open('info2.html', 'name', 'resizable= no width=430px height=750px'); return false">게시물관련 문의</a>&nbsp; &nbsp; &nbsp;
+				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">주인이신가요?</a>
+			</td>
+		</tr>
+	<% }else if(session.getAttribute("cid")=="null"){ %>
 		<tr align="center">
-				<td  colspan="4">	<a href="ldelete.dol?lId=${dto.lId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
+				<td  colspan="4">	<a href="ldelete.dol?lId=${dto.wId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
 				
 				</td>
 				
 		</tr>
-	<% } else{ %>
+	<%} else{ %>
 		<tr align="center">
 			<td colspan="4">
 				<a href="#" onclick="window.open('info2.html', 'name', 'resizable= no width=430px height=750px'); return false">게시물관련 문의</a>&nbsp; &nbsp; &nbsp;
-				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">이 아이 본적있어요!</a>
+				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">주인이신가요?</a>
 			</td>
 		</tr>
-	<%} %> --%>
+	<%} %> 
 		
 		</table>
 	</c:forEach>

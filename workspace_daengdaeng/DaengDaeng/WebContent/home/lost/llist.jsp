@@ -167,7 +167,7 @@
 	
 	<a href="../adopt/alist.doa" ><img src="../icons/home.png">입양정보</a>
 	<a href="llist.dol" style="color: red;"><img src="../icons/lost.png"/>실종정보</a>
-	<a href="#portfolio" ><img src="../icons/watch.png"/>유기견정보</a>
+	<a href="../watch/wlist.dow" ><img src="../icons/watch.png"/>유기견정보</a>
 	<br>
 		<div id="mask"></div>
 	<div class="window">
@@ -231,13 +231,20 @@
 			<td colspan="2">${dto.lDate}</td>	
 		</tr>
 		
-<%-- 		<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
-		<% if(session.getAttribute("cid").equals("master")){ %>
+		<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
+		<% if(session.getAttribute("cid")!="null"){ %>
+		<tr align="center">
+			<td colspan="4">
+				<a href="#" onclick="window.open('info2.html', 'name', 'resizable= no width=430px height=750px'); return false">게시물관련 문의</a>&nbsp; &nbsp; &nbsp;
+				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">이 아이 본적있어요!</a>
+			</td>
+		</tr>
+		<% } else if(session.getAttribute("cid").equals("master")){ %>
 		<tr align="center">
 				<td  colspan="4">	<a href="ldelete.dol?lId=${dto.lId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
 				
 				</td>
-				
+			
 		</tr>
 	<% } else{ %>
 		<tr align="center">
@@ -246,7 +253,7 @@
 				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">이 아이 본적있어요!</a>
 			</td>
 		</tr>
-	<%} %> --%>
+	<%} %>
 		
 		</table>
 	</c:forEach>

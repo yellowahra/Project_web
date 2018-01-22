@@ -19,16 +19,7 @@
 	<link rel="stylesheet" href="board.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-<!-- <script type="text/javascript">
-	$(document).ready(function(){
-		
-		$("#adoptinfo").click(function(){
-			alert("입양정보");
-		});
-		
-	});
 
-</script> -->
 	<style>
 	#mask{  
 	  position:absolute;  
@@ -66,7 +57,11 @@
 		padding-top: 3em;
 		padding-left: 3em;
 	}
-
+	table{
+		margin-top: 2em;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	</style>
 	<script src="https://code.jquery.com/jquery-latest.js"></script> 
 	<script>
@@ -180,7 +175,7 @@
 	
 	<a href="alist.doa" style="color: red;"><img src="../icons/home.png">입양정보</a>
 	<a href="../lost/llist.dol" ><img src="../icons/lost.png"/>실종정보</a>
-	<a href="#portfolio" ><img src="../icons/watch.png"/>유기견정보</a>
+	<a href="../watch/wlist.dow" ><img src="../icons/watch.png"/>유기견정보</a>
 	<br>
 		<div id="mask"></div>
 	<div class="window">
@@ -235,23 +230,30 @@
 			<td  colspan="2">날짜</td>
 			<td colspan="2">${dto.aDate}</td>	
 		</tr>
-		
-	<%-- 	<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
-		<% if(session.getAttribute("cid").equals("master")){ %>
-		<tr align="center">
-				<td  colspan="4">	
-				<a href="adelete.doa?aId=${dto.aId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
-				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">입양문의</a>
-				</td>
-		</tr>
-	<% } else{ %>
+
+		<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
+		<% if(session.getAttribute("cid")!="null"){ %>
 		<tr align="center">
 			<td colspan="4">
 				<a href="#" onclick="window.open('info2.html', 'name', 'resizable= no width=430px height=750px'); return false">게시물관련 문의</a>&nbsp; &nbsp;
 				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">입양문의</a>
 			</td>
 		</tr>
-	<%} %> --%>
+	<% } else if(session.getAttribute("cid").equals("master")){ %>
+		<tr align="center">
+				<td  colspan="4">	
+				<a href="adelete.doa?aId=${dto.aId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
+				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">입양문의</a>
+				</td>
+		</tr>
+	<%} else{ %>
+			<tr align="center">
+			<td colspan="4">
+				<a href="#" onclick="window.open('info2.html', 'name', 'resizable= no width=430px height=750px'); return false">게시물관련 문의</a>&nbsp; &nbsp;
+				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">입양문의</a>
+			</td>
+		</tr>
+	<%} %>
 				
 		</table>
 	</c:forEach>
