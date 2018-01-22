@@ -54,7 +54,7 @@
 	}
 	.window .close{
 	
-		margin-top: 30em;
+		margin-top: 40em;
 		margin-left: 30em;
 		font-size: 10pt;
 	}
@@ -89,7 +89,7 @@
 		$('.openMask').click(function(e){
 			e.preventDefault();
 			wrapWindowByMask();
-			$("#mask").append("&nbsp; &nbsp;&nbsp; &nbsp;유기견을 입양하고 싶어요!: 반려견을 사지 말고 유기견 입양으로 사랑을 나눠요!<br><br><br>");
+			$("#mask").append("&nbsp; &nbsp;&nbsp; &nbsp; 유기견을 입양하고 싶어요!: 반려견을 사지 말고 유기견 입양으로 사랑을 나눠요!<br><br><br>");
 			$("#mask").append("&nbsp; &nbsp;유기동물 발견 후 공고를 통해 10일이 지나도 주인을 찾지 못한 경우,<br> "+
 					"&nbsp; &nbsp;해당 시, 군, 구 등이 소유권을 갖게 되어 개인에게 기증/분양할 수있습니다.<br>"+
 					"1.&nbsp; 목록 중 입양을 원하시는 유기동물이 있는 곳으로 직접 전화를 걸어 입양 안내를 받으시기 바랍니다.<br>"+
@@ -120,22 +120,23 @@
 
 	</script>
 <style type="text/css">
-.button {
-background-color: white;
-color: black;
-border: 2px solid #4CAF50;
-padding: 10px 10px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-margin-left:20px;
+	.button {
+		background-color: white;
+		color: black; 
+		border: 2px solid #4CAF50;
+		padding: 10px 10px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin-left:20px;
+	
+	}
+	.button:hover {
+	background-color: #4CAF50;
+	color: white;
+	}
 
-}
-.button:hover {
-background-color: #4CAF50;
-color: white;
-}
 
 </style>
 </head>
@@ -163,7 +164,7 @@ color: white;
 	</nav>
 	<%} %>
 		
-	<!-- Nav -->
+
 	<nav id="nav">
 	<ul>
 		<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
@@ -192,7 +193,7 @@ color: white;
 <div id="main">
 	
 	<a href="alist.doa" style="color: red;"><img src="../icons/home.png">입양정보</a>
-	<a href="#portfolio" ><img src="../icons/lost.png"/>실종정보</a>
+	<a href="../lost/llist.dol" ><img src="../icons/lost.png"/>실종정보</a>
 	<a href="#portfolio" ><img src="../icons/watch.png"/>유기견정보</a>
 	<br>
 	
