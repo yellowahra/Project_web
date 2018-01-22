@@ -236,7 +236,7 @@
 			<td colspan="2">${dto.aDate}</td>	
 		</tr>
 		
-		<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
+	<%-- 	<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
 		<% if(session.getAttribute("cid").equals("master")){ %>
 		<tr align="center">
 				<td  colspan="4">	
@@ -251,7 +251,7 @@
 				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">입양문의</a>
 			</td>
 		</tr>
-	<%} %>
+	<%} %> --%>
 				
 		</table>
 	</c:forEach>

@@ -19,16 +19,7 @@
 	<link rel="stylesheet" href="board.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-<!-- <script type="text/javascript">
-	$(document).ready(function(){
-		
-		$("#adoptinfo").click(function(){
-			alert("입양정보");
-		});
-		
-	});
 
-</script> -->
 	<style>
 	#mask{  
 	  position:absolute;  
@@ -240,7 +231,7 @@
 			<td colspan="2">${dto.lDate}</td>	
 		</tr>
 		
-		<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
+<%-- 		<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
 		<% if(session.getAttribute("cid").equals("master")){ %>
 		<tr align="center">
 				<td  colspan="4">	<a href="ldelete.dol?lId=${dto.lId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
@@ -255,12 +246,7 @@
 				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">이 아이 본적있어요!</a>
 			</td>
 		</tr>
-	<%} %>
-		
-		
-		
-		
-		
+	<%} %> --%>
 		
 		</table>
 	</c:forEach>
