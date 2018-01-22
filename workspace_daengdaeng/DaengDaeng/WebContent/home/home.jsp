@@ -10,19 +10,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 
 <link rel="daengdaeng icon" href="images/favicon.ico" type="image/x-icon" />
-<<<<<<< HEAD:workspace_daengdaeng/DaengDaeng/WebContent/home/home.jsp
 	<title>댕댕이 노트</title>
-=======
-<title>댕댕이 노트</title>
-	<meta charset="EUC-KR">
->>>>>>> adopt, lost dont:workspace_daengdaeng/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/DaengDaeng/home/index.html
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-<<<<<<< HEAD:workspace_daengdaeng/DaengDaeng/WebContent/home/home.jsp
 
 	<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -32,17 +26,6 @@
 			<script src="assets/js/util.js"></script>
 		<script src="assets/js/ie/respond.min.js"></script>
 			<script src="assets/js/main.js"></script> 
-=======
-		
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollzer.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/ie/respond.min.js"></script>
-	<script src="assets/js/main.js"></script> 
->>>>>>> adopt, lost dont:workspace_daengdaeng/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/DaengDaeng/home/index.html
 </head>
 <body>
 <%
@@ -53,19 +36,12 @@
 %>
 <!-- Header -->
 <div id="header">
-<<<<<<< HEAD:workspace_daengdaeng/DaengDaeng/WebContent/home/home.jsp
 		<div class="top">
 		<section id="info">
 		<input id="info" type="hidden" name="cid" size="10" value=<%=cid %>><%=cid %>님 안녕하세요
 		<a href="modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
 		<a href="logout.jsp"><button class="btn_sm">로그아웃</button>
 		</section>
-=======
-	<div class="top">
-	<nav id="join_login">
-		<a href="joinin.html" ><button class="btn_sm">회원가입</button></a><br><br>
-		<a href="login.html"><button class="btn_sm">로그인</button></a>
->>>>>>> adopt, lost dont:workspace_daengdaeng/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/DaengDaeng/home/index.html
 	</nav>
 	<!-- Nav -->
 	<nav id="nav">
@@ -81,7 +57,7 @@
 		<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><img src="icons/dog_gray.png"/>댕댕이 커뮤티니</a>
 		<ul id="subMenu">
 			<li><a href="board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="icons/chat_gray.png"/>정보공유</a></li>
-			<li><a href="adopt/alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="icons/location_gray.png"/>유기견정보</a><li>
+			<li><a href="adopt/alist.jsp" id="portfolio-link" class="skel-layers-ignoreHref"><img src="icons/location_gray.png"/>유기견정보</a><li>
 		</ul>
 		</li>
 	</ul>
@@ -98,14 +74,7 @@
 		<header>
 			<img class="logo_img" src="images/logo001.png"/><Br>
 		</header>
-<<<<<<< HEAD:workspace_daengdaeng/DaengDaeng/WebContent/home/home.jsp
 		<input type="hidden" name="cid" size="10" value=<%=cid %>><%=cid %>님 안녕하세요
-=======
-		<footer class="main_btn">
-			<a href="joinin.html" class="button">회원가입</a>&nbsp&nbsp&nbsp
-			<a href="login.html" class="button">로그인</a>
-		</footer>
->>>>>>> adopt, lost dont:workspace_daengdaeng/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/DaengDaeng/home/index.html
 		</div>
 	</section>
 </div>
@@ -126,12 +95,7 @@
 					</ul>
 
 			</div>
-<<<<<<< HEAD:workspace_daengdaeng/DaengDaeng/WebContent/home/home.jsp
 
 
 </body>
-=======
-		
-	</body>
->>>>>>> adopt, lost dont:workspace_daengdaeng/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/DaengDaeng/home/index.html
 </html>

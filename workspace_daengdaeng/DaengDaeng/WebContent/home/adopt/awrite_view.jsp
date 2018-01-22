@@ -1,16 +1,6 @@
  <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<<<<<<< HEAD
-<%-- <%@ page import= "com.oreilly.servlet.MultipartRequest" %>
-<%@ page import= "com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
-<%@ page import= "java.util.Enumeration" %>
-<%@ page import="java.util.*" %>
-<%@ page import="java.io.*" %>
-<!-- 파일 업로드 처리를 위한 MultipartRequest 객체를 임포트 -->
-<%@ page import="com.oreilly.servlet.MultipartRequest" %>  --%>
-=======
 
->>>>>>> adopt, lost dont
  <%!
 	String cname, cid, cpw;
 %>
@@ -34,8 +24,6 @@
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/ie/respond.min.js"></script>
 	<script src="../assets/js/main.js"></script> 
-<<<<<<< HEAD
-=======
 	
 	<style>
 	#mask, #mask2 {  
@@ -128,7 +116,6 @@
 
 	</script>
 
->>>>>>> adopt, lost dont
 </head>
 <body>
 <%
@@ -179,30 +166,6 @@
 	
 <!-- Main -->
 <div id="main">
-<<<<<<< HEAD
-<table class="write_view" cellpadding="0" cellspacing="0" border="1">
-		<form action="awrite.doa" method="post">
-			<tr>
-				<td  id="head">이름</td>
-				<td><input type="text" name="cid" value=<%=cid %> size="30"></td>
-			</tr>
-			<tr>
-				<td id="head"> 품종</td>
-				<td><input type="text" name="abreed" size="40"></td>
-			</tr>
-			<tr>
-				<td id="head">나이</td>
-				<td><input type="text" name="aage" size="40"></td>
-			</tr>
-			<tr>
-				<td id="head"> 성별</td>
-				<td><input type="text" name="agender" size="40"></td>
-			</tr>
-			
-			<tr>
-				<td id="head"> 위치</td>
-				<td><input type="text" name="alocation" size="40"></td>
-=======
 	
 	<a href="alist.doa" style="color: red;"><img src="../icons/home.png">입양정보</a>
 	<a href="../lost/llist.dol" ><img src="../icons/lost.png"/>실종정보</a>
@@ -238,7 +201,6 @@
 			<tr>
 				<td id="head" > 위치</td>
 				<td><input type="text" name="alocation" size="30"></td>
->>>>>>> adopt, lost dont
 			</tr>
 			<tr>
 				<td id="head"> 파일</td>
@@ -247,18 +209,6 @@
 		
 			<tr>
 				<td colspan="2">
-<<<<<<< HEAD
-				<input type="submit" value="입력"> &nbsp; &nbsp; &nbsp;
-				</td>
-			</tr>
-		</form>
-	
-
-			
-	</form>
-	</table>
-	 <a href="alist.doa"><center>목록보기</center></a>
-=======
 				<center><input type="submit" value="입력"></center>
 				</td>
 			</tr>
@@ -267,7 +217,6 @@
 	</table>
 	</div>
 
->>>>>>> adopt, lost dont
 </div>
 
 		<!-- Footer -->

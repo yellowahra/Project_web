@@ -10,12 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.daengdaeng.adoptcommand.AdoptCommand;
-import com.daengdaeng.adoptcommand.AdoptContentCommand;
 import com.daengdaeng.adoptcommand.AdoptDeleteCommand;
 import com.daengdaeng.adoptcommand.AdoptListCommand;
-import com.daengdaeng.adoptcommand.AdoptModifyCommand;
-import com.daengdaeng.adoptcommand.AdoptReplyCommand;
-import com.daengdaeng.adoptcommand.AdoptReplyViewCommand;
 import com.daengdaeng.adoptcommand.AdoptWriteCommand;
 
 /**
@@ -97,25 +93,8 @@ public class AdoptFrontController extends HttpServlet {
 			command.execute(request, response);
 			
 			viewPage= "alist.doa";
-		}else if(comm.equals("acontent_view.doa")) {
-			command = new AdoptContentCommand();
-			command.execute(request, response);
-			viewPage = "acontent_view.jsp";
-		}else if(comm.equals("amodify.doa")) {
-			command = new AdoptModifyCommand();
-			command.execute(request, response);
-			viewPage = "alist.doa";
 		}else if(comm.equals("adelete.doa")){
 			command = new AdoptDeleteCommand();
-			command.execute(request, response);
-			viewPage = "alist.doa";
-		}else if(comm.equals("areply_view.doa")){
-			command = new AdoptReplyViewCommand();
-			command.execute(request, response);
-			viewPage = "areply_view.jsp";
-			
-		}else if(comm.equals("areply.doa")) {
-			command = new AdoptReplyCommand();
 			command.execute(request, response);
 			viewPage = "alist.doa";
 		}
