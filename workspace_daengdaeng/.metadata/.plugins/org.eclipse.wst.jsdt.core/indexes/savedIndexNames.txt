@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.4+C:\CodeLab\git_desktop\Project_web\workspace_daengdaeng\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 687575905.index
 1438990183.index
@@ -11,3 +12,7 @@ INDEX VERSION 1.4+C:\CodeLab\git_desktop\Project_web\workspace_daengdaeng\.metad
 2626726398.index
 2584358936.index
 645163089.index
+=======
+INDEX VERSION 1.4+C:\AHRA\CodeLab\git_laptop\Project_web\workspace_daengdaeng\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3678715713.index
+>>>>>>> e821c817fa403146d84ebe91a764b39d3e5bccc2
