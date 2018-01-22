@@ -232,7 +232,7 @@
 		</tr>
 		
 		<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
-		<% if(session.getAttribute("cid").equals("master")){ %>
+		<% if(session.getAttribute("cid")==("master")){ %>
 			<tr align="center">
 					<td  colspan="4">	<a href="ldelete.dol?lId=${dto.lId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
 					

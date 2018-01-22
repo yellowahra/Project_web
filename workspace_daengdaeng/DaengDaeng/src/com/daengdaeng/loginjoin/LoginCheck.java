@@ -26,7 +26,7 @@ public class LoginCheck extends HttpServlet {
 	
 	private String cname, cid, cpw;
 	private String cemail;
-       
+	HttpSession httpSession;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -54,38 +54,61 @@ public class LoginCheck extends HttpServlet {
 		System.out.println("doPost()");
 		actionCheck(request, response);
 	}
+	private boolean pwConfirm() {
+		boolean result = false;
+		String sessionPw = (String)httpSession.getAttribute("cpw");
+		if(sessionPw.equals(cpw)) {
+			result = true;			
+		}else {
+			result = false;
+		}
+		return result;
+	}//pwConfirm
 	
 	protected void actionCheck(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
+		request.setCharacterEncoding("EUC-KR");
+		HttpSession httpSession = request.getSession();
 		cid = request.getParameter("cid");
 		cpw = request.getParameter("cpw");
 		
-		String query = "SELECT * FROM customer WHERE cid='"+cid+"' AND cpw='" + cpw +"'";
+			
+
+			if(pwConfirm()){
+				System.out.println("Password authentication is successful");
+				String query = "SELECT * FROM customer WHERE cid='"+cid+"' AND cpw='" + cpw +"'";
+				System.out.println(query);
+				try {
+					Class.forName("oracle.jdbc.driver.OracleDriver");
+					
+					connection = DriverManager.getConnection(
+							"jdbc:oracle:thin:@localhost:1521:orcl", 
+							"daengdaeng", "oracle_11g");
+					while(resultSet.next()) {
+						cname = resultSet.getString("cname");
+						cid = resultSet.getString("cid");
+						cpw = resultSet.getString("cpw");
+						cemail =  resultSet.getString("cemail");
+					}
+					
+				
+					
+					httpSession.setAttribute("cname", cname);
+					httpSession.setAttribute("cid", cid);
+					httpSession.setAttribute("cpw", cpw);
+					stmt = connection.createStatement();
+					int i = stmt.executeUpdate(query);
+					if(i==1) {
+						System.out.println("Login Success");
+						httpSession.setAttribute("cname", cname);
+						response.sendRedirect("home/loginResult.jsp");
+					}else {
+						System.out.println("login Fail");
+						
+						response.sendRedirect("home/loginfail.jsp");
+						
+					}
+			
 		
-		try {
-			
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", 
-					"daengdaeng", "oracle_11g");
-			stmt = connection.createStatement();
-			resultSet = stmt.executeQuery(query);
-			
-			
-			while(resultSet.next()) {
-				cname = resultSet.getString("cname");
-				cid = resultSet.getString("cid");
-				cpw = resultSet.getString("cpw");
-				cemail =  resultSet.getString("cemail");
-			}
-			
-			HttpSession httpSession = request.getSession();
-			
-			httpSession.setAttribute("cname", cname);
-			httpSession.setAttribute("cid", cid);
-			httpSession.setAttribute("cpw", cpw);
-			
-			response.sendRedirect("home/loginResult.jsp");
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -99,7 +122,11 @@ public class LoginCheck extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		
+	}else {
+		System.out.println("Error-Password do not matched.");
+	
 	}
+	
+}//actionCheck
 
 }

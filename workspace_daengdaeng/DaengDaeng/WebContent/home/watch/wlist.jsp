@@ -190,10 +190,10 @@
 	<div>
 	
 	<c:forEach items="${wlist}" var="dto">
-	<table class="wlist" cellpadding="0" cellspacing="0"  style="width:350px">
+	<table class="wlist" cellpadding="0" cellspacing="0"  style="width:400px">
 	
 		<tr align="center">			
-			<td colspan="4"><img src='watchimage/${dto.wfilename}' width='300px'></td>
+			<td colspan="4"><img src='watchimage/${dto.wfilename}' width='400px'></td>
 			
 		</tr>
 		<tr align="center" >
@@ -232,7 +232,7 @@
 		</tr>
 		
 	<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
-		<% if(session.getAttribute("cid").equals("master")){ %>
+		<% if(session.getAttribute("cid")==("master")){ %>
 		<tr align="center">
 				<td  colspan="4">	<a href="wdelete.dow?wId=${dto.wId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
 				
