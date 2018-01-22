@@ -13,7 +13,7 @@ public class LostWriteCommand implements LostCommand {
 		String lage = request.getParameter("lage");
 		String lgender = request.getParameter("lgender");
 		String llocation = request.getParameter("llocation");
-		String lfilename = request.getParameter("filename");
+		String lfilename = request.getParameter("lfilename");
 		String lcontact = request.getParameter("lcontact");
 		String lmemo = request.getParameter("lmemo");
 		LostDao dao = new LostDao();

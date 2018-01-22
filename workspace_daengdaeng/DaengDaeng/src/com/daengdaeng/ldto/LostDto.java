@@ -99,7 +99,7 @@ public class LostDto {
 	public int getlHit() {
 		return lHit;
 	}
-	public void setaHit(int lHit) {
+	public void setlHit(int lHit) {
 		this.lHit = lHit;
 	}
 	
