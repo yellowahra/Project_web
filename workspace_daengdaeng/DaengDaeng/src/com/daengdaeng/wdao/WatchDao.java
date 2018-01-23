@@ -33,7 +33,7 @@ public class WatchDao {
 			
 			while(resultSet.next()) {
 				int wId = resultSet.getInt("wId");
-				String cid = resultSet.getString("wid");
+				String cid = resultSet.getString("cid");
 				String wbreed = resultSet.getString("wbreed");
 				String wage = resultSet.getString("wage");
 				String wgender = resultSet.getString("wgender");

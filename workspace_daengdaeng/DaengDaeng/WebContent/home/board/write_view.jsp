@@ -49,7 +49,7 @@
 	<!-- Nav -->
 	<nav id="nav">
 	<ul>
-		<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>´ó´óÀÌ µî·Ï</a></li>
+		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>´ó´óÀÌ µî·Ï</a></li>
 		<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>´ó´óÀÌ ´ÙÀÌ¾î¸®</a>
 		<ul id="subMenu">
 			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>´ó´óÀÌ ÀÏÁ¤</a></li>
