@@ -89,7 +89,10 @@
 	<c:forEach items="${dlist}" var="dto">
 
 	<table class="dlist" cellpadding="0" cellspacing="0"  style="width:450px">
-	
+			<tr>	
+			<td width="50px">¿Ã∏ß</td>
+			<td width="200px">${dto.cid}</td>
+			</tr>
 		<tr align="center">			
 			<td colspan="4"><img src='registerimage/${dto.dfilename}' width='300px'></td>
 			
