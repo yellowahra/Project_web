@@ -1,4 +1,4 @@
-package com.daengdaeng.dfrontcontroller;
+package com.daengdaeng.kgfrontcontroller;
 
 import java.io.IOException;
 
@@ -9,21 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.daengdaeng.dogcommand.DogCommand;
-import com.daengdaeng.dogcommand.DogDeleteCommand;
-import com.daengdaeng.dogcommand.DogListCommand;
-import com.daengdaeng.dogcommand.DogWriteCommand;
+import com.daengdaeng.kgcommand.KgCommand;
+import com.daengdaeng.kgcommand.KgDeleteCommand;
+import com.daengdaeng.kgcommand.KgListCommand;
+import com.daengdaeng.kgcommand.KgWriteCommand;
+
 /**
  * Servlet implementation class BFrontController
  */
-@WebServlet("*.dod")
-public class DogFrontController extends HttpServlet {
+@WebServlet("*.dos")
+public class KgFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DogFrontController() {
+    public KgFrontController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -46,7 +47,6 @@ public class DogFrontController extends HttpServlet {
 //		doGet(request, response);
 		System.out.println("doPost");
 		actionDo(request, response);
-	
 	}
 
 	protected void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -57,7 +57,7 @@ public class DogFrontController extends HttpServlet {
 		
 		String viewPage = null;
 		
-		DogCommand command = null;
+		KgCommand command = null;
 		
 		String uri = request.getRequestURI();
 		System.out.println("URI: " + uri);
@@ -78,24 +78,28 @@ public class DogFrontController extends HttpServlet {
 		System.out.println("comm: " + comm);
 		
 		
-		if(comm.equals("dlist.dod")) {
+		if(comm.equals("slist.dos")) {
 			
-			command = new DogListCommand();
+			command = new KgListCommand();
 			
 			command.execute(request, response);
 			
-			viewPage = "doglist.jsp";
-		}else if(comm.equals("dwrite_view.dod")) {
-			viewPage = "dogwrite_view.jsp";
-		}else if(comm.equals("dwrite.dod")) {
-			command = new DogWriteCommand();
+			viewPage = "weighthome.jsp";
+		}else if(comm.equals("swrite_view.dos")) {
+			viewPage = "weightwrite_view.jsp";
+			
+		}else if(comm.equals("swrite.dos")) {
+			command = new KgWriteCommand();
+			
 			command.execute(request, response);
-			viewPage= "dlist.dod";
-		}else if(comm.equals("ddelete.dod")){
-			command = new DogDeleteCommand();
+			
+			viewPage= "slist.dos";
+		}else if(comm.equals("sdelete.dos")){
+			command = new KgDeleteCommand();
 			command.execute(request, response);
-			viewPage = "dlist.dod";
+			viewPage = "slist.dos";
 		}
+		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);

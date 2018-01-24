@@ -90,7 +90,10 @@
 		width: 18em;
 		height: 5em;
 	}
+	#footer{
+		margin-bottom: 0;
 	
+	}
 
 /* Box Model */
 
@@ -1656,6 +1659,11 @@
 
 	footer {
 		margin: 2em 0 0 0;
+		
+	}
+	#footer{
+		margin-bottom: 0;
+	
 	}
 
 	strong, b {

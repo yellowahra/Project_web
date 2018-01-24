@@ -2,7 +2,7 @@
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <%!
-	String cname, cid, cpw;
+	String cname,cid, cpw;
 	
 %>
 
@@ -22,7 +22,24 @@
 	<link rel="stylesheet" href="board.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+<script>
+$(function(){
+	var idval = $("#selectdog");
+	$('#selectname').change(function(){
+		
+		var element = $(this).find('option:selected');
+		var myTag = element.attr('value');
+		idval.val(myTag);
+		
+		
+	});
+	
+	
+	
+});
 
+
+</script>
 </head>
 <body>
 <%
@@ -51,12 +68,12 @@
 	<!-- Nav -->
 	<nav id="nav">
 	<ul>
-		<li><a href="dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
+		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
 		<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 다이어리</a>
 		<ul id="subMenu">
 			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 일정</a></li>
 			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
-			<li id="subMenu_li"><a href="../weight/slist.dos" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
+			<li id="subMenu_li"><a href="slist.dos" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
 		</li>
 		<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
@@ -75,11 +92,56 @@
 	
 <!-- Main -->
 <div id="main">
+	<div align="center">
+		<a href="../weight/weighthome.jsp" style="color: red;"><img src="weightimage/scale.png" width="50px">몸무게_Weight</a>&nbsp; &nbsp; &nbsp;&nbsp;
+		<a href="#" ><img src="weightimage/medicine.png" width="50px"/>약_Medicine</a>&nbsp; &nbsp; &nbsp;&nbsp;
+		<a href="#" ><img src="weightimage/allergy.png" width="50px"/>알레르기_Allergy</a>&nbsp; &nbsp; &nbsp;&nbsp;
+		<a href="#" ><img src="weightimage/vaccine.png" width="50px"/>백신_Vaccine</a>
+		<br><br>
+	</div>
+
 
 		<% if(session.getAttribute("cid")!=null){ %>
 		<p id="link">
 	
-			<a href="dwrite_view.dod" class="button">반려견 등록</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+		<select name="selectname" id="selectname">
+				 <option value="none">반려견선택</option>
+			<c:forEach items="${slist}" var="dto">
+				<c:if test="${dto.cid==cid}">
+						  <option value="${dto.dname}">${dto.dname}</option>
+				</c:if>
+			</c:forEach>		
+		</select>
+	<input value="dname" id='selectdog'>
+			
+		<div>
+
+	
+	
+		<table class="slist" cellpadding="0" cellspacing="0"  >
+		<tr align="center" >
+			<td>몸무게</td>
+			<td>이름</td>
+			<td>날짜</td>
+			<td>삭제</td>
+		</tr>	
+	<c:forEach items="${slist}" var="dto">
+		<tr>
+			<td align="center">${dto.dweight}kg</td>
+			<td>${dto.dname}</td>
+			<td width="10">${dto.sDate}</td>
+			<td><a href="sdelete.dos?sId=${dto.sId}">삭제하기</a><td>
+		</tr>	
+	</c:forEach>
+		</table>
+
+
+
+
+	</div>
+			
+			
+			
 		</p>
 	<% } else{ %>
 		<p id="link">
@@ -87,57 +149,7 @@
 		<a href="../login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 	</p>
 	<%} %>
-	<div>
-
-	<c:forEach items="${dlist}" var="dto">
-		<c:if test="${dto.cid==cid}">
-		<table class="dlist" cellpadding="0" cellspacing="0"  style="width:450px">
-			<tr align="center">			
-				<td colspan="4"><img src='registerimage/${dto.dfilename}' width='300px'></td>
-				
-			</tr>
-			<tr align="center" >
-				<td colspan="2">이름</td>
-				<td colspan="2">${dto.dname}</td>
-			</tr>
-			<tr align="center">
-				<td colspan="2">품종</td>
-				<td colspan="2">${dto.dbreed}</td>
-				
-			</tr>
-			<tr align="center" >
-				<td colspan="2">생일</td>
-				<td colspan="2">${dto.dbd}</td>
-			</tr>
-			<tr align="center" >
-				<td colspan="2">데려온날</td>
-				<td colspan="2">${dto.dad}</td>
-			</tr>
 	
-			<tr align="center">
-				<td width="50px">성별</td>
-				<td width="50px">${dto.dgender}</td>
-				<td width="50px">나이</td>
-				<td width="200px">${dto.dage}</td>
-			</tr>
-			<tr align="center">
-				<td width="100px">몸무게</td>
-				<td width="50px">${dto.dweight} kg</td>
-				<td width="100px">등록번호</td>
-				<td width="200px">${dto.didnum}</td>
-			</tr>
-					<tr align="center">
-						<td  colspan="4">	<a href="ddelete.dod?dId=${dto.dId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
-						
-						</td>
-					
-				</tr>
-		</table>
-		</c:if>
-	</c:forEach>
-
-
-	</div>
 </div>
 		<!-- Footer -->
 			<div id="footer">

@@ -1,28 +1,50 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+ <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
  <%!
 	String cname, cid, cpw;
-	
 %>
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <link rel="daengdaeng icon" href="../images/favicon.ico" type="image/x-icon" />
 	<title>댕댕이 노트 - 글쓰기</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="../assets/css/main.css" />
-	<!-- <link rel="stylesheet" href="../assets/css/joinin.css" /> -->
 	<link rel="stylesheet" href="board.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/jquery.scrolly.min.js"></script>
+	<script src="../assets/js/jquery.scrollzer.min.js"></script>
+	<script src="../assets/js/skel.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/ie/respond.min.js"></script>
+	<script src="../assets/js/main.js"></script> 
+	<!-- jQuery UI CSS파일  -->
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
+	<!-- // jQuery 기본 js파일 -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
+	<!-- // jQuery UI 라이브러리 js파일 -->
+	<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>  
+	<script>
+	$(function() {
+		  $( "#testDatepicker" ).datepicker({
+		        showOn: "both", 
+		        buttonImage: "calendar.png", 
+		        buttonImageOnly: true 
+		  });
+		  $( "#testDatepicker2" ).datepicker({
+		        showOn: "both", 
+		        buttonImage: "calendar.png", 
+		        buttonImageOnly: true 
+		  });
+	});
+		
+	</script>
 </head>
 <body>
 <%
@@ -32,7 +54,6 @@
 
 %>
 <!-- Header -->
-
 <div id="header">
 		<div class="top">
 	<% if(session.getAttribute("cid")!=null){ %>
@@ -47,7 +68,6 @@
 		<a href="../login.html"><button class="btn_sm">로그인</button></a>
 	</nav>
 	<%} %>
-		
 	<!-- Nav -->
 	<nav id="nav">
 	<ul>
@@ -56,7 +76,7 @@
 		<ul id="subMenu">
 			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 일정</a></li>
 			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
-			<li id="subMenu_li"><a href="../weight/slist.dos" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
+			<li id="subMenu_li"><a href="#about" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
 		</li>
 		<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
@@ -76,82 +96,71 @@
 <!-- Main -->
 <div id="main">
 
-		<% if(session.getAttribute("cid")!=null){ %>
-		<p id="link">
-	
-			<a href="dwrite_view.dod" class="button">반려견 등록</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-		</p>
-	<% } else{ %>
-		<p id="link">
-
-		<a href="../login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-	</p>
-	<%} %>
 	<div>
+	<table class="swrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 50%;" >
+		<form action="swrite.dos" method="post">
+			<tr>
+				<td id="head"  >반려인이름</td>
 
-	<c:forEach items="${dlist}" var="dto">
-		<c:if test="${dto.cid==cid}">
-		<table class="dlist" cellpadding="0" cellspacing="0"  style="width:450px">
-			<tr align="center">			
-				<td colspan="4"><img src='registerimage/${dto.dfilename}' width='300px'></td>
-				
+				<td><input type="text" name="cid" value=<%=cid %> size="40"></td>
 			</tr>
-			<tr align="center" >
-				<td colspan="2">이름</td>
-				<td colspan="2">${dto.dname}</td>
+			<tr>
+				<td id="head"  >반려견이름</td>
+				<td><input type="text" name="dname" size="40"></td>
 			</tr>
-			<tr align="center">
-				<td colspan="2">품종</td>
-				<td colspan="2">${dto.dbreed}</td>
-				
+			<tr>
+				<td id="head">사진</td>
+				<td><input type="file" name="dfilename"></td>
 			</tr>
-			<tr align="center" >
-				<td colspan="2">생일</td>
-				<td colspan="2">${dto.dbd}</td>
+			<tr>
+				<td id="head">품종</td>
+				<td><input type="text" name="dbreed" size="40"></td>
 			</tr>
-			<tr align="center" >
-				<td colspan="2">데려온날</td>
-				<td colspan="2">${dto.dad}</td>
+			<tr>
+				<td id="head">태어난날</td>
+				<td><input type="text" id="testDatepicker" name="dbd"></td>
+			</tr>
+			<tr>
+				<td id="head">가족이된날</td>
+				<td><input type="text" id="testDatepicker2" name="dad"></td>
+			</tr>
+			<tr>
+				<td id="head">나이</td>
+				<td><input type="text" name="dage" size="40"></td>
+			<tr>
+				<td id="head">성별</td>
+				<td><input type="text" name="dgender" size="40"></td>
+			</tr>
+			
+			<tr>
+				<td id="head" >몸무게</td>
+				<td><input type="text" name="dweight" size="10">kg</td>
+			</tr>
+			<tr>
+				<td id="head" >등록번호</td>
+				<td><input type="text" name="didnum" size="40"></td>
 			</tr>
 	
-			<tr align="center">
-				<td width="50px">성별</td>
-				<td width="50px">${dto.dgender}</td>
-				<td width="50px">나이</td>
-				<td width="200px">${dto.dage}</td>
+			<tr>
+				<td colspan="2">
+				<center><input type="submit" value="입력"></center>
+				</td>
 			</tr>
-			<tr align="center">
-				<td width="100px">몸무게</td>
-				<td width="50px">${dto.dweight} kg</td>
-				<td width="100px">등록번호</td>
-				<td width="200px">${dto.didnum}</td>
-			</tr>
-					<tr align="center">
-						<td  colspan="4">	<a href="ddelete.dod?dId=${dto.dId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
-						
-						</td>
-					
-				</tr>
-		</table>
-		</c:if>
-	</c:forEach>
+		</form>
 
-
+	</table>
 	</div>
+
 </div>
+
 		<!-- Footer -->
 			<div id="footer">
+
 				<!-- Copyright -->
 					<ul class="copyright">
 						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
+
 			</div>
 </body>
-	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/jquery.scrolly.min.js"></script>
-	<script src="../assets/js/jquery.scrollzer.min.js"></script>
-	<script src="../assets/js/skel.min.js"></script>
-	<script src="../assets/js/util.js"></script>
-	<script src="../assets/js/ie/respond.min.js"></script>
-	<script src="../assets/js/main.js"></script> 
 </html>

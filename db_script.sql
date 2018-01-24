@@ -116,3 +116,18 @@ CREATE TABLE dog(
 COMMIT;
 CREATE SEQUENCE DOG_SEQ;
 DROP TABLE dog;
+
+
+CREATE TABLE weight(
+	sID VARCHAR2(20),
+	cId VARCHAR2(20),
+	dName VARCHAR2(20),
+	dweight VARCHAR2(20),
+	sDate DATE DEFAULT SYSDATE,
+	CONSTRAINT weight_fk_cID FOREIGN KEY (cID) REFERENCES customer(cID)
+);
+COMMIT;
+CREATE SEQUENCE weight_SEQ;
+COMMIT;
+
+INSERT INTO weight (sId, cid, dname, dweight) VALUES (weight_seq.nextval, 'sophia', '파도', 2);
