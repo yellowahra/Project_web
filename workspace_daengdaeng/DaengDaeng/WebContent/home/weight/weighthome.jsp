@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <%!
 	String cname,cid, cpw;
@@ -22,7 +21,7 @@
 	<link rel="stylesheet" href="board.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-<script>
+<script language="javascript" charset='euc-kr'>
 $(function(){
 	var idval = $("#selectdog");
 	$('#selectname').change(function(){
@@ -30,16 +29,13 @@ $(function(){
 		var element = $(this).find('option:selected');
 		var myTag = element.attr('value');
 		idval.val(myTag);
-		
-		
 	});
-	
-	
-	
+
 });
 
 
 </script>
+
 </head>
 <body>
 <%
@@ -49,7 +45,6 @@ $(function(){
 
 %>
 <!-- Header -->
-
 <div id="header">
 		<div class="top">
 	<% if(session.getAttribute("cid")!=null){ %>
@@ -69,14 +64,14 @@ $(function(){
 	<nav id="nav">
 	<ul>
 		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
-		<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 다이어리</a>
+		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 다이어리</a>
 		<ul id="subMenu">
 			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 일정</a></li>
 			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
-			<li id="subMenu_li"><a href="slist.dos" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
+			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
 		</li>
-		<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
+		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
 		<ul id="subMenu">
 			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
 			<li><a href="../adopt/alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>유기견정보</a><li>
@@ -89,22 +84,25 @@ $(function(){
 <div id="top2">
 	<img src="../images/logo002.png" id="logo_img"/>
 </div>
-	
+	<Br><Br>
 <!-- Main -->
 <div id="main">
 	<div align="center">
-		<a href="../weight/weighthome.jsp" style="color: red;"><img src="weightimage/scale.png" width="50px">몸무게_Weight</a>&nbsp; &nbsp; &nbsp;&nbsp;
+		<a href="slist.dos" style="color: red;"><img src="weightimage/scale.png" width="50px">몸무게_Weight</a>&nbsp; &nbsp; &nbsp;&nbsp;
 		<a href="#" ><img src="weightimage/medicine.png" width="50px"/>약_Medicine</a>&nbsp; &nbsp; &nbsp;&nbsp;
 		<a href="#" ><img src="weightimage/allergy.png" width="50px"/>알레르기_Allergy</a>&nbsp; &nbsp; &nbsp;&nbsp;
 		<a href="#" ><img src="weightimage/vaccine.png" width="50px"/>백신_Vaccine</a>
 		<br><br>
+		<a href="#" onclick="window.open('weightinfo.html', 'name', 'resizable= no width=700px height=800px'); return false" 
+				style="margin-left:10%;"><img src="../icons/info.png"/>반려견 체중관리 정보</a>&nbsp; &nbsp; &nbsp;<br><br><br>
 	</div>
 
+	
 
 		<% if(session.getAttribute("cid")!=null){ %>
-		<p id="link">
 	
-		<select name="selectname" id="selectname">
+	
+		<select name="selectname" id="selectname" style="margin-left:10%; font-size: 25pt; width: 50%; height: 50%;">
 				 <option value="none">반려견선택</option>
 			<c:forEach items="${slist}" var="dto">
 				<c:if test="${dto.cid==cid}">
@@ -112,37 +110,13 @@ $(function(){
 				</c:if>
 			</c:forEach>		
 		</select>
-	<input value="dname" id='selectdog'>
-			
-		<div>
-
-	
-	
-		<table class="slist" cellpadding="0" cellspacing="0"  >
-		<tr align="center" >
-			<td>몸무게</td>
-			<td>이름</td>
-			<td>날짜</td>
-			<td>삭제</td>
-		</tr>	
-	<c:forEach items="${slist}" var="dto">
-		<tr>
-			<td align="center">${dto.dweight}kg</td>
-			<td>${dto.dname}</td>
-			<td width="10">${dto.sDate}</td>
-			<td><a href="sdelete.dos?sId=${dto.sId}">삭제하기</a><td>
-		</tr>	
-	</c:forEach>
-		</table>
-
-
-
-
-	</div>
-			
-			
-			
-		</p>
+		<Br><Br>
+		
+		<form name="select" method="post" action="wlist.dos" style="margin-left:10%; font-size: 25pt; width: 50%;">
+			<input value="selectname" name="select" id="selectdog" style="border:none; font-size: 25pt;" ><br>
+			<input type="submit" value="입력">
+		</form>
+		<br><br>
 	<% } else{ %>
 		<p id="link">
 

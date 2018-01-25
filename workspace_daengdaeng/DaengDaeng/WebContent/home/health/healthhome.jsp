@@ -83,7 +83,7 @@
 	<img id="pet_health_img" src="pet_health.png">
 	<br><br>
 	<div align="center">
-		<a href="../weight/weighthome.jsp"><img src="scale.png" width="50px">몸무게_Weight</a>&nbsp; &nbsp; &nbsp;&nbsp;
+		<a href="../weight/slist.dos"><img src="scale.png" width="50px">몸무게_Weight</a>&nbsp; &nbsp; &nbsp;&nbsp;
 		<a href="#" ><img src="medicine.png" width="50px"/>약_Medicine</a><br>
 		<a href="#" ><img src="allergy.png" width="50px"/>알레르기_Allergy</a>&nbsp; &nbsp; &nbsp;&nbsp;
 		<a href="#" ><img src="vaccine.png" width="50px"/>백신_Vaccine</a>

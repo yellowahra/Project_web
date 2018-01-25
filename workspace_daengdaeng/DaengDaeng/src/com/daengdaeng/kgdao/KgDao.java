@@ -20,31 +20,35 @@ public class KgDao {
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
 		
-		try {
-			
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", 
-						"daengdaeng", "oracle_11g");
+
 			
 				
-			String query = "SELECT sId, cid, dname, dweight, sDate "
-					+ "FROM weight ORDER BY sDate ASC";
-			
-			preparedStatement = connection.prepareStatement(query);
-			resultSet = preparedStatement.executeQuery();
-			
-			while(resultSet.next()) {
-				int sId = resultSet.getInt("sId");
-				String cid = resultSet.getString("cid");
-				String dname = resultSet.getString("dname");
-				String dweight = resultSet.getString("dweight");
-				Timestamp sDate = resultSet.getTimestamp("sDate");
-							
-				KgDto dto = new KgDto(sId, cid, dname, dweight, sDate);
+			try {
 				
-				dtos.add(dto);
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", 
+							"daengdaeng", "oracle_11g");
 				
-			}
+					
+				String query = "SELECT sId, cid, dname, dweight, sDate "
+						+ "FROM weight ORDER BY sDate ASC";
+				
+				preparedStatement = connection.prepareStatement(query);
+				resultSet = preparedStatement.executeQuery();
+				
+				while(resultSet.next()) {
+					int sId = resultSet.getInt("sId");
+					String cid = resultSet.getString("cid");
+					String dname = resultSet.getString("dname");
+					String dweight = resultSet.getString("dweight");
+					Timestamp sDate = resultSet.getTimestamp("sDate");
+								
+					KgDto dto = new KgDto(sId, cid, dname, dweight, sDate);
+					
+					dtos.add(dto);
+					
+				}
+					
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -126,6 +130,54 @@ public class KgDao {
 		
 		
 	} // adelete(
+	public ArrayList<KgDto> wlist() {
+		ArrayList<KgDto> dtos = new ArrayList<KgDto>(); 
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		
+		try {
+			
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", 
+						"daengdaeng", "oracle_11g");
+			
+				
+			String query = "SELECT sId, cid, dname, dweight, sDate "
+					+ "FROM weight ORDER BY sDate ASC";
+			
+			preparedStatement = connection.prepareStatement(query);
+			resultSet = preparedStatement.executeQuery();
+			
+			while(resultSet.next()) {
+				int sId = resultSet.getInt("sId");
+				String cid = resultSet.getString("cid");
+				String dname = resultSet.getString("dname");
+				String dweight = resultSet.getString("dweight");
+				Timestamp sDate = resultSet.getTimestamp("sDate");
+							
+				KgDto dto = new KgDto(sId, cid, dname, dweight, sDate);
+				
+				dtos.add(dto);
+				
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(resultSet!=null) resultSet.close();
+				if(preparedStatement !=null)  preparedStatement.close();
+				if(connection !=null) connection.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+		return dtos;
+	} // list()
 	
 }
 

@@ -80,8 +80,9 @@ public class DogDao {
 						"daengdaeng", "oracle_11g");
 			
 			
-			String query = "INSERT INTO dog (dId, cid, dname, dfilename, dbd, dad, dage, dbreed, dgender, dweight, didnum )"
-					+ "VALUES (dog_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String query = "INSERT ALL INTO dog (dId, cid, dname, dfilename, dbd, dad, dage, dbreed, dgender, dweight, didnum )"
+					+ "VALUES (dog_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) INTO weight (sId, cid, dname, dweight) "+ "VALUES (weight_seq.nextval, ?, ?, ?) "+
+					"SELECT * FROM dual";
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, cid);
 			preparedStatement.setString(2, dname);
@@ -93,6 +94,9 @@ public class DogDao {
 			preparedStatement.setString(8, dgender);
 			preparedStatement.setString(9, dweight);	
 			preparedStatement.setString(10, didnum);
+			preparedStatement.setString(11, cid);
+			preparedStatement.setString(12, dname);
+			preparedStatement.setString(13, dweight);
 			int rn = preparedStatement.executeUpdate();
 			
 		}catch(Exception e) {

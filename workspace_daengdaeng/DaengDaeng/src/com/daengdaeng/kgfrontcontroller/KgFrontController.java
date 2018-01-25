@@ -13,7 +13,7 @@ import com.daengdaeng.kgcommand.KgCommand;
 import com.daengdaeng.kgcommand.KgDeleteCommand;
 import com.daengdaeng.kgcommand.KgListCommand;
 import com.daengdaeng.kgcommand.KgWriteCommand;
-
+import com.daengdaeng.kgcommand.WKgListCommand;
 /**
  * Servlet implementation class BFrontController
  */
@@ -98,6 +98,13 @@ public class KgFrontController extends HttpServlet {
 			command = new KgDeleteCommand();
 			command.execute(request, response);
 			viewPage = "slist.dos";
+			
+		}else if(comm.equals("wlist.dos")){
+			command = new WKgListCommand();
+			
+			command.execute(request, response);
+			
+			viewPage = "weightlist.jsp";
 		}
 		
 		

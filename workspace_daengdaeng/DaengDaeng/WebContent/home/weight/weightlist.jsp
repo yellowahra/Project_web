@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <%!
-	String cname, cid, cpw;
+	String cname,cid, cpw;
 	
 %>
 
@@ -11,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js" charset='euc-kr'></script>
 
 <link rel="daengdaeng icon" href="../images/favicon.ico" type="image/x-icon" />
 	<title>댕댕이 노트 - 글쓰기</title>
@@ -22,6 +21,8 @@
 	<link rel="stylesheet" href="board.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 
 </head>
 <body>
@@ -32,7 +33,6 @@
 
 %>
 <!-- Header -->
-
 <div id="header">
 		<div class="top">
 	<% if(session.getAttribute("cid")!=null){ %>
@@ -51,7 +51,7 @@
 	<!-- Nav -->
 	<nav id="nav">
 	<ul>
-		<li><a href="dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
+		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
 		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 다이어리</a>
 		<ul id="subMenu">
 			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 일정</a></li>
@@ -72,72 +72,91 @@
 <div id="top2">
 	<img src="../images/logo002.png" id="logo_img"/>
 </div>
-	
+		<Br><Br>
 <!-- Main -->
 <div id="main">
+	<div align="center">
+		<a href="slist.dos" style="color: red;"><img src="weightimage/scale.png" width="50px">몸무게_Weight</a>&nbsp; &nbsp; &nbsp;&nbsp;
+		<a href="#" ><img src="weightimage/medicine.png" width="50px"/>약_Medicine</a>&nbsp; &nbsp; &nbsp;&nbsp;
+		<a href="#" ><img src="weightimage/allergy.png" width="50px"/>알레르기_Allergy</a>&nbsp; &nbsp; &nbsp;&nbsp;
+		<a href="#" ><img src="weightimage/vaccine.png" width="50px"/>백신_Vaccine</a>
+		<br><br>
+	</div>
 
-		<% if(session.getAttribute("cid")!=null){ %>
-		<p id="link">
+		<% if(session.getAttribute("cid")!=null){ 
+			request.setCharacterEncoding("EUC-KR");
+			String select = request.getParameter("select");  
+			session.setAttribute("select", select);
+			session.getAttribute("select");%>
+<%-- 	<%= select %> --%>
+		<a href="#" onclick="window.open('calories.jsp', 'name', 'resizable= no width=500px height=750px'); return false" 
+				style="margin-left:10%;">
+		칼로리계산기</a>&nbsp; &nbsp; &nbsp;
 	
-			<a href="dwrite_view.dod" class="button">반려견 등록</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-		</p>
+<div class="graphBox">
+	<script type="text/javascript">
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(drawVisualization);
+	
+		function drawVisualization() { 
+			var data = google.visualization.arrayToDataTable([
+					['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
+					['2004/05',  165,      938,         522,             998,           450,      614.6],
+					['2005/06',  135,      1120,        599,             1268,          288,      682],
+					['2006/07',  157,      1167,        587,             807,           397,      623],
+					['2007/08',  139,      1110,        615,             968,           215,      609.4],
+					['2008/09',  136,      691,         629,             1026,          366,      569.6]
+				]);
+			var options = {
+					title : 'Monthly Coffee Production by Country',
+					vAxis: {title: 'Weight'},
+					hAxis: {title: 'Date'}, 
+					seriesType: 'bars',
+					series: {5: {type: 'line'}}
+				};
+			
+			var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+			chart.draw(data, options);
+		}
+	</script>
+	<img src="../images/under_construction.png" style="width:20%; height: 10%; margin-left:10%;">차트 수정하기
+	<div id="chart_div" style="width:900px; height: 500px;"></div>
+
+
+</div>
+		<table class="wlist" cellpadding="0" cellspacing="0"  width="50em">
+				<tr align="center" >
+					<td width="50" align="center">이름</td>
+					<td width="10">몸무게</td>
+					<td width="20">날짜</td>
+					<td width="30">삭제</td>
+				</tr>	
+			<c:forEach items="${wlist}" var="dto">
+				<c:if test="${dto.dname==select}">
+					<tr>
+						<td align="center">${dto.dname}</td>
+						<td align="center">${dto.dweight}kg</td>
+						<td align="center">${dto.sDate}</td>
+						<td align="center"><a href="sdelete.dos?sId=${dto.sId}">삭제하기</a></td>
+					</tr>	
+				</c:if>
+			</c:forEach>
+		</table>
+
+	<form name="dnamew" method="post" action="swrite_view.dos" style="margin-left:10%; font-size: 20pt; width: 50%;">
+			<input value=<%= select %> name="dnamew" id="selectdog" style="border:none;">
+			<input type="submit" value="체중입력하기">
+		</form>
+		
+		
+		
 	<% } else{ %>
 		<p id="link">
 
 		<a href="../login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 	</p>
 	<%} %>
-	<div>
-
-	<c:forEach items="${dlist}" var="dto">
-		<c:if test="${dto.cid==cid}">
-		<table class="dlist" cellpadding="0" cellspacing="0"  style="width:450px">
-			<tr align="center">			
-				<td colspan="4"><img src='registerimage/${dto.dfilename}' width='300px'></td>
-				
-			</tr>
-			<tr align="center" >
-				<td colspan="2">이름</td>
-				<td colspan="2">${dto.dname}</td>
-			</tr>
-			<tr align="center">
-				<td colspan="2">품종</td>
-				<td colspan="2">${dto.dbreed}</td>
-				
-			</tr>
-			<tr align="center" >
-				<td colspan="2">생일</td>
-				<td colspan="2">${dto.dbd}</td>
-			</tr>
-			<tr align="center" >
-				<td colspan="2">데려온날</td>
-				<td colspan="2">${dto.dad}</td>
-			</tr>
 	
-			<tr align="center">
-				<td width="50px">성별</td>
-				<td width="50px">${dto.dgender}</td>
-				<td width="50px">나이</td>
-				<td width="200px">${dto.dage}</td>
-			</tr>
-			<tr align="center">
-				<td width="100px">몸무게</td>
-				<td width="50px">${dto.dweight} kg</td>
-				<td width="100px">등록번호</td>
-				<td width="200px">${dto.didnum}</td>
-			</tr>
-					<tr align="center">
-						<td  colspan="4">	<a href="ddelete.dod?dId=${dto.dId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
-						
-						</td>
-					
-				</tr>
-		</table>
-		</c:if>
-	</c:forEach>
-
-
-	</div>
 </div>
 		<!-- Footer -->
 			<div id="footer">
