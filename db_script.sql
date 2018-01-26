@@ -21,7 +21,8 @@ CREATE TABLE board(
 	CONSTRAINT customer_fk_cID FOREIGN KEY (cID) REFERENCES customer (cID)
 	
 );
-
+-------------------------------------------------------------------------
+board
 CREATE TABLE board(
 	bID VARCHAR2(20),
 	cId VARCHAR2(20),
@@ -39,7 +40,8 @@ COMMIT;
 CREATE SEQUENCE BOARD_SEQ;
 
 COMMIT;
-
+---------------------------------------------------------------------------
+adopt
 CREATE TABLE adopt(
 	aID VARCHAR2(20),
 	cId VARCHAR2(20),
@@ -60,7 +62,8 @@ COMMIT;
 
 CREATE SEQUENCE ADOPT_SEQ;
 COMMIT;
-
+----------------------------------------------------------------------
+lost
 CREATE TABLE lost(
 	lID VARCHAR2(20),
 	cId VARCHAR2(20),
@@ -79,7 +82,8 @@ CREATE TABLE lost(
 COMMIT;
 CREATE SEQUENCE LOST_SEQ;
 COMMIT;
-
+--------------------------------------------------------------------
+watch
 CREATE TABLE watch(
 	wID VARCHAR2(20),
 	cId VARCHAR2(20),
@@ -98,7 +102,8 @@ CREATE TABLE watch(
 COMMIT;
 CREATE SEQUENCE WATCH_SEQ;
 COMMIT;
-
+--------------------------------------------------------
+dog
 CREATE TABLE dog(
 	dID VARCHAR2(20),
 	cId VARCHAR2(20),
@@ -117,7 +122,8 @@ COMMIT;
 CREATE SEQUENCE DOG_SEQ;
 DROP TABLE dog;
 
-
+-----------------------------------------------------------
+weight
 CREATE TABLE weight(
 	sID VARCHAR2(20),
 	cId VARCHAR2(20),
@@ -130,4 +136,72 @@ COMMIT;
 CREATE SEQUENCE weight_SEQ;
 COMMIT;
 
-INSERT INTO weight (sId, cid, dname, dweight) VALUES (weight_seq.nextval, 'sophia', '파도', 2);
+
+
+SELECT DISTINCT * From weight;
+
+-------------------------------------------------------------
+1_25 Medicine
+
+CREATE TABLE medicine(
+	mID VARCHAR2(20),
+	cId VARCHAR2(20),
+	dName VARCHAR2(20),
+	mname VARCHAR2(20),
+	mdosage VARCHAR2(20),
+	mfreq VARCHAR2(20),
+	mseff VARCHAR2(20),
+	mmemo VARCHAR2(100),
+	mDate DATE DEFAULT SYSDATE,
+	CONSTRAINT medicine_fk_cID FOREIGN KEY (cID) REFERENCES customer(cID)
+);
+
+CREATE SEQUENCE medicine_SEQ;
+COMMIT;
+DROP TABLE medicine;
+------------------------------------------------------------------
+vaccine
+CREATE TABLE vaccine(
+	vID VARCHAR2(20),
+	cId VARCHAR2(20),
+	dName VARCHAR2(20),
+	vname VARCHAR2(20),
+	vinjdate VARCHAR2(20),
+	vseff VARCHAR2(20),
+	vmemo VARCHAR2(100),
+	vDate DATE DEFAULT SYSDATE,
+	CONSTRAINT vaccine_fk_cID FOREIGN KEY (cID) REFERENCES customer(cID)
+);
+
+CREATE SEQUENCE vaccine_SEQ;
+COMMIT;
+DROP TABLE vaccine;
+------------------------------------------------------------------
+allergy
+CREATE TABLE allergy(
+	alID VARCHAR2(20),
+	cId VARCHAR2(20),
+	dName VARCHAR2(20),
+	alreason VARCHAR2(20),
+	alreaction VARCHAR2(20),
+	alseverity VARCHAR2(50),
+	almemo VARCHAR2(50),
+	alDate DATE DEFAULT SYSDATE,
+	CONSTRAINT allergy_fk_cID FOREIGN KEY (cID) REFERENCES customer(cID)
+);
+
+CREATE SEQUENCE allergy_SEQ;
+COMMIT;
+
+-------------------------------------------------------------------
+SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'WEIGHT_SEQ';
+
+ALTER SEQUENCE VACCINE_SEQ INCREMENT BY -81;
+
+
+
+
+
+
+
+

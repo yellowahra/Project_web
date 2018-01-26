@@ -9,9 +9,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		var gallery = document.getElementById("gallery");
+		var num=0;
+		
+		document.getElementById('prev').onclick = function(){
+			num--;
+			
+			if(num<0){
+				num=8;
+			}
+			gallery.src = "FirstAid\\FirstAid" + num+".gif";
+			
+		};
+		
+		document.getElementById('next').onclick = function(){
+			num++;
+			
+			if(num>8){
+				num=0;
+			}
+			gallery.src = "FirstAid\\FirstAid" + num+".gif";
+			
+		};
+	};
+
+</script>
 
 <link rel="daengdaeng icon" href="../images/favicon.ico" type="image/x-icon" />
-	<title>댕댕이 노트 - 글쓰기</title>
+	<title>댕댕이 노트-건강수첩</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="../assets/css/main.css" />
@@ -19,14 +46,6 @@
 	<link rel="stylesheet" href="board.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	<style>
-	#pet_health_img{
-		display:block;
-		width: 70%;
-		margin-left: auto;
-   		margin-right: auto;
-	}
-	</style>
 </head>
 <body>
 <%
@@ -60,7 +79,7 @@
 		<ul id="subMenu">
 			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 일정</a></li>
 			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
-			<li id="healthhome.jsp"><a href="#about" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
+			<li id="subMenu_li"><a href="healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
 		</li>
 		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
@@ -79,14 +98,18 @@
 	
 <!-- Main -->
 <div id="main">
-	
-	<img id="pet_health_img" src="pet_health.png">
-	<br><br>
+	<p align="center" style="margin-top: 2em;">
+		<img  src="FirstAid\\left_btn.png" id="prev">
+		<img  src="FirstAid\\FirstAid0.gif" id="gallery" style="width: 40%;">
+		<img  src="FirstAid\\right_btn.png" id="next">
+	</p>
+	<!-- 
+	<img id="pet_health_img" src="pet_health.png"> -->
 	<div align="center">
 		<a href="../weight/slist.dos"><img src="scale.png" width="50px">몸무게_Weight</a>&nbsp; &nbsp; &nbsp;&nbsp;
-		<a href="#" ><img src="medicine.png" width="50px"/>약_Medicine</a><br>
+		<a href="../medicine/mlist.dom" ><img src="medicine.png" width="50px"/>약_Medicine</a><br>
 		<a href="#" ><img src="allergy.png" width="50px"/>알레르기_Allergy</a>&nbsp; &nbsp; &nbsp;&nbsp;
-		<a href="#" ><img src="vaccine.png" width="50px"/>백신_Vaccine</a>
+		<a href="../vaccine/vlist.dov" ><img src="vaccine.png" width="50px"/>예방접종_Vaccine</a>
 		<br><br>
 	</div>
 	

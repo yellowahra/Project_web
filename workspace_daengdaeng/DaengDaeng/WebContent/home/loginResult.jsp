@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 
 <link rel="daengdaeng icon" href="images/favicon.ico" type="image/x-icon" />
-	<title>댕댕이 노트</title>
+	<title>댕댕이 노트-로그인</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="assets/css/main.css" />

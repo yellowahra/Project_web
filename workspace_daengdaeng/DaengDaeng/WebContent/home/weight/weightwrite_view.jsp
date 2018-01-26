@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 
 <link rel="daengdaeng icon" href="../images/favicon.ico" type="image/x-icon" />
-	<title>댕댕이 노트 - 글쓰기</title>
+	<title>댕댕이 노트-체중관리</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="../assets/css/main.css" />
@@ -29,22 +29,7 @@
 	<!-- // jQuery 기본 js파일 -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
 	<!-- // jQuery UI 라이브러리 js파일 -->
-	<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>  
-	<script>
-	$(function() {
-		  $( "#testDatepicker" ).datepicker({
-		        showOn: "both", 
-		        buttonImage: "calendar.png", 
-		        buttonImageOnly: true 
-		  });
-		  $( "#testDatepicker2" ).datepicker({
-		        showOn: "both", 
-		        buttonImage: "calendar.png", 
-		        buttonImageOnly: true 
-		  });
-	});
-		
-	</script>
+
 </head>
 <body>
 <%
@@ -71,12 +56,12 @@
 	<!-- Nav -->
 	<nav id="nav">
 	<ul>
-		<li><a href="dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
+		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
 		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 다이어리</a>
 		<ul id="subMenu">
 			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 일정</a></li>
 			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
-			<li id="slist.dos"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
+			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
 		</li>
 		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
@@ -92,14 +77,14 @@
 <div id="top2">
 	<img src="../images/logo002.png" id="logo_img"/>
 </div>
-	
+	<Br><Br>
 <!-- Main -->
 <div id="main">
 	<div align="center">
 		<a href="slist.dos" style="color: red;"><img src="weightimage/scale.png" width="50px">몸무게_Weight</a>&nbsp; &nbsp; &nbsp;&nbsp;
-		<a href="#" ><img src="weightimage/medicine.png" width="50px"/>약_Medicine</a>&nbsp; &nbsp; &nbsp;&nbsp;
+		<a href="../medicine/mlist.dom" ><img src="weightimage/medicine.png" width="50px"/>약_Medicine</a>&nbsp; &nbsp; &nbsp;&nbsp;
 		<a href="#" ><img src="weightimage/allergy.png" width="50px"/>알레르기_Allergy</a>&nbsp; &nbsp; &nbsp;&nbsp;
-		<a href="#" ><img src="weightimage/vaccine.png" width="50px"/>백신_Vaccine</a>
+		<a href="../vaccine/vlist.dov" ><img src="weightimage/vaccine.png" width="50px"/>예방접종_Vaccine</a>
 		<br><br>
 	</div>
 	
@@ -109,12 +94,7 @@
 	String dnamew = request.getParameter("dnamew");  
 	session.setAttribute("dnamew", dnamew);
 	session.getAttribute("dnamew");%>
-	<%  
-	request.setCharacterEncoding("EUC-KR");
-	String select2 = request.getParameter("select2");  
-	session.setAttribute("select", select2);
-	session.getAttribute("select");%>
-	<%= select2 %>
+
 	<%= dnamew %>
 	<div>
 	<table class="swrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 60%; font-size: 20pt;" >

@@ -13,7 +13,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <link rel="daengdaeng icon" href="../images/favicon.ico" type="image/x-icon" />
-	<title>댕댕이 노트 - 글쓰기</title>
+	<title>댕댕이 노트-체중관리</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="../assets/css/main.css" />
@@ -89,9 +89,9 @@ $(function(){
 <div id="main">
 	<div align="center">
 		<a href="slist.dos" style="color: red;"><img src="weightimage/scale.png" width="50px">몸무게_Weight</a>&nbsp; &nbsp; &nbsp;&nbsp;
-		<a href="#" ><img src="weightimage/medicine.png" width="50px"/>약_Medicine</a>&nbsp; &nbsp; &nbsp;&nbsp;
+		<a href="../medicine/mlist.dom" ><img src="weightimage/medicine.png" width="50px"/>약_Medicine</a>&nbsp; &nbsp; &nbsp;&nbsp;
 		<a href="#" ><img src="weightimage/allergy.png" width="50px"/>알레르기_Allergy</a>&nbsp; &nbsp; &nbsp;&nbsp;
-		<a href="#" ><img src="weightimage/vaccine.png" width="50px"/>백신_Vaccine</a>
+		<a href="../vaccine/vlist.dov" ><img src="weightimage/vaccine.png" width="50px"/>예방접종_Vaccine</a>
 		<br><br>
 		<a href="#" onclick="window.open('weightinfo.html', 'name', 'resizable= no width=700px height=800px'); return false" 
 				style="margin-left:10%;"><img src="../icons/info.png"/>반려견 체중관리 정보</a>&nbsp; &nbsp; &nbsp;<br><br><br>

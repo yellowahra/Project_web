@@ -81,7 +81,13 @@ public class DogDao {
 			
 			
 			String query = "INSERT ALL INTO dog (dId, cid, dname, dfilename, dbd, dad, dage, dbreed, dgender, dweight, didnum )"
-					+ "VALUES (dog_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) INTO weight (sId, cid, dname, dweight) "+ "VALUES (weight_seq.nextval, ?, ?, ?) "+
+					+ "VALUES (dog_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) "
+					+ "INTO weight (sId, cid, dname, dweight) "
+					+ "VALUES (weight_seq.nextval, ?, ?, ?) "
+					+ "INTO medicine (mId, cid, dname) "
+					+ "VALUES (medicine_seq.nextval, ?, ?) "
+					+ "INTO vaccine (vId, cid, dname) "
+					+ "VALUES (vaccine_seq.nextval, ?, ?) "+
 					"SELECT * FROM dual";
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, cid);
@@ -97,6 +103,10 @@ public class DogDao {
 			preparedStatement.setString(11, cid);
 			preparedStatement.setString(12, dname);
 			preparedStatement.setString(13, dweight);
+			preparedStatement.setString(14, cid);
+			preparedStatement.setString(15, dname);
+			preparedStatement.setString(16, cid);
+			preparedStatement.setString(17, dname);
 			int rn = preparedStatement.executeUpdate();
 			
 		}catch(Exception e) {

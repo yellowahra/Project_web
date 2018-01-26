@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 
 <link rel="daengdaeng icon" href="../images/favicon.ico" type="image/x-icon" />
-	<title>댕댕이 노트 - 글쓰기</title>
+	<title>댕댕이 노트-유기견정보</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="../assets/css/main.css" />
@@ -168,8 +168,8 @@
 <div id="main">
 	
 	<a href="../adopt/alist.doa" ><img src="../icons/home.png">입양정보</a>
-	<a href="llist.dol" style="color: red;"><img src="../icons/lost.png"/>실종정보</a>
-	<a href="wlist.dow" ><img src="../icons/watch.png"/>유기견정보</a>
+	<a href="../lost/llist.dol"><img src="../icons/lost.png"/>실종정보</a>
+	<a href="wlist.dow" style="color: red;" ><img src="../icons/watch.png"/>유기견정보</a>
 	<br>
 	
 	<div id="mask"></div>

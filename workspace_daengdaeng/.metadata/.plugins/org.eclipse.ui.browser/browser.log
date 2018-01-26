@@ -10381,3 +10381,36 @@
 1월 25, 2018 17:39:47.90 [5800:8412:0125/173947.898:ERROR:process_metrics.cc(105)] NOT IMPLEMENTED
 1월 25, 2018 17:40:07.42 
 1월 25, 2018 17:40:07.42 KLIB_SelfTest return : KLR_OK
+
+1월 26, 2018 10:52:16.89 NEW SESSION
+1월 26, 2018 10:52:16.89 
+1월 26, 2018 10:52:16.94 KLIB_SelfTest return : KLR_OK
+1월 26, 2018 10:52:58.02 
+1월 26, 2018 10:52:58.02 KLIB_SelfTest return : KLR_OK
+1월 26, 2018 11:17:52.49 
+1월 26, 2018 11:17:52.49 KLIB_SelfTest return : KLR_OK
+1월 26, 2018 12:04:25.77 [5884:8588:0126/120425.772:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 0.505 s
+1월 26, 2018 12:06:11.43 [5884:8588:0126/120611.438:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 1.214 s
+1월 26, 2018 12:06:13.53 [5884:8588:0126/120613.534:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 1.214 s
+1월 26, 2018 12:06:13.80 [5884:7744:0126/120613.809:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+1월 26, 2018 12:10:30.65 
+1월 26, 2018 12:10:30.65 KLIB_SelfTest return : KLR_OK
+1월 26, 2018 12:11:55.31 
+1월 26, 2018 12:11:55.31 KLIB_SelfTest return : KLR_OK
+1월 26, 2018 14:06:32.15 [10188:8020:0126/140632.157:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 14:06:33.37 [10188:8020:0126/140633.374:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 14:06:36.79 [10188:8020:0126/140636.796:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 14:06:42.37 [10188:8020:0126/140642.378:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 14:06:57.05 [10188:8020:0126/140657.053:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 14:06:58.14 [10188:8020:0126/140658.148:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 14:07:00.97 [10188:8020:0126/140700.974:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 14:07:06.75 [10188:8020:0126/140706.753:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 14:07:08.47 [10188:8020:0126/140708.476:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 14:07:17.03 [10188:8020:0126/140717.034:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 14:07:41.16 [10188:8020:0126/140741.162:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 0.231 s
+1월 26, 2018 15:16:32.11 [10188:8020:0126/151632.112:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 15:16:40.10 [10188:8020:0126/151640.101:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 15:16:43.58 [10188:8020:0126/151643.579:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 16:52:01.48 [10188:8020:0126/165201.483:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 17:05:19.52 [10188:8020:0126/170519.524:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.478 s
+1월 26, 2018 17:12:59.02 [10188:8020:0126/171259.025:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 9.513 s

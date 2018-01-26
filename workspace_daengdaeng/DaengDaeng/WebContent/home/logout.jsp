@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<link rel="daengdaeng icon" href="images/favicon.ico" type="image/x-icon" />
+	<title>댕댕이 노트-로그아웃</title>
 </head>
 <body>
 <%

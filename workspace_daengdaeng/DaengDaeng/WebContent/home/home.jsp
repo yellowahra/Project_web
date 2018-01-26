@@ -53,7 +53,7 @@
 		<ul id="subMenu">
 			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="icons/write_gray.png"/>大大捞 老沥</a></li>
 			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="icons/write_gray.png"/>大大捞 眠撅</a><li>
-			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="icons/health_gray.png"/>大大捞 扒碍荐酶</a></li>
+			<li id="subMenu_li"><a href="health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="icons/health_gray.png"/>大大捞 扒碍荐酶</a></li>
 		</ul>
 		</li>
 		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref"><img src="icons/dog_gray.png"/>大大捞 目孤萍聪</a>

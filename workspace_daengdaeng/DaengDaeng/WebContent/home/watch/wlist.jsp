@@ -11,7 +11,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <link rel="daengdaeng icon" href="../images/favicon.ico" type="image/x-icon" />
-	<title>´ó´óÀÌ ³ëÆ® - ±Û¾²±â</title>
+	<title>´ó´óÀÌ ³ëÆ®-À¯±â°ßÁ¤º¸</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="../assets/css/main.css" />
