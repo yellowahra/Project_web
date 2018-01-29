@@ -87,7 +87,11 @@ public class DogDao {
 					+ "INTO medicine (mId, cid, dname) "
 					+ "VALUES (medicine_seq.nextval, ?, ?) "
 					+ "INTO vaccine (vId, cid, dname) "
-					+ "VALUES (vaccine_seq.nextval, ?, ?) "+
+					+ "VALUES (vaccine_seq.nextval, ?, ?) "
+					+ "INTO allergy (alId, cid, dname) "
+					+ "VALUES (allergy_seq.nextval, ?, ?) "
+					+ "INTO calendar (nId, cid, dname) "
+					+ "VALUES (calendar_seq.nextval, ?, ?) "+
 					"SELECT * FROM dual";
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, cid);
@@ -107,6 +111,10 @@ public class DogDao {
 			preparedStatement.setString(15, dname);
 			preparedStatement.setString(16, cid);
 			preparedStatement.setString(17, dname);
+			preparedStatement.setString(18, cid);
+			preparedStatement.setString(19, dname);
+			preparedStatement.setString(20, cid);
+			preparedStatement.setString(21, dname);
 			int rn = preparedStatement.executeUpdate();
 			
 		}catch(Exception e) {

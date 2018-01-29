@@ -54,7 +54,7 @@
 		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>大大捞 殿废</a></li>
 		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>大大捞 促捞绢府</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>大大捞 老沥</a></li>
+			<li id="subMenu_li"><a href="../calendar/calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>大大捞 老沥</a></li>
 			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>大大捞 眠撅</a><li>
 			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>大大捞 扒碍荐酶</a></li>
 		</ul>
@@ -78,7 +78,7 @@
 	<div align="center">
 		<a href="slist.dos" style="color: red;"><img src="weightimage/scale.png" width="50px">个公霸_Weight</a>&nbsp; &nbsp; &nbsp;&nbsp;
 		<a href="../medicine/mlist.dom" ><img src="weightimage/medicine.png" width="50px"/>距_Medicine</a>&nbsp; &nbsp; &nbsp;&nbsp;
-		<a href="#" ><img src="weightimage/allergy.png" width="50px"/>舅饭福扁_Allergy</a>&nbsp; &nbsp; &nbsp;&nbsp;
+		<a href="../allergy/allergylist.doal" ><img src="weightimage/allergy.png" width="50px"/>舅饭福扁_Allergy</a>&nbsp; &nbsp; &nbsp;&nbsp;
 		<a href="..vaccine/vlist/dov" ><img src="weightimage/vaccine.png" width="50px"/>抗规立辆_Vaccine</a>
 		<br><br>
 	</div>

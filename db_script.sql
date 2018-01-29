@@ -182,6 +182,7 @@ CREATE TABLE allergy(
 	alID VARCHAR2(20),
 	cId VARCHAR2(20),
 	dName VARCHAR2(20),
+	alredate VARCHAR2(20),
 	alreason VARCHAR2(20),
 	alreaction VARCHAR2(20),
 	alseverity VARCHAR2(50),
@@ -192,14 +193,47 @@ CREATE TABLE allergy(
 
 CREATE SEQUENCE allergy_SEQ;
 COMMIT;
-
+DROP TABLE allergy;
 -------------------------------------------------------------------
 SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'WEIGHT_SEQ';
 
 ALTER SEQUENCE VACCINE_SEQ INCREMENT BY -81;
 
 
+-----------------------------------------------------------
+1-29
+CREATE TABLE allergy(
+	alID VARCHAR2(20),
+	cId VARCHAR2(20),
+	dName VARCHAR2(20),
+	alredate VARCHAR2(20),
+	alreason VARCHAR2(20),
+	alreaction VARCHAR2(20),
+	alseverity VARCHAR2(50),
+	almemo VARCHAR2(50),
+	alDate DATE DEFAULT SYSDATE,
+	CONSTRAINT allergy_fk_cID FOREIGN KEY (cID) REFERENCES customer(cID)
+);
 
+CREATE SEQUENCE allergy_SEQ;
+COMMIT;
+DROP TABLE allergy;
+
+CREATE SEQUENCE medicine_SEQ;
+COMMIT;
+
+CREATE TABLE calendar(
+	nID VARCHAR2(20),
+	cId VARCHAR2(20),
+	dName VARCHAR2(20),
+	ndate VARCHAR2(20),
+	ntime VARCHAR2(20),
+	ntype VARCHAR2(20),
+	nlmemo VARCHAR2(50),
+	writeDate DATE DEFAULT SYSDATE,
+	CONSTRAINT calendar_fk_cID FOREIGN KEY (cID) REFERENCES customer(cID)
+);
+CREATE SEQUENCE calendar_SEQ;
 
 
 
