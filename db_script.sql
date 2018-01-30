@@ -235,6 +235,20 @@ CREATE TABLE calendar(
 );
 CREATE SEQUENCE calendar_SEQ;
 
+-----------------------------------------------------------
+photo
+CREATE TABLE photo(
+	pID VARCHAR2(20),
+	cId VARCHAR2(20),
+	dName VARCHAR2(20),
+	takendate VARCHAR2(20),
+	ptitle VARCHAR2(50),
+	pfile VARCHAR2(20),
+	pDate DATE DEFAULT SYSDATE,
+	CONSTRAINT photo_fk_cID FOREIGN KEY (cID) REFERENCES customer(cID)
+);
+CREATE SEQUENCE photo_SEQ;
+
 
 
 

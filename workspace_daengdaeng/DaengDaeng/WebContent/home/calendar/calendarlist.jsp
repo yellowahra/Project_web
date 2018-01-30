@@ -52,14 +52,14 @@
 	<nav id="nav">
 	<ul>
 		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>´ó´óÀÌ µî·Ï</a></li>
-		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>´ó´óÀÌ ´ÙÀÌ¾î¸®</a>
+		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">´ó´óÀÌ ´ÙÀÌ¾î¸®</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>´ó´óÀÌ ÀÏÁ¤</a></li>
-			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>´ó´óÀÌ Ãß¾ï</a><li>
+			<li id="subMenu_li"><a href="calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>´ó´óÀÌ ÀÏÁ¤</a></li>
+			<li id="subMenu_li"> <a href="../photo/photolist.dop" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>´ó´óÀÌ Ãß¾ï</a><li>
 			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>´ó´óÀÌ °Ç°­¼öÃ¸</a></li>
 		</ul>
 		</li>
-		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>´ó´óÀÌ Ä¿¹ÂÆ¼´Ï</a>
+		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref">´ó´óÀÌ Ä¿¹ÂÆ¼´Ï</a>
 		<ul id="subMenu">
 			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>Á¤º¸°øÀ¯</a></li>
 			<li><a href="../adopt/alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>À¯±â°ßÁ¤º¸</a><li>
@@ -87,9 +87,9 @@
 		<table class="ccalendarlist" cellpadding="0" cellspacing="0"  width="70%">
 				<tr align="center" >
 					<td width="20" align="center">ÀÌ¸§</td>
+					<td width="30">Á¾·ù</td>
 					<td width="30">³¯Â¥</td>
 					<td width="20">½Ã°£</td>
-					<td width="30">Á¾·ù</td>
 					<td width="50">¸Þ¸ð</td>
 					<td width="5">»èÁ¦ÇÏ±â</td>
 				</tr>	
@@ -98,6 +98,7 @@
 					<c:if test="${dto.cid==cid}">
 					<tr>
 						<td align="center">${dto.dname}</td>
+						<td align="center">${dto.ntype}</td>
 						<td align="center">${dto.ndate}</td>
 						
 						<td align="center">${dto.ntime}</td>

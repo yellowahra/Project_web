@@ -85,7 +85,7 @@ public class CalendarFrontController extends HttpServlet {
 			command.execute(request, response);
 			
 			viewPage = "calendarhome.jsp";
-		}else if(comm.equals("calendarwrite_view.dom")) {
+		}else if(comm.equals("calendarwrite_view.doc")) {
 			viewPage = "calendarwrite_view.jsp";
 			
 		}else if(comm.equals("calendarwrite.doc")) {

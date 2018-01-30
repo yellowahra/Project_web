@@ -33,15 +33,13 @@
 	<script>
 	$(function() {
 		  $( "#testDatepicker" ).datepicker({
+			  changeMonth: true, 
+		         changeYear: true,
 		        showOn: "both", 
 		        buttonImage: "calendar.png", 
 		        buttonImageOnly: true 
 		  });
-		  $( "#testDatepicker2" ).datepicker({
-		        showOn: "both", 
-		        buttonImage: "calendar.png", 
-		        buttonImageOnly: true 
-		  });
+
 	});
 		
 	</script>
@@ -72,20 +70,18 @@
 	<nav id="nav">
 	<ul>
 		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
-		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 다이어리</a>
+		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">댕댕이 다이어리</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="../calendar/calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 일정</a></li>
-			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
+			<li id="subMenu_li"><a href="../calendar/calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
+			<li id="subMenu_li"> <a href="../photo/photolist.dop" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
 			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
 		</li>
-		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
+		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref">댕댕이 커뮤티니</a>
 		<ul id="subMenu">
 			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
 			<li><a href="../adopt/alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>유기견정보</a><li>
 		</ul>
-		</li>
-	</ul>
 	</nav>
 	</div>
 </div>
@@ -115,32 +111,32 @@
 
 	<%= dnamev %>
 	<div>
-	<table class="vwrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 60%; font-size: 20pt;" >
+	<table class="vwrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 50%; font-size: 20pt;" >
 		<form action="vwrite.dom" method="post">
 			<tr>
-				<td id="head"  width="30%">반려인이름</td>
+				<td id="head"  width="100" nowrap>반려인이름</td>
 
 				<td><input type="text" name="cid" value=<%=cid %> size="40"></td>
 			</tr>
 			<tr>
-				<td id="head" width="30%" >반려견이름</td>
+				<td id="head" width="100" nowrap>반려견이름</td>
 				<td><input type="text" name="dname" value=<%=dnamev %> size="40"></td>
 			</tr>
 		
 			<tr>
-			<td id="head" >주사이름</td>
+			<td id="head" width="100" nowrap>주사이름</td>
 				<td><input type="text" name="vname" size="40"></td>
 			</tr>
 			
 			<tr>
-			<td id="head">접종날짜</td>
+			<td id="head" width="100" nowrap>접종날짜</td>
 				<td><input type="text" id="testDatepicker" name="vinjdate" size="40"></td>
 			<tr>
-				<td id="head">부작용</td>
+				<td id="head" width="100" nowrap>부작용</td>
 				<td><input type="text" name="vseff" size="40"></td>
 			</tr>
 			<tr>
-				<td id="head">메모</td>
+				<td id="head" width="100" nowrap>메모</td>
 				<td><textarea name="vmemo" cols="40"></textarea></td>
 			</tr>
 			<tr>

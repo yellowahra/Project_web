@@ -33,9 +33,28 @@ $(function(){
 
 });
 
-
+$(function () { 
+   // 옵션목록 
+   var valueArr = []; 
+   var showArr = []; 
+   var hideArr = []; 
+   // 옵션목록을 배열로 등록 
+   $("#selectname > option").each(function () { 
+      valueArr.push($(this).val()); 
+   }); 
+   $.each(valueArr, function (index, element) { // 배열의 원소수만큼 반복 
+      if ($.inArray(element, showArr) == -1) { // showArr 에서 값을 찾는다.  값이 없을경우(-1) 
+         showArr.push(element); // 없으면 showArr에추가 
+         } else { 
+         hideArr.push(index); // 있으면 hideArr에index 추가 
+      } 
+   }); 
+   // 중복된 index목록을 역순으로 지워준다. 
+   for (var i in hideArr.reverse()) { 
+      $("#selectname > option").eq(hideArr[i]).remove(); 
+   } 
+}); 
 </script>
-
 </head>
 <body>
 <%
@@ -64,14 +83,14 @@ $(function(){
 	<nav id="nav">
 	<ul>
 		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
-		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 다이어리</a>
+		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">댕댕이 다이어리</a>
 		<ul id="subMenu">
-			<li id="../calendar/calendarlist.doc"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 일정</a></li>
-			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
+			<li id="subMenu_li"><a href="calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
+			<li id="subMenu_li"> <a href="../photo/photolist.dop" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
 			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
 		</li>
-		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
+		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref">댕댕이 커뮤티니</a>
 		<ul id="subMenu">
 			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
 			<li><a href="../adopt/alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>유기견정보</a><li>

@@ -143,14 +143,14 @@
 	<nav id="nav">
 	<ul>
 		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
-		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 다이어리</a>
+		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">댕댕이 다이어리</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="../calendar/calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 일정</a></li>
-			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
+			<li id="subMenu_li"><a href="../calendar/calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
+			<li id="subMenu_li"> <a href="../photo/photolist.dop" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
 			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
 		</li>
-		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
+		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref">댕댕이 커뮤티니</a>
 		<ul id="subMenu">
 			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
 			<li><a href="../adopt/alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>유기견정보</a><li>
@@ -182,36 +182,36 @@
 	<table class="wwrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 50%;" >
 		<form action="wwrite.dow" method="post">
 			<tr>
-				<td id="head"  >이름</td>
+				<td id="head" width="100" nowrap >이름</td>
 				<td><input type="text" name="cid" value=<%=cid %> size="40"></td>
 			</tr>
 			<tr>
-				<td id="head" >품종</td>
+				<td id="head" width="100" nowrap>품종</td>
 				<td><input type="text" name="wbreed" size="40"></td>
 			</tr>
 			<tr>
-				<td id="head">나이</td>
+				<td id="head" width="100" nowrap>나이</td>
 				<td><input type="text" name="wage" size="40"></td>
 			</tr>
 			<tr>
-				<td id="head">성별</td>
+				<td id="head" width="100" nowrap>성별</td>
 				<td><input type="text" name="wgender" size="40"></td>
 			</tr>
 			
 			<tr>
-				<td id="head" >위치</td>
+				<td id="head" width="100" nowrap>위치</td>
 				<td><input type="text" name="wlocation" size="40"></td>
 			</tr>
 			<tr>
-				<td id="head"> 파일</td>
+				<td id="head" width="100" nowrap> 파일</td>
 				<td><input type="file" name="wfilename"></td>
 			</tr>
 			<tr>
-				<td id="head">연락처</td>
+				<td id="head" width="100" nowrap>연락처</td>
 				<td><input type="text" name="wcontact" size="40"></td>
 			</tr>
 			<tr>
-				<td id="head"> 특이사항</td>
+				<td id="head" width="100" nowrap> 특이사항</td>
 				<td><textarea name="wmemo" cols="40"></textarea></td>
 			</tr>
 			<tr>

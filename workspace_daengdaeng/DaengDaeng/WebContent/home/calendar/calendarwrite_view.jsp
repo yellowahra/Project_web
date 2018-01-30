@@ -30,24 +30,67 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
 	<!-- // jQuery UI 라이브러리 js파일 -->
 	<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>  
-	<script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js" charset="EUC-KR"></script>
+
+<link rel="stylesheet" href="jquery.ui.timepicker.css">
+<script src="jquery.ui.timepicker.js"></script>
+<style>
+.ui-timepicker { font-size: 12px; width: 10em; }
+#ui-timepicker-div { padding: 0em; }
+.ui-timepicker-hours, .ui-timepicker-minutes { padding: 0;}  
+.ui-timepicker-table .ui-timepicker-title { line-height: 1.8em; text-align: center; }
+.ui-timepicker-table td { padding: 0em; width: 10em; }
+.ui-timepicker-table th.periods { padding: 0; width: 10em; }
+.ui-timepicker-table td span {
+	display:block;
+    padding:0;
+    width: 10em;
+
+    text-align:center;
+    text-decoration:none;
+}
+.ui-timepicker-table td a {
+    display:block;
+    padding:0;
+    width: 3em;
+    cursor: pointer;
+    text-align:center;
+    text-decoration:none;
+}
+/* buttons and button pane styling */
+.ui-timepicker .ui-timepicker-buttonpane {
+    background-image: none; margin:0; padding:0; border-left: 0; border-right: 0; border-bottom: 0;
+}
+.ui-timepicker .ui-timepicker-buttonpane button { margin:0; cursor: pointer; padding: 0; width:auto; overflow:visible; font-color: red;}
+
+</style>  
+<script>
+$(function() {
+
+    $('#timepicker').timepicker({
+    	showNowButton: true,
+    	showCloseButton: true,
+   
+    });
+  
+});
+
 	$(function() {
 		  $( "#testDatepicker" ).datepicker({
+			    changeMonth: true, 
+		        changeYear: true,
 		        showOn: "both", 
 		        buttonImage: "calendar.png", 
 		        buttonImageOnly: true 
 		  });
-		  $( "#testDatepicker2" ).datepicker({
-		        showOn: "both", 
-		        buttonImage: "calendar.png", 
-		        buttonImageOnly: true 
-		  });
+
 	});
-	$('#setTimeExample').timepicker();
-	$('#setTimeButton').on('click', function (){
-	    $('#setTimeExample').timepicker('setTime', new Date());
-	});
+	
 	</script>
+	
+
 </head>
 <body>
 <%
@@ -75,14 +118,14 @@
 	<nav id="nav">
 	<ul>
 		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
-		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 다이어리</a>
+		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">댕댕이 다이어리</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 일정</a></li>
-			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
+			<li id="subMenu_li"><a href="calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
+			<li id="subMenu_li"> <a href="../photo/photolist.dop" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
 			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
 		</li>
-		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
+		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref">댕댕이 커뮤티니</a>
 		<ul id="subMenu">
 			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
 			<li><a href="../adopt/alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>유기견정보</a><li>
@@ -108,28 +151,28 @@
 
 	<%= dnamen %>
 	<div>
-	<table class="calendarwrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 60%; font-size: 20pt;" >
+	<table class="calendarwrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; width: 50%; font-size: 20pt;" >
 		<form action="calendarwrite.doc" method="post">
 			<tr>
-				<td id="head"  width="30%">반려인이름</td>
+				<td id="head"  width="100"  nowrap>반려인이름</td>
 
-				<td><input type="text" name="cid" value=<%=cid %> size="40"></td>
+				<td><input type="text" name="cid" value=<%=cid %> size="20"></td>
 			</tr>
 			<tr>
-				<td id="head" width="30%" >반려견이름</td>
-				<td><input type="text" name="dname" value=<%=dnamen %> size="40"></td>
+				<td id="head" width="100"  nowrap>반려견이름</td>
+				<td><input type="text" name="dname" value=<%=dnamen %> size="20"></td>
 			</tr>
 		
 			<tr>
-			<td id="head" >날짜</td>
-				<td><input type="text" id="testDatepicker"  name="ndate" size="40"></td>
+			<td id="head" width="100" nowrap>날짜</td>
+				<td><input type="text" id="testDatepicker"  name="ndate"></td>
 			</tr>
 			
 			<tr>
-			<td id="head">시간</td>		
-				<td><input type="text" id="setTimeExample" name="ntime" size="40"> <button id="setTimeButton">현재시간</button></td>
+			<td id="head" width="100" nowrap>시간</td>		
+				<td><input type="text" id="timepicker" name="ntime"></td>
 			<tr>
-			<td id="head">종류</td>
+			<td id="head" width="100" nowrap>종류</td>
 				<td><select name="ntype">
 					  <option value="간식">간식</option>
 					  <option value="밥">밥</option>
@@ -142,7 +185,7 @@
 				</select></td>
 			</tr>
 			<tr>
-				<td id="head">메모</td>
+				<td id="head" width="100" nowrap>메모</td>
 				<td><textarea name="nmemo" cols="40"></textarea></td>
 			</tr>
 			<tr>

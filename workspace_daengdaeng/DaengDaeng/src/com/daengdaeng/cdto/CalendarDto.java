@@ -10,20 +10,17 @@ public class CalendarDto {
 	String ntime;
 	String ntype;
 	String nmemo;
-
 	Timestamp writeDate;
-	
-	
-	
+
 	public CalendarDto(int nId, String cid, String dname, String ndate, String ntime, String ntype, String nmemo, Timestamp writeDate) {
 
 		this.nId = nId;
 		this.cid = cid;
  		this.dname = dname;
 		this.ndate = ndate;
-		this.ntime=ntime;
-		this.ntype=ntype;
-		this.nmemo=nmemo;
+		this.ntime = ntime;
+		this.ntype = ntype;
+		this.nmemo = nmemo;
 		this.writeDate = writeDate;
 	}
 	public int getnId() {
@@ -45,7 +42,6 @@ public class CalendarDto {
 	public void setdname(String dname) {
 		this.dname = dname;
 	}
-	
 	
 	public String getndate() {
 		return ndate;
@@ -78,6 +74,5 @@ public class CalendarDto {
 	public void setwriteDate(Timestamp writeDate) {
 		this.writeDate = writeDate;
 	}
-	
-	
+
 }

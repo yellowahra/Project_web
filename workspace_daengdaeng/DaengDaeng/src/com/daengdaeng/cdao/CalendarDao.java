@@ -8,7 +8,6 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import com.daengdaeng.cdto.CalendarDto;
-import com.daengdaeng.cdao.CalendarDao;
 
 
 
@@ -20,7 +19,10 @@ public class CalendarDao {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
+		
+
 			
+				
 			try {
 				
 				Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -28,7 +30,7 @@ public class CalendarDao {
 							"daengdaeng", "oracle_11g");
 				
 					
-				String query = "SELECT nId, cid, dname, ndate, ntime, ntype, nmemo "
+				String query = "SELECT nId, cid, dname, ndate, ntime, ntype, nmemo, writeDate "
 						+ "FROM calendar ORDER BY writeDate ASC";
 				
 				preparedStatement = connection.prepareStatement(query);
@@ -42,7 +44,7 @@ public class CalendarDao {
 					String ntime = resultSet.getString("ntime");
 					String ntype = resultSet.getString("ntype");
 					String nmemo = resultSet.getString("nmemo");
-								
+													
 					Timestamp writeDate = resultSet.getTimestamp("writeDate");
 								
 					CalendarDto dto = new CalendarDto(nId, cid, dname, ndate, ntime, ntype, nmemo, writeDate);
@@ -66,7 +68,7 @@ public class CalendarDao {
 		
 		
 		return dtos;
-	} // list()
+	} // calendarlist()
 	
 	public void calendarwrite(String cid, String dname, String ndate, String ntime, String ntype, String nmemo) {
 		
@@ -81,7 +83,7 @@ public class CalendarDao {
 			
 			
 			String query = "INSERT INTO calendar (nId, cid, dname, ndate, ntime, ntype, nmemo) "
-					+ "VALUES (medicine_seq.nextval, ?, ?, ?, ?, ?, ?)";
+					+ "VALUES (calendar_seq.nextval, ?, ?, ?, ?, ?, ?)";
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, cid);
 			preparedStatement.setString(2, dname);
@@ -89,7 +91,7 @@ public class CalendarDao {
 			preparedStatement.setString(4, ntime);
 			preparedStatement.setString(5, ntype);
 			preparedStatement.setString(6, nmemo);
-		
+	
 			int rn = preparedStatement.executeUpdate();
 			
 		}catch(Exception e) {
@@ -104,7 +106,7 @@ public class CalendarDao {
 			}
 		}
 		
-	} // write()
+	} // calendarwrite()
 	
 	public void calendardelete(String nId){
 		
@@ -134,48 +136,43 @@ public class CalendarDao {
 		}
 		
 		
-	} // adelete(
-	//wlist->mmlist
+	} // calendardelete(
+	//ccalendarlist
 	public ArrayList<CalendarDto> ccalendarlist() {
-			ArrayList<CalendarDto> dtos = new ArrayList<CalendarDto>(); 
+		ArrayList<CalendarDto> dtos = new ArrayList<CalendarDto>(); 
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		try {
 			
-			Connection connection = null;
-			PreparedStatement preparedStatement = null;
-			ResultSet resultSet = null;
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", 
+						"daengdaeng", "oracle_11g");
 			
-
 				
-					
-				try {
-					
-					Class.forName("oracle.jdbc.driver.OracleDriver");
-					connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", 
-								"daengdaeng", "oracle_11g");
-					
-						
-					String query = "SELECT nId, cid, dname, ndate, ntime, ntype, nmemo "
-							+ "FROM calendar ORDER BY writeDate ASC";
-					
-					preparedStatement = connection.prepareStatement(query);
-					resultSet = preparedStatement.executeQuery();
-					
-					while(resultSet.next()) {
-						int nId = resultSet.getInt("nId");
-						String cid = resultSet.getString("cid");
-						String dname = resultSet.getString("dname");
-						String ndate = resultSet.getString("ndate");
-						String ntime = resultSet.getString("ntime");
-						String ntype = resultSet.getString("ntype");
-						String nmemo = resultSet.getString("nmemo");
-									
-						Timestamp writeDate = resultSet.getTimestamp("writeDate");
-									
-						CalendarDto dto = new CalendarDto(nId, cid, dname, ndate, ntime, ntype, nmemo, writeDate);
-						
-						dtos.add(dto);
-						
-					}
-						
+			String query = "SELECT nId, cid, dname, ndate, ntime, ntype, nmemo, writeDate "
+					+ "FROM calendar ORDER BY writeDate ASC";
+			
+			preparedStatement = connection.prepareStatement(query);
+			resultSet = preparedStatement.executeQuery();
+			
+			while(resultSet.next()) {
+				int nId = resultSet.getInt("nId");
+				String cid = resultSet.getString("cid");
+				String dname = resultSet.getString("dname");
+				String ndate = resultSet.getString("ndate");
+				String ntime = resultSet.getString("ntime");
+				String ntype = resultSet.getString("ntype");
+				String nmemo = resultSet.getString("nmemo");
+			
+				Timestamp writeDate = resultSet.getTimestamp("writeDate");
+							
+				CalendarDto dto = new CalendarDto(nId, cid, dname, ndate, ntime, ntype, nmemo, writeDate);
+				
+				dtos.add(dto);
+				
+			}
 				
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -191,7 +188,7 @@ public class CalendarDao {
 		
 		
 		return dtos;
-	} // mmlist()
+	} // ccalendarlist()
 	
 }
 

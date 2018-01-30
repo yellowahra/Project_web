@@ -141,16 +141,16 @@
 	<%} %>
 	<!-- Nav -->
 	<nav id="nav">
-	<ul>
+		<ul>
 		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
-		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 다이어리</a>
+		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">댕댕이 다이어리</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="../calendar/calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 일정</a></li>
-			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
+			<li id="subMenu_li"><a href="../calendar/calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
+			<li id="subMenu_li"> <a href="../photo/photolist.dop" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
 			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
 		</li>
-		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
+		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref">댕댕이 커뮤티니</a>
 		<ul id="subMenu">
 			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
 			<li><a href="alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>유기견정보</a><li>
@@ -179,31 +179,31 @@
 	<a href="#" class="openMask"><img src="../icons/info.png"/>입양관련 주의사항</a> <br>
 		 <a href="alist.doa" class="button"><center>목록보기</center></a>
 	<div>
-	<table class="write_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 50%;" >
+	<table class="awrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 50%;" >
 		<form action="awrite.doa" method="post">
 			<tr>
-				<td id="head" >게시자</td>
+				<td id="head" width="100" nowrap>게시자</td>
 				<td><input type="text" name="cid" value=<%=cid %> size="30"></td>
 			</tr>
 			<tr>
-				<td id="head" > 품종</td>
+				<td id="head" width="100" nowrap> 품종</td>
 				<td><input type="text" name="abreed" size="30"></td>
 			</tr>
 			<tr>
-				<td id="head">나이</td>
+				<td id="head" width="100" nowrap>나이</td>
 				<td><input type="text" name="aage" size="30"></td>
 			</tr>
 			<tr>
-				<td id="head"> 성별</td>
+				<td id="head" width="100" nowrap> 성별</td>
 				<td><input type="text" name="agender" size="30"></td>
 			</tr>
 			
 			<tr>
-				<td id="head" > 위치</td>
+				<td id="head" width="100" nowrap> 위치</td>
 				<td><input type="text" name="alocation" size="30"></td>
 			</tr>
 			<tr>
-				<td id="head"> 파일</td>
+				<td id="head" width="100" nowrap> 파일</td>
 				<td><input type="file" name="filename"></td>
 			</tr>
 		

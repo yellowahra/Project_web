@@ -33,11 +33,15 @@
 	<script>
 	$(function() {
 		  $( "#testDatepicker" ).datepicker({
+			  changeMonth: true, 
+		         changeYear: true,
 		        showOn: "both", 
 		        buttonImage: "calendar.png", 
 		        buttonImageOnly: true 
 		  });
 		  $( "#testDatepicker2" ).datepicker({
+			  changeMonth: true, 
+		         changeYear: true,
 		        showOn: "both", 
 		        buttonImage: "calendar.png", 
 		        buttonImageOnly: true 
@@ -72,14 +76,14 @@
 	<nav id="nav">
 	<ul>
 		<li><a href="dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
-		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 다이어리</a>
-			<ul id="subMenu">
-				<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 일정</a></li>
-				<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
-				<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
-			</ul>
+		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">댕댕이 다이어리</a>
+		<ul id="subMenu">
+			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
+			<li id="subMenu_li"> <a href="../photo/photolist.dop" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
+			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
+		</ul>
 		</li>
-		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
+		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref">댕댕이 커뮤티니</a>
 		<ul id="subMenu">
 			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
 			<li><a href="../adopt/alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>유기견정보</a><li>
@@ -100,35 +104,35 @@
 	<table class="dwrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 50%;" >
 		<form action="dwrite.dod" method="post">
 			<tr>
-				<td id="head"  >반려인이름</td>
+				<td id="head" width="100" nowrap >반려인이름</td>
 
 				<td><input type="text" name="cid" value=<%=cid %> size="40"></td>
 			</tr>
 			<tr>
-				<td id="head"  >반려견이름</td>
+				<td id="head" width="100" nowrap >반려견이름</td>
 				<td><input type="text" name="dname" size="40"></td>
 			</tr>
 			<tr>
-				<td id="head">사진</td>
+				<td id="head" width="100" nowrap>사진</td>
 				<td><input type="file" name="dfilename"></td>
 			</tr>
 			<tr>
-				<td id="head">품종</td>
+				<td id="head" width="100" nowrap>품종</td>
 				<td><input type="text" name="dbreed" size="40"></td>
 			</tr>
 			<tr>
-				<td id="head">태어난날</td>
+				<td id="head" width="100" nowrap>태어난날</td>
 				<td><input type="text" id="testDatepicker" name="dbd"></td>
 			</tr>
 			<tr>
-				<td id="head">가족이된날</td>
+				<td id="head" width="100" nowrap>가족이된날</td>
 				<td><input type="text" id="testDatepicker2" name="dad"></td>
 			</tr>
 			<tr>
-				<td id="head">나이</td>
+				<td id="head" width="100" nowrap>나이</td>
 				<td><input type="text" name="dage" size="40"></td>
 			<tr>
-				<td id="head">성별</td>
+				<td id="head" width="100" nowrap>성별</td>
 				<td><input type="text" name="dgender" size="40"></td>
 			</tr>
 			

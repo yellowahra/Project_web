@@ -50,16 +50,16 @@
 		
 	<!-- Nav -->
 	<nav id="nav">
-	<ul>
+<ul>
 		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
-		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 다이어리</a>
+		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">댕댕이 다이어리</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="../calendar/calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 일정</a></li>
-			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
+			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
+			<li id="subMenu_li"> <a href="../photo/photolist.dop" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
 			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
 		</li>
-		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 커뮤티니</a>
+		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref">댕댕이 커뮤티니</a>
 		<ul id="subMenu">
 			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
 			<li><a href="../adopt/alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>유기견정보</a><li>
@@ -78,13 +78,12 @@
 	<div align="center">
 		<a href="../weight/slist.dos"><img src="../health/scale.png" width="50px">몸무게_Weight</a>&nbsp; &nbsp; &nbsp;&nbsp;
 		<a href="../medicine/mlist.dom"><img src="../health/medicine.png" width="50px"/>약_Medicine</a>&nbsp; &nbsp; &nbsp;&nbsp;
-		<a href="#"><img src="../health/allergy.png" width="50px"/>알레르기_Allergy</a>&nbsp; &nbsp; &nbsp;&nbsp;
-		<a href="vlist.dov"  style="color: red;" ><img src="../health/vaccine.png" width="50px"/>예방접종_Vaccine</a>
-		<br><br>
-		<a href="#" onclick="window.open('vaccineinfo.jsp', 'name', 'resizable= no width=700px height=800px'); return false" 
-				style="margin-left:10%;"><img src="../icons/info.png"/>꼭 필요한 예방접종</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-	<a href="#" onclick="window.open('vaccinealert.jsp', 'name', 'resizable= no width=700px height=800px'); return false" 
-				style="margin-left:10%;"><img src="../icons/info.png"/>예방접종 전후 주의사항</a>&nbsp; &nbsp; &nbsp;
+		<a href="allergylist.doal" style="color: red;"><img src="../health/allergy.png" width="50px"/>알레르기_Allergy</a>&nbsp; &nbsp; &nbsp;&nbsp;
+		<a href="../vaccine/vlist.dov" ><img src="../health/vaccine.png" width="50px"/>예방접종_Vaccine</a>
+			<br><br>
+		<a href="#" onclick="window.open('allergyinfo.jsp', 'name', 'resizable= no width=700px height=800px'); return false" 
+				style="margin-left:10%;"><img src="../icons/info.png"/>알레르기 원인, 증상, 완화방법</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+
 	</div>
 
 		<% if(session.getAttribute("cid")!=null){ 

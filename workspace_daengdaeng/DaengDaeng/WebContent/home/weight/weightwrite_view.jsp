@@ -55,22 +55,23 @@
 	<%} %>
 	<!-- Nav -->
 	<nav id="nav">
-	<ul>
+<ul>
 		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>大大捞 殿废</a></li>
-		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>大大捞 促捞绢府</a>
+		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">大大捞 促捞绢府</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="../calendar/calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>大大捞 老沥</a></li>
-			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>大大捞 眠撅</a><li>
+			<li id="subMenu_li"><a href="../calendar/calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>大大捞 老沥</a></li>
+			<li id="subMenu_li"> <a href="../photo/photolist.dop" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>大大捞 眠撅</a><li>
 			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>大大捞 扒碍荐酶</a></li>
 		</ul>
 		</li>
-		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>大大捞 目孤萍聪</a>
+		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref">大大捞 目孤萍聪</a>
 		<ul id="subMenu">
 			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>沥焊傍蜡</a></li>
 			<li><a href="../adopt/alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>蜡扁斑沥焊</a><li>
 		</ul>
 		</li>
 	</ul>
+
 	</nav>
 	</div>
 </div>
@@ -97,20 +98,20 @@
 
 	<%= dnamew %>
 	<div>
-	<table class="swrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 60%; font-size: 20pt;" >
+	<table class="swrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 50%; font-size: 20pt;" >
 		<form action="swrite.dos" method="post">
 			<tr>
-				<td id="head"  width="50%">馆妨牢捞抚</td>
+				<td id="head"  width="100" nowrap>馆妨牢捞抚</td>
 
-				<td width="50%"><input type="text" name="cid" value=<%=cid %> size="20"></td>
+				<td><input type="text" name="cid" value=<%=cid %> size="20"></td>
 			</tr>
 			<tr>
-				<td id="head"  >馆妨斑捞抚</td>
+				<td id="head" width="100" nowrap >馆妨斑捞抚</td>
 				<td><input type="text" name="dname" value=<%=dnamew %> size="20"></td>
 			</tr>
 		
 			<tr>
-				<td id="head" >个公霸</td>
+				<td id="head" width="100" nowrap>个公霸</td>
 				<td><input type="text" name="dweight" size="10">kg</td>
 			</tr>
 		

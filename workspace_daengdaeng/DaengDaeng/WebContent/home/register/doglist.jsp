@@ -52,14 +52,14 @@
 	<nav id="nav">
 	<ul>
 		<li><a href="dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>´ó´óÀÌ µî·Ï</a></li>
-		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>´ó´óÀÌ ´ÙÀÌ¾î¸®</a>
+		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">´ó´óÀÌ ´ÙÀÌ¾î¸®</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>´ó´óÀÌ ÀÏÁ¤</a></li>
-			<li id="subMenu_li"> <a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>´ó´óÀÌ Ãß¾ï</a><li>
+			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>´ó´óÀÌ ÀÏÁ¤</a></li>
+			<li id="subMenu_li"> <a href="../photo/photolist.dop" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>´ó´óÀÌ Ãß¾ï</a><li>
 			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>´ó´óÀÌ °Ç°­¼öÃ¸</a></li>
 		</ul>
 		</li>
-		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>´ó´óÀÌ Ä¿¹ÂÆ¼´Ï</a>
+		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref">´ó´óÀÌ Ä¿¹ÂÆ¼´Ï</a>
 		<ul id="subMenu">
 			<li><a href="../board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>Á¤º¸°øÀ¯</a></li>
 			<li><a href="../adopt/alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>À¯±â°ßÁ¤º¸</a><li>
