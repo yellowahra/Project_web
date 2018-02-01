@@ -41,13 +41,13 @@
 	<% if(session.getAttribute("cid")!=null){ %>
 		<section id="info">
 		<input id="info" type="hidden" name="cid" size="10" value=<%=cid %>><%=cid %>님 안녕하세요
-		<a href="../modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
-		<a href="../logout.jsp"><button class="btn_sm">로그아웃</button>
+		<a href="../login/modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
+		<a href="../login/logout.jsp"><button class="btn_sm">로그아웃</button>
 		</section>
 	<% } else{ %>
 		<nav id="join_login">
-		<a href="../joinin.html" ><button class="btn_sm">회원가입</button></a><br><br>
-		<a href="../login.html"><button class="btn_sm">로그인</button></a>
+		<a href="../join/join.jsp" ><button class="btn_sm">회원가입</button></a><br><br>
+		<a href="../login/login.html"><button class="btn_sm">로그인</button></a>
 	</nav>
 	<%} %>
 	<!-- Nav -->
@@ -56,7 +56,7 @@
 		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
 		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">댕댕이 다이어리</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
+			<li id="subMenu_li"><a href="../calendar/calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
 			<li id="subMenu_li"> <a href="../photo/photolist.dop" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
 			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
@@ -101,23 +101,35 @@
 				<td id="head">내용</td>
 				<td><textarea rows="10" name="bContent" cols="35">${content_view.bContent}</textarea></td>
 			</tr>
-			<tr>
-				<td colspan="2">
-
+	<c:choose>
+		<c:when test="${content_view.cid==cid}">
+			
+			<tr align="center">
+						<td  colspan="2">
 					<input type="submit" value="수정">&nbsp; &nbsp; &nbsp;
 					<a href="delete.do?bId=${content_view.bId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
+						
+						</td>
+					
+				</tr>
+		</c:when>
+		<c:when test="${dto.cid!=cid}">
+			<tr align="center">
+			<td colspan="4">
 					<a href="list.do">목록보기</a>&nbsp; &nbsp; &nbsp;
 					<a href="reply_view.do?bId=${content_view.bId}">답변</a>&nbsp; &nbsp; &nbsp;
+			</td>
+		</tr>
+		
+		</c:when>
+		</c:choose>
 
-					
-				</td>
-			</tr>
 		</form>
 	</table>
 </div>
 
 		<!-- Footer -->
-			<div id="footer">
+			<div id="footer" >
 
 				<!-- Copyright -->
 					<ul class="copyright">

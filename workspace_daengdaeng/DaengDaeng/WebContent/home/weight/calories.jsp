@@ -51,7 +51,7 @@
 	}
 	%>
 	</form>
-<div style="margin-left: 0em; margin-bottom: 3em;">
+<div style="margin-left:1em; margin-bottom: 3em;">
 
 	기본칼로리: <%= calories %> Kcal<br>
 	&lt;활동량에 따른 필요 칼로리&gt;<br>

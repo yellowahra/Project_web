@@ -127,13 +127,13 @@
 	<% if(session.getAttribute("cid")!=null){ %>
 		<section id="info">
 		<input id="info" type="hidden" name="cid" size="10" value=<%=cid %>><%=cid %>님 안녕하세요
-		<a href="../modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
-		<a href="../logout.jsp"><button class="btn_sm">로그아웃</button>
+		<a href="../login/modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
+		<a href="../login/logout.jsp"><button class="btn_sm">로그아웃</button>
 		</section>
 	<% } else{ %>
 		<nav id="join_login">
-		<a href="../joinin.html" ><button class="btn_sm">회원가입</button></a><br><br>
-		<a href="../login.html"><button class="btn_sm">로그인</button></a>
+		<a href="../join/join.jsp" ><button class="btn_sm">회원가입</button></a><br><br>
+		<a href="../login/login.html"><button class="btn_sm">로그인</button></a>
 	</nav>
 	<%} %>
 		
@@ -143,7 +143,7 @@
 		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
 		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">댕댕이 다이어리</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
+			<li id="subMenu_li"><a href="../calendar/calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
 			<li id="subMenu_li"> <a href="../photo/photolist.dop" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
 			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
@@ -184,78 +184,76 @@
 	<% } else{ %>
 		<p id="link">
 
-		<a href="../login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+		<a href="../login/login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 	</p>
 	<%} %>
+	
 	<div>
 	
 	<c:forEach items="${llist}" var="dto">
-	<table class="llist" cellpadding="0" cellspacing="0"  style="width:350px">
+	<table class="llist" cellpadding="0" cellspacing="0"  style="width:50%">
 	
 		<tr align="center">			
-			<td colspan="4"><img src='lostimage/${dto.lfilename}' width='300px'></td>
+			<td colspan="4"><img src='lostimage/${dto.lfilename}' width='80%'></td>
 			
 		</tr>
 		<tr align="center" >
-			<td width="50px">번호</td>
-			<td align="center" width="50px">${dto.lId}</td>
-			<td width="50px">이름</td>
-			<td width="200px">${dto.cid}</td>
+			<td width="70" nowrap>번호</td>
+			<td align="center" width="70" nowrap>${dto.lId}</td>
+			<td width="50" nowrap>작성자</td>
+			<td width="50" nowrap>${dto.cid}</td>
 		</tr>
 		<tr align="center">
-			<td width="50px">나이</td>
-			<td width="50px">${dto.lage}</td>
-			<td width="50px">품종</td>
-			<td width="200px">${dto.lbreed}</td>
+			<td >나이</td>
+			<td >${dto.lage}</td>
+			<td>성별</td>
+			<td>${dto.lgender}</td>
 			
 		</tr>
 
 		<tr align="center">
-			<td width="50px">성별</td>
-			<td width="50px">${dto.lgender}</td>
-			<td width="50px">위치</td>
-			<td width="200px">${dto.llocation}</td>
+			<td >품종</td>
+			<td colspan="3">${dto.lbreed}</td>
 		</tr>
 		<tr align="center">
-			<td width="50px">주인정보</td>
-			<td width="50px" colspan="3">${dto.lcontact}</td>
+			<td>위치</td>
+			<td colspan="3">${dto.llocation}</td>
+		</tr>
+		<tr align="center">
+			<td >주인정보</td>
+			<td colspan="3">${dto.lcontact}</td>
 
 		</tr>
 		<tr align="center">
-			<td width="50px">특이사항</td>
-			<td width="50px" colspan="3">${dto.lmemo}</td>
+			<td>특이사항</td>
+			<td colspan="3">${dto.lmemo}</td>
 
 		</tr>
 		<tr align="center">
 			<td  colspan="2">날짜</td>
 			<td colspan="2">${dto.lDate}</td>	
 		</tr>
-		
-		<!-- master로 로그인 되었을 경우에만 게시글 삭제 가능 -->
-		<% if(session.getAttribute("cid").equals("master")){ %>
+		<c:choose>
+		<c:when test="${dto.cid==cid}">
 			<tr align="center">
-					<td  colspan="4">	<a href="ldelete.dol?lId=${dto.lId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
+						<td  colspan="4">	<a href="ldelete.dol?lId=${dto.lId}">삭제하기</a>&nbsp; &nbsp; &nbsp;
+						
+						</td>
 					
-					</td>
-				
-			</tr>
-		<% } else if(session.getAttribute("cid")!="null"){ %>
-		<tr align="center">
+				</tr>
+		</c:when>
+		<c:when test="${dto.cid!=cid}">
+			<tr align="center">
 			<td colspan="4">
 				<a href="#" onclick="window.open('info2.html', 'name', 'resizable= no width=430px height=750px'); return false">게시물관련 문의</a>&nbsp; &nbsp; &nbsp;
 				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">이 아이 본적있어요!</a>
 			</td>
 		</tr>
-	<% } else{ %>
-		<tr align="center">
-			<td colspan="4">
-				<a href="#" onclick="window.open('info2.html', 'name', 'resizable= no width=430px height=750px'); return false">게시물관련 문의</a>&nbsp; &nbsp; &nbsp;
-				<a href="#" onclick="window.open('info.html', 'name', 'resizable= no width=430px height=750px'); return false">이 아이 본적있어요!</a>
-			</td>
-		</tr>
-	<%} %>
 		
+		</c:when>
+		</c:choose>
 		</table>
+		
 	</c:forEach>
 		
 	</div>

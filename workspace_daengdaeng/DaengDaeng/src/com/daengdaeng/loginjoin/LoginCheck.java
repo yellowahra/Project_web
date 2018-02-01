@@ -23,7 +23,7 @@ public class LoginCheck extends HttpServlet {
 	private Connection connection;
 	private Statement stmt;
 	private ResultSet resultSet;
-	
+	HttpSession httpSession;
 	private String cname, cid, cpw;
 	private String cemail;
        
@@ -85,7 +85,10 @@ public class LoginCheck extends HttpServlet {
 			httpSession.setAttribute("cid", cid);
 			httpSession.setAttribute("cpw", cpw);
 			
-			response.sendRedirect("home/loginResult.jsp");
+			
+		
+			response.sendRedirect("home/login/loginResult.jsp");
+			
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -101,5 +104,6 @@ public class LoginCheck extends HttpServlet {
 		}
 		
 	}
+	
 
 }

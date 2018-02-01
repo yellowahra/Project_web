@@ -76,11 +76,11 @@ public class ModifyCheck extends HttpServlet {
 				if(i==1) {
 					System.out.println("UPDATE Success");
 					httpSession.setAttribute("cname", cname);
-					response.sendRedirect("home/modifyResult.jsp");
+					response.sendRedirect("home/login/modifyResult.jsp");
 				}else {
 					System.out.println("UPDATE Fail");
 					
-					response.sendRedirect("home/modify.jsp");
+					response.sendRedirect("home/login/updatefail.jsp");
 					
 				}
 			}catch(Exception e) {
@@ -96,7 +96,7 @@ public class ModifyCheck extends HttpServlet {
 			}
 		}else {
 			System.out.println("Error-Password do not matched.");
-		
+			response.sendRedirect("home/login/updatefail.jsp");
 		}
 		
 	}//actionCheck

@@ -38,13 +38,13 @@
 	<% if(session.getAttribute("cid")!=null){ %>
 		<section id="info">
 		<input id="info" type="hidden" name="cid" size="10" value=<%=cid %>><%=cid %>님 안녕하세요
-		<a href="../modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
-		<a href="../logout.jsp"><button class="btn_sm">로그아웃</button>
+		<a href="../login/modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
+		<a href="../login/logout.jsp"><button class="btn_sm">로그아웃</button>
 		</section>
 	<% } else{ %>
 		<nav id="join_login">
-		<a href="../joinin.html" ><button class="btn_sm">회원가입</button></a><br><br>
-		<a href="../login.html"><button class="btn_sm">로그인</button></a>
+		<a href="../join/join.jsp" ><button class="btn_sm">회원가입</button></a><br><br>
+		<a href="../login/login.html"><button class="btn_sm">로그인</button></a>
 	</nav>
 	<%} %>
 		
@@ -90,11 +90,11 @@
 			session.setAttribute("select", select);
 			session.getAttribute("select");%>
 <%-- 	<%= select %> --%>
-		<a href="#" onclick="window.open('calories.jsp', 'name', 'resizable= no width=500px height=750px'); return false" 
-				style="margin-left:10%;">
-		칼로리계산기</a>&nbsp; &nbsp; &nbsp;
+		<center><a href="#" onclick="window.open('calories.jsp', 'name', 'resizable= no width=500px height=750px'); return false" 
+				style="margin-left:10%; font-size: 25pt; color:blue;">
+		칼로리계산기</a>&nbsp; &nbsp; &nbsp;</center>
 	
-<div class="graphBox">
+<div class="graphBox" style="margin-left:10%">
 	<script type="text/javascript">
 		google.charts.load('current', {'packages':['corechart']});
 		google.charts.setOnLoadCallback(drawVisualization);
@@ -102,16 +102,16 @@
 		function drawVisualization() { 
 			var data = google.visualization.arrayToDataTable([
 					['Month', 'weight'],
-					['2004/05',  165],
-					['2005/06',  135],
-					['2006/07',  157],
-					['2007/08',  139],
-					['2008/09',  136]
+					['2014/4/3',  5.5],
+					['2014/6/3',  6.2],
+					['2014/7/3',  7.7],
+					['2014/9/3',  6],
+					['2014/12/3',  6]
 				]);
 			var options = {
 					title : '몸무게',
-					vAxis: {title: 'Weight'},
-					hAxis: {title: 'Date'}, 
+					vAxis: {title: '무게(kg)'},
+					hAxis: {title: '날짜'}, 
 					seriesType: 'line',
 					/* series: {5: {type: 'line'}} */
 				};
@@ -156,7 +156,7 @@
 	<% } else{ %>
 		<p id="link">
 
-		<a href="../login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+		<a href="../login/login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 	</p>
 	<%} %>
 	

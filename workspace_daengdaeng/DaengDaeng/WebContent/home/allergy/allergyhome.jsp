@@ -50,13 +50,13 @@ $(function(){
 	<% if(session.getAttribute("cid")!=null){ %>
 		<section id="info">
 		<input id="info" type="hidden" name="cid" size="10" value=<%=cid %>><%=cid %>님 안녕하세요
-		<a href="../modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
-		<a href="../logout.jsp"><button class="btn_sm">로그아웃</button>
+		<a href="../login/modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
+		<a href="../login/logout.jsp"><button class="btn_sm">로그아웃</button>
 		</section>
 	<% } else{ %>
 		<nav id="join_login">
-		<a href="../joinin.html" ><button class="btn_sm">회원가입</button></a><br><br>
-		<a href="../login.html"><button class="btn_sm">로그인</button></a>
+		<a href="../join/join.jsp" ><button class="btn_sm">회원가입</button></a><br><br>
+		<a href="../login/login.html"><button class="btn_sm">로그인</button></a>
 	</nav>
 	<%} %>
 		
@@ -66,7 +66,7 @@ $(function(){
 		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
 		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">댕댕이 다이어리</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
+			<li id="subMenu_li"><a href="../calendar/calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
 			<li id="subMenu_li"> <a href="../photo/photolist.dop" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
 			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
@@ -114,14 +114,14 @@ $(function(){
 		<Br><Br>
 		
 		<form name="select" method="post" action="aallergylist.doal" style="margin-left:10%; font-size: 25pt; width: 50%;">
-			<input value="selectname" name="select" id="selectdog" style="border:none; font-size: 25pt;" ><br>
+			<input value="선택된 반려견" name="select" id="selectdog" style="border:none; font-size: 25pt;" ><br>
 			<input type="submit" value="입력">
 		</form>
 		<br><br>
 	<% } else{ %>
 		<p id="link">
 
-		<a href="../login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+		<a href="../login/login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 	</p>
 	<%} %>
 	

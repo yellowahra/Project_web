@@ -37,13 +37,13 @@
 	<% if(session.getAttribute("cid")!=null){ %>
 		<section id="info">
 		<input id="info" type="hidden" name="cid" size="10" value=<%=cid %>><%=cid %>´Ô ¾È³çÇÏ¼¼¿ä
-		<a href="../modify.jsp"><button class="btn_sm">È¸¿øÁ¤º¸¼öÁ¤</button><br><br>
-		<a href="../logout.jsp"><button class="btn_sm">·Î±×¾Æ¿ô</button>
+		<a href="../login/modify.jsp"><button class="btn_sm">È¸¿øÁ¤º¸¼öÁ¤</button><br><br>
+		<a href="../login/logout.jsp"><button class="btn_sm">·Î±×¾Æ¿ô</button>
 		</section>
 	<% } else{ %>
 		<nav id="join_login">
-		<a href="../joinin.html" ><button class="btn_sm">È¸¿ø°¡ÀÔ</button></a><br><br>
-		<a href="../login.html"><button class="btn_sm">·Î±×ÀÎ</button></a>
+		<a href="../join/join.jsp" ><button class="btn_sm">È¸¿ø°¡ÀÔ</button></a><br><br>
+		<a href="../login/login.html"><button class="btn_sm">·Î±×ÀÎ</button></a>
 	</nav>
 	<%} %>
 	<!-- Nav -->
@@ -52,7 +52,7 @@
 		<li><a href="../register/dlist.dod" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>´ó´óÀÌ µî·Ï</a></li>
 		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">´ó´óÀÌ ´ÙÀÌ¾î¸®</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>´ó´óÀÌ ÀÏÁ¤</a></li>
+			<li id="subMenu_li"><a href="../calendar/calendarlist.doc" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>´ó´óÀÌ ÀÏÁ¤</a></li>
 			<li id="subMenu_li"> <a href="../photo/photolist.dop" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>´ó´óÀÌ Ãß¾ï</a><li>
 			<li id="subMenu_li"><a href="../health/healthhome.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>´ó´óÀÌ °Ç°­¼öÃ¸</a></li>
 		</ul>

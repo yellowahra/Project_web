@@ -39,8 +39,8 @@
 		<div class="top">
 		<section id="info">
 		<input id="info" type="hidden" name="cid" size="10" value=<%=cid %>><%=cid %>님 안녕하세요
-		<a href="modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
-		<a href="logout.jsp"><button class="btn_sm">로그아웃</button>
+		<a href="login/modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
+		<a href="login/logout.jsp"><button class="btn_sm">로그아웃</button>
 		</section>
 
 	<!-- Nav -->
@@ -79,18 +79,25 @@
 		</header>
 		<input type="hidden" name="cid" size="10" value=<%=cid %>><%=cid %>님 안녕하세요
 		</div>
+		<br><Br>
+		<div style="margin-left:30%;">
+		
+	<a href="adopt/alist.doa" ><img src="icons/home.png">입양정보</a>&nbsp; &nbsp; &nbsp;&nbsp;
+	<a href="lost/llist.dol"><img src="icons/lost.png"/>실종정보</a>&nbsp; &nbsp; &nbsp;&nbsp;
+	<a href="watch/wlist.dow" ><img src="icons/watch.png"/>유기견정보</a>
+	<br>
+		
+		</div>
 	</section>
+
+
 </div>
 
-<div id="home_finddog">
-	<!-- Portfolio -->
-	<section id="portfolio" class="two">
-
-	</section>
-</div>
+	<img src="images/home_dog2.jpg" width="100%">
+	
 
 		<!-- Footer -->
-			<div id="footer">
+			<div id="footer" >
 
 				<!-- Copyright -->
 					<ul class="copyright">

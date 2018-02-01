@@ -38,13 +38,13 @@
 	<% if(session.getAttribute("cid")!=null){ %>
 		<section id="info">
 		<input id="info" type="hidden" name="cid" size="10" value=<%=cid %>><%=cid %>님 안녕하세요
-		<a href="../modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
-		<a href="../logout.jsp"><button class="btn_sm">로그아웃</button>
+		<a href="../login/modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
+		<a href="../login/logout.jsp"><button class="btn_sm">로그아웃</button>
 		</section>
 	<% } else{ %>
 		<nav id="join_login">
-		<a href="../joinin.html" ><button class="btn_sm">회원가입</button></a><br><br>
-		<a href="../login.html"><button class="btn_sm">로그인</button></a>
+		<a href="../join/join.jsp" ><button class="btn_sm">회원가입</button></a><br><br>
+		<a href="../login/login.html"><button class="btn_sm">로그인</button></a>
 	</nav>
 	<%} %>
 		
@@ -75,7 +75,7 @@
 		<Br><Br>
 <!-- Main -->
 <div id="main">
-	<h1>일정관리</h1>
+<p style="font-size: 160%; color: black; margin-left: 10%" >일정관리</p>
 
 		<% if(session.getAttribute("cid")!=null){ 
 			request.setCharacterEncoding("EUC-KR");
@@ -112,21 +112,22 @@
 
 		<form name="dnamen" method="post" action="calendarwrite_view.doc" style="margin-left:10%; font-size: 20pt; width: 50%;">
 			<input value=<%= select %> name="dnamen" id="selectdog" style="border:none;">
-			<input type="submit" value="입력">
+			<input type="submit" value="일정입력">
 		</form>
-		
+		<br>
+		<br>
 		
 		
 	<% } else{ %>
 		<p id="link">
 
-		<a href="../login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+		<a href="../login/login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 	</p>
 	<%} %>
 	
 </div>
 		<!-- Footer -->
-			<div id="footer">
+			<div id="footer" style="position:absolute; bottom: 0px; width:100%;">
 				<!-- Copyright -->
 					<ul class="copyright">
 						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>

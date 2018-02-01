@@ -132,7 +132,7 @@ $(function () {
 		<Br><Br>
 		
 		<form name="select" method="post" action="mmlist.dom" style="margin-left:10%; font-size: 25pt; width: 50%;">
-			<input value="selectname" name="select" id="selectdog" style="border:none; font-size: 25pt;" ><br>
+			<input value="선택된 반려견" name="select" id="selectdog" style="border:none; font-size: 25pt;" ><br>
 			<input type="submit" value="입력">
 		</form>
 		<br><br>
