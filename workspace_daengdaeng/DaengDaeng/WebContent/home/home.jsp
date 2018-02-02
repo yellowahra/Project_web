@@ -26,6 +26,7 @@
 			<script src="assets/js/util.js"></script>
 		<script src="assets/js/ie/respond.min.js"></script>
 			<script src="assets/js/main.js"></script> 
+		
 </head>
 <body>
 <%
@@ -59,7 +60,7 @@
 		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref">댕댕이 커뮤티니</a>
 		<ul id="subMenu">
 			<li><a href="board/list.do" id="portfolio-link" class="skel-layers-ignoreHref"><img src="icons/chat_gray.png"/>정보공유</a></li>
-			<li><a href="adopt/alist.jsp" id="portfolio-link" class="skel-layers-ignoreHref"><img src="icons/location_gray.png"/>유기견정보</a><li>
+			<li><a href="adopt/alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="icons/location_gray.png"/>유기견정보</a><li>
 		</ul>
 		</li>
 	</ul>
@@ -74,19 +75,13 @@
 	<!-- Intro -->
 	<section id="top" class="one dark cover">
 		<div class="container">
-		<header>
+
 			<img class="logo_img" src="images/logo001.png"/><Br>
-		</header>
-		<input type="hidden" name="cid" size="10" value=<%=cid %>><%=cid %>님 안녕하세요
-		</div>
-		<br><Br>
-		<div style="margin-left:30%;">
-		
+
+		<input type="hidden" name="cid" size="10" value=<%=cid %>><%=cid %>님 안녕하세요<br>
 	<a href="adopt/alist.doa" ><img src="icons/home.png">입양정보</a>&nbsp; &nbsp; &nbsp;&nbsp;
 	<a href="lost/llist.dol"><img src="icons/lost.png"/>실종정보</a>&nbsp; &nbsp; &nbsp;&nbsp;
 	<a href="watch/wlist.dow" ><img src="icons/watch.png"/>유기견정보</a>
-	<br>
-		
 		</div>
 	</section>
 

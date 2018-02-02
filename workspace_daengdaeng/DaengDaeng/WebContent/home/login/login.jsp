@@ -1,4 +1,6 @@
-<!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!--
 	Prologue by HTML5 UP
 	html5up.net | @ajlkn
@@ -24,7 +26,30 @@
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/ie/respond.min.js"></script>
 	<script src="../assets/js/main.js"></script>
-
+ <script type="text/javascript">
+    function check() {
+     var form = document.formlogin;
+     
+    
+     if(form.cid.value.replace(/\s/ig, "") == "") {
+      alert("아이디를 입력하세요.");
+      return false;
+     }
+     if(form.cpw.value.replace(/\s/ig, "") == "") {
+         alert("비밀번호를 입력하세요.");
+         return false;
+        }
+     if(!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(form.cpw.value)) {
+      alert(" 비밀번호가 틀렸습니다.");
+      return false;
+     } 
+   
+     
+   return true;
+     
+    }
+ 
+  </script>
 </head>
 <body>
 <!-- Header -->
@@ -32,22 +57,22 @@
 	<div class="top">
 		<nav id="join_login">
 		<a href="../join/join.jsp" ><button class="btn_sm">회원가입</button></a><br><br>
-		<a href="login.html"><button class="btn_sm">로그인</button></a>
+		<a href="login.jsp"><button class="btn_sm">로그인</button></a>
 		</nav>
 		<!-- Nav -->
 	<nav id="nav">
 	<ul>
-		<li><a href="login.html" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
+		<li><a href="login.jsp" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>댕댕이 등록</a></li>
 		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">댕댕이 다이어리</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="login.html" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
-			<li id="subMenu_li"> <a href="login.html" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
-			<li id="subMenu_li"><a href="login.html" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
+			<li id="subMenu_li"><a href="login.jsp" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>댕댕이 일정</a></li>
+			<li id="subMenu_li"> <a href="login.jsp" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>댕댕이 추억</a><li>
+			<li id="subMenu_li"><a href="login.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>댕댕이 건강수첩</a></li>
 		</ul>
 		</li>
 		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref">댕댕이 커뮤티니</a>
 		<ul id="subMenu">
-			<li><a href="login.html" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
+			<li><a href="login.jsp" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>정보공유</a></li>
 			<li><a href="../adopt/alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>유기견정보</a><li>
 		</ul>
 		</li>
@@ -63,7 +88,7 @@
 
 <!--login form  -->
 <div id="login">
-	<form action="/DaengDaeng/LoginCheck" method="POST">
+	<form name=formlogin action="/DaengDaeng/LoginCheck" method="POST" onsubmit="return check();">
 		아이디:	<input type="text" name="cid" size="10"><br>
 		비밀번호: <input type="text" name="cpw" size="10"><br>
 		

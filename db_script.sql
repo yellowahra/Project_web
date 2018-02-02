@@ -229,7 +229,7 @@ CREATE TABLE calendar(
 	ndate VARCHAR2(20),
 	ntime VARCHAR2(20),
 	ntype VARCHAR2(20),
-	nlmemo VARCHAR2(50),
+	nmemo VARCHAR2(50),
 	writeDate DATE DEFAULT SYSDATE,
 	CONSTRAINT calendar_fk_cID FOREIGN KEY (cID) REFERENCES customer(cID)
 );

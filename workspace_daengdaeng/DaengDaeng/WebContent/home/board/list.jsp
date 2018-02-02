@@ -64,7 +64,7 @@ color: white;
 	<% } else{ %>
 		<nav id="join_login">
 		<a href="../join/join.jsp" ><button class="btn_sm">회원가입</button></a><br><br>
-		<a href="../login/login.html"><button class="btn_sm">로그인</button></a>
+		<a href="../login/login.jsp"><button class="btn_sm">로그인</button></a>
 	</nav>
 	<%} %>
 		
@@ -123,7 +123,7 @@ color: white;
 	<% } else{ %>
 		<tr id="link">
 
-		<td colspan="5" align="center">글쓰기를 위해 <a href="../login/login.html" class="button">로그인</a></td>
+		<td colspan="5" align="center">글쓰기를 위해 <a href="../login/login.jsp" class="button">로그인</a></td>
 	</tr>
 	<%} %>
 	</table>

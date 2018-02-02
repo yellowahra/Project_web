@@ -22,6 +22,7 @@
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/ie/respond.min.js"></script>
 	<script src="../assets/js/main.js"></script> 
+
 </head>
 <body>
 <!-- Header -->
@@ -29,22 +30,22 @@
 	<div class="top">
 	<nav id="join_login">
 		<a href="join.jsp" ><button class="btn_sm">È¸¿ø°¡ÀÔ</button></a><br><br>
-		<a href="../login/login.html"><button class="btn_sm">·Î±×ÀÎ</button></a>
+		<a href="../login/login.jsp"><button class="btn_sm">·Î±×ÀÎ</button></a>
 	</nav>
 	<!-- Nav -->
 	<nav id="nav">
 	<ul>
-		<li><a href="../login/login.html" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>´ó´óÀÌ µî·Ï</a></li>
+		<li><a href="../login/login.jsp" id="top-link" class="skel-layers-ignoreHref"><img src="../icons/dog_gray.png"/>´ó´óÀÌ µî·Ï</a></li>
 		<li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref">´ó´óÀÌ ´ÙÀÌ¾î¸®</a>
 		<ul id="subMenu">
-			<li id="subMenu_li"><a href="../login/login.html" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>´ó´óÀÌ ÀÏÁ¤</a></li>
-			<li id="subMenu_li"> <a href="../login/login.html" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>´ó´óÀÌ Ãß¾ï</a><li>
-			<li id="subMenu_li"><a href="../login/login.html" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>´ó´óÀÌ °Ç°­¼öÃ¸</a></li>
+			<li id="subMenu_li"><a href="../login/login.jsp" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/calendar_gray.png"/>´ó´óÀÌ ÀÏÁ¤</a></li>
+			<li id="subMenu_li"> <a href="../login/login.jsp" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/write_gray.png"/>´ó´óÀÌ Ãß¾ï</a><li>
+			<li id="subMenu_li"><a href="../login/login.jsp" id="about-link" class="skel-layers-ignoreHref"><img src="../icons/health_gray.png"/>´ó´óÀÌ °Ç°­¼öÃ¸</a></li>
 		</ul>
 		</li>
 		<li><a href="#" id="contact-link" class="skel-layers-ignoreHref">´ó´óÀÌ Ä¿¹ÂÆ¼´Ï</a>
 		<ul id="subMenu">
-			<li><a href="../login/login.html" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>Á¤º¸°øÀ¯</a></li>
+			<li><a href="../login/login.jsp" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/chat_gray.png"/>Á¤º¸°øÀ¯</a></li>
 			<li><a href="adopt/alist.doa" id="portfolio-link" class="skel-layers-ignoreHref"><img src="../icons/location_gray.png"/>À¯±â°ßÁ¤º¸</a><li>
 		</ul>
 		</li>
@@ -60,11 +61,11 @@
 <div id="main">
 	È¸¿ø°¡ÀÔÀÌ Á¤»ó Ã³¸®µÇ¾ú½À´Ï´Ù.<br>
 	<br>
-	<a href="../login/login.html"><button class="btn_sm">·Î±×ÀÎ</button>
+	<a href="../login/login.jsp"><button class="btn_sm">·Î±×ÀÎ</button>
 </div>
 
 		<!-- Footer -->
-			<div id="footer">
+			<div id="footer" >
 
 				<!-- Copyright -->
 					<ul class="copyright">

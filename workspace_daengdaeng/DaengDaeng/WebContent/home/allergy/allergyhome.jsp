@@ -33,7 +33,27 @@ $(function(){
 
 });
 
-
+$(function () { 
+   // 옵션목록 
+   var valueArr = []; 
+   var showArr = []; 
+   var hideArr = []; 
+   // 옵션목록을 배열로 등록 
+   $("#selectname > option").each(function () { 
+      valueArr.push($(this).val()); 
+   }); 
+   $.each(valueArr, function (index, element) { // 배열의 원소수만큼 반복 
+      if ($.inArray(element, showArr) == -1) { // showArr 에서 값을 찾는다.  값이 없을경우(-1) 
+         showArr.push(element); // 없으면 showArr에추가 
+         } else { 
+         hideArr.push(index); // 있으면 hideArr에index 추가 
+      } 
+   }); 
+   // 중복된 index목록을 역순으로 지워준다. 
+   for (var i in hideArr.reverse()) { 
+      $("#selectname > option").eq(hideArr[i]).remove(); 
+   } 
+}); 
 </script>
 
 </head>
@@ -56,7 +76,7 @@ $(function(){
 	<% } else{ %>
 		<nav id="join_login">
 		<a href="../join/join.jsp" ><button class="btn_sm">회원가입</button></a><br><br>
-		<a href="../login/login.html"><button class="btn_sm">로그인</button></a>
+		<a href="../login/login.jsp"><button class="btn_sm">로그인</button></a>
 	</nav>
 	<%} %>
 		
@@ -94,7 +114,7 @@ $(function(){
 		<a href="../vaccine/vlist.dov" ><img src="../health/vaccine.png" width="50px"/>예방접종_Vaccine</a>
 		<br><br>
 		<a href="#" onclick="window.open('allergyinfo.jsp', 'name', 'resizable= no width=700px height=800px'); return false" 
-				style="margin-left:10%;"><img src="../icons/info.png"/>알레르기 원인, 증상, 완화방법</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+				style="margin-left:10%;"><img src="../icons/info.png"/>알레르기 원인, 증상, 완화방법</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<Br><br><br>
 
 	</div>
 
@@ -102,8 +122,7 @@ $(function(){
 
 		<% if(session.getAttribute("cid")!=null){ %>
 	
-	
-		<select name="selectname" id="selectname" style="margin-left:10%; font-size: 25pt; width: 50%; height: 50%;">
+	<select name="selectname" id="selectname" style="margin-left:10%; font-size: 25pt; width: 50%; height: 50%;">
 				 <option value="none">반려견선택</option>
 			<c:forEach items="${allergylist}" var="dto">
 				<c:if test="${dto.cid==cid}">
@@ -111,6 +130,10 @@ $(function(){
 				</c:if>
 			</c:forEach>		
 		</select>
+		
+		
+		
+		
 		<Br><Br>
 		
 		<form name="select" method="post" action="aallergylist.doal" style="margin-left:10%; font-size: 25pt; width: 50%;">
@@ -121,7 +144,7 @@ $(function(){
 	<% } else{ %>
 		<p id="link">
 
-		<a href="../login/login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+		<a href="../login/login.jsp" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 	</p>
 	<%} %>
 	

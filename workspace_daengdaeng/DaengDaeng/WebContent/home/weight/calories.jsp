@@ -15,11 +15,12 @@
 <div id="top2">
 	<img src="../images/logo002.png" id="logo_img"/>
 </div>
-<img src="dog-calculating-calories.jpg" alt="adopt dog" style="width: 100%; margin-top:3em; margin-bottom:3em;">
+<img src="dog-calculating-calories.jpg" alt="adopt dog" style="width: 100%; margin-top:3em; margin-bottom:1em;">
 
 
 	<form name="calories" method="post">
 	<input type="text" name="insertweight" width="200" size="10">
+	<br>
 	<input type="submit" value="계산" name="calsubmit">
 	<input type="reset" value="다시 입력" name="calreset"> 
 	<%

@@ -44,7 +44,7 @@
 	<% } else{ %>
 		<nav id="join_login">
 		<a href="../join/join.jsp" ><button class="btn_sm">회원가입</button></a><br><br>
-		<a href="../login/login.html"><button class="btn_sm">로그인</button></a>
+		<a href="../login/login.jsp"><button class="btn_sm">로그인</button></a>
 	</nav>
 	<%} %>
 		
@@ -77,14 +77,14 @@
 <div id="main">
 
 		<% if(session.getAttribute("cid")!=null){ %>
-		<p id="link">
+		<p id="link" style="margin-top:3em; margin-left:2em;">
 	
 			<a href="dwrite_view.dod" class="button">반려견 등록</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 		</p>
 	<% } else{ %>
 		<p id="link">
 
-		<a href="../login/login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+		<a href="../login/login.jsp" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 	</p>
 	<%} %>
 	<div>
@@ -140,7 +140,7 @@
 	</div>
 </div>
 		<!-- Footer -->
-			<div id="footer">
+			<div id="footer" >
 				<!-- Copyright -->
 					<ul class="copyright">
 						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>

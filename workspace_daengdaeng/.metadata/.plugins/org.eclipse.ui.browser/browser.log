@@ -10435,3 +10435,34 @@
 2월 01, 2018 18:29:40.94 [5936:8872:0201/182940.898:ERROR:audio_manager_base.cc(315)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
 2월 01, 2018 18:33:27.28 
 2월 01, 2018 18:33:27.28 KLIB_SelfTest return : KLR_OK
+
+2월 02, 2018 10:07:06.24 NEW SESSION
+2월 02, 2018 10:07:06.24 
+2월 02, 2018 10:07:06.28 KLIB_SelfTest return : KLR_OK
+2월 02, 2018 10:47:54.58 
+2월 02, 2018 10:47:54.62 KLIB_SelfTest return : KLR_OK
+2월 02, 2018 10:50:36.83 
+2월 02, 2018 10:50:36.84 KLIB_SelfTest return : KLR_OK
+2월 02, 2018 11:37:17.75 
+2월 02, 2018 11:37:17.80 KLIB_SelfTest return : KLR_OK
+2월 02, 2018 11:56:47.61 
+2월 02, 2018 11:56:47.61 KLIB_SelfTest return : KLR_OK
+2월 02, 2018 12:05:51.48 
+2월 02, 2018 12:05:51.49 KLIB_SelfTest return : KLR_OK
+2월 02, 2018 13:42:39.35 [9644:1072:0202/134234.566:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+2월 02, 2018 14:30:18.20 [9644:7132:0202/143018.207:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+2월 02, 2018 14:58:37.70 [9644:7132:0202/145837.703:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+2월 02, 2018 15:16:33.37 [9644:1072:0202/151633.375:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 8.688 s
+2월 02, 2018 15:16:38.98 [9644:1072:0202/151638.989:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 8.688 s
+2월 02, 2018 15:16:45.72 [9644:1072:0202/151645.720:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 8.688 s
+2월 02, 2018 15:16:52.39 [9644:1072:0202/151652.399:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 8.688 s
+2월 02, 2018 16:02:55.69 [9644:1072:0202/160255.666:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 5.17 s
+2월 02, 2018 16:02:57.38 [9644:1072:0202/160257.383:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 5.17 s
+2월 02, 2018 16:02:59.50 [9644:1072:0202/160259.502:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 5.17 s
+2월 02, 2018 16:03:42.29 [9644:1072:0202/160342.292:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 4.917 s
+2월 02, 2018 16:04:33.93 [9644:1072:0202/160433.936:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 4.917 s
+2월 02, 2018 16:08:07.69 [9644:1072:0202/160807.690:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 4.917 s
+2월 02, 2018 16:17:34.17 [9644:1072:0202/161734.176:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 4.995 s
+2월 02, 2018 16:18:25.65 [9644:1072:0202/161825.656:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 4.995 s
+2월 02, 2018 16:48:50.37 [9644:1072:0202/164850.345:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 8.688 s
+2월 02, 2018 16:58:55.49 [9644:1072:0202/165855.499:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 8.688 s

@@ -75,7 +75,7 @@ $(function () {
 	<% } else{ %>
 		<nav id="join_login">
 		<a href="../join/join.jsp" ><button class="btn_sm">회원가입</button></a><br><br>
-		<a href="../login/login.html"><button class="btn_sm">로그인</button></a>
+		<a href="../login/login.jsp"><button class="btn_sm">로그인</button></a>
 	</nav>
 	<%} %>
 		
@@ -129,7 +129,7 @@ $(function () {
 	<% } else{ %>
 		<p id="link">
 
-		<a href="../login/login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+		<a href="../login/login.jsp" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 	</p>
 	<%} %>
 	

@@ -44,7 +44,7 @@
 	<% } else{ %>
 		<nav id="join_login">
 		<a href="../join/join.jsp" ><button class="btn_sm">회원가입</button></a><br><br>
-		<a href="../login/login.html"><button class="btn_sm">로그인</button></a>
+		<a href="../login/login.jsp"><button class="btn_sm">로그인</button></a>
 	</nav>
 	<%} %>
 		
@@ -117,7 +117,7 @@
 			</c:forEach>
 		</table>
 
-		<form name="dnamev" method="post" action="vwrite_view.dov" style="margin-left:10%; font-size: 20pt; width: 50%;">
+		<form name="dnamev" method="post" action="vwrite_view.dov" style="margin-left:10%; margin-bottom:1em; font-size: 20pt; width: 50%;">
 			<input value=<%= select %> name="dnamev" id="selectdog" style="border:none;">
 			<input type="submit" value="입력">
 		</form>
@@ -127,7 +127,7 @@
 	<% } else{ %>
 		<p id="link">
 
-		<a href="../login/login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+		<a href="../login/login.jsp" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 	</p>
 	<%} %>
 	

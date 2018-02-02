@@ -111,7 +111,7 @@ $(function() {
 	<% } else{ %>
 		<nav id="join_login">
 		<a href="../join/join.jsp" ><button class="btn_sm">회원가입</button></a><br><br>
-		<a href="../login/login.html"><button class="btn_sm">로그인</button></a>
+		<a href="../login/login.jsp"><button class="btn_sm">로그인</button></a>
 	</nav>
 	<%} %>
 	<!-- Nav -->
@@ -141,7 +141,7 @@ $(function() {
 	<Br><Br>
 <!-- Main -->
 <div id="main">
-<h1>일정쓰기</h1>
+<p style="font-size: 160%; color: black; margin-left: 10%" >일정쓰기</p>
 	
 	<%  
 	request.setCharacterEncoding("EUC-KR");
@@ -149,7 +149,7 @@ $(function() {
 	session.setAttribute("dnamen", dnamen);
 	session.getAttribute("dnamen");%>
 
-	<%= dnamen %>
+	<%-- <%= dnamen %> --%>
 	<div>
 	<table class="calendarwrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; width: 50%; font-size: 20pt;" >
 		<form action="calendarwrite.doc" method="post">

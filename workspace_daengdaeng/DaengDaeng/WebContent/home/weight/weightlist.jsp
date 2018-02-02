@@ -44,7 +44,7 @@
 	<% } else{ %>
 		<nav id="join_login">
 		<a href="../join/join.jsp" ><button class="btn_sm">회원가입</button></a><br><br>
-		<a href="../login/login.html"><button class="btn_sm">로그인</button></a>
+		<a href="../login/login.jsp"><button class="btn_sm">로그인</button></a>
 	</nav>
 	<%} %>
 		
@@ -94,7 +94,7 @@
 				style="margin-left:10%; font-size: 25pt; color:blue;">
 		칼로리계산기</a>&nbsp; &nbsp; &nbsp;</center>
 	
-<div class="graphBox" style="margin-left:10%">
+<div class="graphBox" style="margin-left:10%;">
 	<script type="text/javascript">
 		google.charts.load('current', {'packages':['corechart']});
 		google.charts.setOnLoadCallback(drawVisualization);
@@ -146,7 +146,7 @@
 			</c:forEach>
 		</table>
 
-	<form name="dnamew" method="post" action="swrite_view.dos" style="margin-left:10%; font-size: 20pt; width: 50%;">
+	<form name="dnamew" method="post" action="swrite_view.dos" style="margin-left:10%; margin-bottom: 1em;font-size: 20pt; width: 50%;">
 			<input value=<%= select %> name="dnamew" id="selectdog" style="border:none;">
 			<input type="submit" value="체중입력하기">
 		</form>
@@ -156,7 +156,7 @@
 	<% } else{ %>
 		<p id="link">
 
-		<a href="../login/login.html" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+		<a href="../login/login.jsp" class="button">로그인</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 	</p>
 	<%} %>
 	
