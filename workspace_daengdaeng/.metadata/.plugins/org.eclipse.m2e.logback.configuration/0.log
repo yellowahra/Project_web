@@ -12262,3 +12262,5 @@
 2018-02-01 18:26:29,836 [Worker-207] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\CodeLab\git_desktop\Project_web\workspace_daengdaeng\DaengDaeng\src\test\resources
 2018-02-01 18:29:26,582 [Worker-203] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
 2018-02-01 18:29:26,583 [Worker-203] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\CodeLab\git_desktop\Project_web\workspace_daengdaeng\DaengDaeng\src\main\resources
+2018-02-01 18:29:26,584 [Worker-203] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-01 18:29:26,584 [Worker-203] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\CodeLab\git_desktop\Project_web\workspace_daengdaeng\DaengDaeng\src\test\resources

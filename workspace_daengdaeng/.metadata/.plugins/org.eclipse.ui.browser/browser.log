@@ -10433,3 +10433,5 @@
 2월 01, 2018 12:42:41.26 [5936:8872:0201/124241.202:ERROR:audio_manager_base.cc(315)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
 2월 01, 2018 13:44:12.84 [5936:8872:0201/134412.832:ERROR:audio_manager_base.cc(315)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
 2월 01, 2018 18:29:40.94 [5936:8872:0201/182940.898:ERROR:audio_manager_base.cc(315)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+2월 01, 2018 18:33:27.28 
+2월 01, 2018 18:33:27.28 KLIB_SelfTest return : KLR_OK
