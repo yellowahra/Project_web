@@ -38,8 +38,8 @@
 	<% if(session.getAttribute("cid")!=null){ %>
 		<section id="info">
 		<input id="info" type="hidden" name="cid" size="10" value=<%=cid %>><%=cid %>님 안녕하세요
-		<a href="../modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
-		<a href="../logout.jsp"><button class="btn_sm">로그아웃</button>
+		<a href="../login/modify.jsp"><button class="btn_sm">회원정보수정</button><br><br>
+		<a href="../login/logout.jsp"><button class="btn_sm">로그아웃</button>
 		</section>
 	<% } else{ %>
 		<nav id="join_login">
@@ -92,20 +92,23 @@
 			session.setAttribute("select", select);
 			session.getAttribute("select");%>
 <%-- 	<%= select %> --%>
-	
+	<br><br>
+	<center style="color:red; font-size: 30pt;"><%= select %> 알레르기</center>
+	<center><a href="allergylist.doal">다른 반려견 선택</a></center>
 		<table class="aallergylist" cellpadding="0" cellspacing="0"  width="70%">
 				<tr align="center" >
 					<td width="20" align="center">이름</td>
 					<td width="30">날짜</td>
 					<td width="20">원인</td>
 					<td width="30">증상</td>
-					<td width="20">심각도</td>
+					<td width="30">심각도</td>
 					<td width="50">메모</td>
 					<td width="5">삭제하기</td>
 				</tr>	
 			<c:forEach items="${aallergylist}" var="dto">
 				<c:if test="${dto.dname==select}">
 					<c:if test="${dto.cid==cid}">
+					<c:if test="${dto.alreaction!=null}">
 					<tr>
 						<td align="center">${dto.dname}</td>
 						<td align="center">${dto.alredate}</td>
@@ -113,16 +116,24 @@
 						<td align="center">${dto.alreaction}</td>
 						<td align="center">${dto.alseverity}</td>
 						<td align="center">${dto.almemo}</td>
-						<td align="center"><a href="allergydelete.doal?alId=${dto.alId}">삭제하기</a></td>
-					</tr>	
+						<td align="center">
+					
+						<a href="allergydelete.doal?alId=${dto.alId}">
+								
+						삭제하기</a>
+	
+						</td>
+						
+					</tr>
+					</c:if>	
 					</c:if>
 				</c:if>
 			</c:forEach>
 		</table>
 
 		<form name="dnamev" method="post" action="allergywrite_view.doal" style="margin-left:10%; margin-bottom: 1em; font-size: 20pt; width: 50%;">
-			<input value=<%= select %> name="dnameal" id="selectdog" style="border:none;">
-			<input type="submit" value="입력">
+			<input value=<%= select %> name="dnameal" id="selectdog" style="border:none;" type="hidden" >
+			<center><input type="submit" value="입력"></center>
 		</form>
 		
 		

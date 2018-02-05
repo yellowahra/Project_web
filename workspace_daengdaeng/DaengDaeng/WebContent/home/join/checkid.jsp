@@ -2,6 +2,44 @@
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page import = "java.sql.*" %>
+
+<%-- <jsp:useBean id="selectController" class="sogom.mgmt.libs.controller.SelectController"></jsp:useBean> --%>
+<%-- <%
+    String user_number = request.getParameter("cid");
+    //데이터베이스 연동을 위한 변수
+    Connection con = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+    
+    try{
+     Class.forName("oracle.jdbc.driver.OracleDriver");
+     
+     con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","daengdaeng","oracle_11g");
+     
+     String sql = "select * from customer where cid = ?";
+     pstmt = con.prepareStatement(sql);
+     pstmt.setString(1, cid);
+     rs = pstmt.executeQuery();
+     
+    boolean flag = true;
+    String str = "";
+    if(cid == null){
+    	cid = "";
+    }
+    
+    if(!cid.equals("")){
+        flag = selectController.idCheck(cid);
+    }
+    if(flag){    // 이미 존재하는 계정
+        str = "NO";
+        out.print(str);
+    
+    }else{        // 사용가능한 계정
+        str = "YES";
+        out.print(str);
+    }
+%> --%>
+
  <%
    //아이디 중복검사
    //넘어온 아이디 값 가져오기
@@ -14,7 +52,7 @@
    Connection con = null;
    PreparedStatement pstmt = null;
    ResultSet rs = null;
-   
+    String str = "";
    try{
     Class.forName("oracle.jdbc.driver.OracleDriver");
     
@@ -27,10 +65,12 @@
     
     if(cid == null || rs.next()==true){
      check = false;
+     str = "NO";
     } 
     //그렇지 않으면 사용가능한 아이디.
     else {
      check = true;
+     str = "YES";
     }
     
    } catch(Exception e) {

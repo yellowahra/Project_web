@@ -65,10 +65,10 @@
 </div>
 
 		<!-- Footer -->
-			<div id="footer" >
+			<div id="footer" style=" position:absolute; bottom:0;  width:100%;">
 
 				<!-- Copyright -->
-					<ul class="copyright">
+					<ul class="copyright" >
 						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 

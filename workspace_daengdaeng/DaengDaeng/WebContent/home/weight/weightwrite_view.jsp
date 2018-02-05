@@ -29,7 +29,24 @@
 	<!-- // jQuery 기본 js파일 -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
 	<!-- // jQuery UI 라이브러리 js파일 -->
-
+<script type="text/javascript">
+	
+	
+    function check() {
+     var form = document.formweight;
+     
+     if(form.dweight.value.replace(/\s/ig, "") == "") {
+      alert("몸무게는 필수 입력 사항입니다.");
+      return false;
+     }
+     
+    
+     
+   return true;
+     
+    }
+ 
+  </script>
 </head>
 <body>
 <%
@@ -96,10 +113,10 @@
 	session.setAttribute("dnamew", dnamew);
 	session.getAttribute("dnamew");%>
 
-	<%= dnamew %>
+<%-- 	<%= dnamew %> --%>
 	<div>
-	<table class="swrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 50%; font-size: 20pt;" >
-		<form action="swrite.dos" method="post">
+	<table name="select" class="swrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 50%; font-size: 20pt;" >
+		<form name="formweight" action="swrite.dos" method="post" onsubmit="return check();">
 			<tr>
 				<td id="head"  width="100" nowrap>반려인이름</td>
 
@@ -116,7 +133,7 @@
 			</tr>
 		
 			<tr>
-				<td colspan="2">
+				<td colspan="2"><input value=<%=dnamew %> name="select" id="selectdog" type="hidden" >
 				<center><input type="submit" value="입력"></center>
 				</td>
 			</tr>

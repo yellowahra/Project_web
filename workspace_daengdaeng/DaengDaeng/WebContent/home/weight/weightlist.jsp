@@ -80,7 +80,7 @@
 		<a href="slist.dos" style="color: red;"><img src="weightimage/scale.png" width="50px">몸무게_Weight</a>&nbsp; &nbsp; &nbsp;&nbsp;
 		<a href="../medicine/mlist.dom" ><img src="weightimage/medicine.png" width="50px"/>약_Medicine</a>&nbsp; &nbsp; &nbsp;&nbsp;
 		<a href="../allergy/allergylist.doal" ><img src="weightimage/allergy.png" width="50px"/>알레르기_Allergy</a>&nbsp; &nbsp; &nbsp;&nbsp;
-		<a href="..vaccine/vlist/dov" ><img src="weightimage/vaccine.png" width="50px"/>예방접종_Vaccine</a>
+		<a href="../vaccine/vlist.dov" ><img src="weightimage/vaccine.png" width="50px"/>예방접종_Vaccine</a>
 		<br><br>
 	</div>
 
@@ -89,12 +89,13 @@
 			String select = request.getParameter("select");  
 			session.setAttribute("select", select);
 			session.getAttribute("select");%>
-<%-- 	<%= select %> --%>
+ 	
 		<center><a href="#" onclick="window.open('calories.jsp', 'name', 'resizable= no width=500px height=750px'); return false" 
 				style="margin-left:10%; font-size: 25pt; color:blue;">
 		칼로리계산기</a>&nbsp; &nbsp; &nbsp;</center>
 	
 <div class="graphBox" style="margin-left:10%;">
+
 	<script type="text/javascript">
 		google.charts.load('current', {'packages':['corechart']});
 		google.charts.setOnLoadCallback(drawVisualization);
@@ -102,11 +103,11 @@
 		function drawVisualization() { 
 			var data = google.visualization.arrayToDataTable([
 					['Month', 'weight'],
-					['2014/4/3',  5.5],
-					['2014/6/3',  6.2],
-					['2014/7/3',  7.7],
-					['2014/9/3',  6],
-					['2014/12/3',  6]
+					['2017/4/3',  5.5],
+					['2017/6/3',  6.2],
+					['2017/7/3',  7.7],
+					['2017/9/3',  6],
+					['2017/12/3',  6]
 				]);
 			var options = {
 					title : '몸무게',
@@ -121,10 +122,12 @@
 		}
 	</script>
 	<img src="../images/under_construction.png" style="width:20%; height: 10%; margin-left:10%;">차트 수정하기
-	<div id="chart_div" style="width:900px; height: 500px;"></div>
+	<div id="chart_div" style="width:50%; height: 50%;"></div>
 
 
 </div>
+<center style="color:red; font-size: 30pt;"><%= select %> 몸무게</center>
+	<center><a href="slist.dos">다른 반려견 선택</a></center>
 		<table class="wlist" cellpadding="0" cellspacing="0"  width="50em">
 				<tr align="center" >
 					<td width="50" align="center">이름</td>
@@ -135,6 +138,7 @@
 			<c:forEach items="${wlist}" var="dto">
 				<c:if test="${dto.cid==cid}">
 					<c:if test="${dto.dname==select}">
+					<c:if test="${dto.dweight!=null}">
 					<tr>
 						<td align="center">${dto.dname}</td>
 						<td align="center">${dto.dweight}kg</td>
@@ -142,14 +146,16 @@
 						<td align="center"><a href="sdelete.dos?sId=${dto.sId}">삭제하기</a></td>
 					</tr>
 					</c:if>	
+					</c:if>
 				</c:if>
 			</c:forEach>
 		</table>
 
 	<form name="dnamew" method="post" action="swrite_view.dos" style="margin-left:10%; margin-bottom: 1em;font-size: 20pt; width: 50%;">
-			<input value=<%= select %> name="dnamew" id="selectdog" style="border:none;">
+			<center><input value=<%= select %> name="dnamew" id="selectdog" style="border:none;" type="hidden"></center>
 			<input type="submit" value="체중입력하기">
 		</form>
+		
 		
 		
 		

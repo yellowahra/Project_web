@@ -23,7 +23,6 @@
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-
 </head>
 <body>
 <%
@@ -75,15 +74,19 @@
 		<Br><Br>
 <!-- Main -->
 <div id="main">
-<p style="font-size: 160%; color: black; margin-left: 10%" >일정관리</p>
-
+<p style="font-size: 160%; color: black; margin-left: 10%; margin-bottom:0;" >일정관리</p>
+		<!-- <img src="calendar_under.png" style="width:20%; height: 10%; margin-left:30%;"> -->
+		
+	
 		<% if(session.getAttribute("cid")!=null){ 
 			request.setCharacterEncoding("EUC-KR");
 			String select = request.getParameter("select");  
 			session.setAttribute("select", select);
 			session.getAttribute("select");%>
 <%-- 	<%= select %> --%>
-	
+	<br><Br>
+		<center style="color:red; font-size: 30pt;"><%= select %> 일정</center>
+		<center><a href="calendarlist.doc">다른 반려견 선택</a></center>
 		<table class="ccalendarlist" cellpadding="0" cellspacing="0"  width="70%">
 				<tr align="center" >
 					<td width="20" align="center">이름</td>
@@ -96,6 +99,7 @@
 			<c:forEach items="${ccalendarlist}" var="dto">
 				<c:if test="${dto.dname==select}">
 					<c:if test="${dto.cid==cid}">
+					<c:if test="${dto.ntype!=null}">
 					<tr>
 						<td align="center">${dto.dname}</td>
 						<td align="center">${dto.ntype}</td>
@@ -106,17 +110,19 @@
 						<td align="center"><a href="calendardelete.doc?nId=${dto.nId}">삭제하기</a></td>
 					</tr>	
 					</c:if>
+					</c:if>
 				</c:if>
 			</c:forEach>
 		</table>
 
 		<form name="dnamen" method="post" action="calendarwrite_view.doc" style="margin-left:10%; font-size: 20pt; width: 50%;">
-			<input value=<%= select %> name="dnamen" id="selectdog" style="border:none;">
+			<input value=<%= select %> name="dnamen" id="selectdog" style="border:none;" type="hidden">
 			<input type="submit" value="일정입력">
 		</form>
-		<br>
-		<br>
 		
+		<br>
+		<br>
+			<center>일정관리 수정하기<br><img src="calendar_under.png" style="width:50%;"></center>
 		
 	<% } else{ %>
 		<p id="link">
@@ -127,7 +133,7 @@
 	
 </div>
 		<!-- Footer -->
-			<div id="footer" style="position:absolute; bottom: 0px; width:100%;">
+			<div id="footer" >
 				<!-- Copyright -->
 					<ul class="copyright">
 						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>

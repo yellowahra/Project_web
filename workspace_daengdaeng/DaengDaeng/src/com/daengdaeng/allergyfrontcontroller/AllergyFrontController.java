@@ -93,7 +93,7 @@ public class AllergyFrontController extends HttpServlet {
 			
 			command.execute(request, response);
 			
-			viewPage= "allergylist.doal";
+			viewPage= "aallergylist.doal";
 		}else if(comm.equals("allergydelete.doal")){
 			command = new AllergyDeleteCommand();
 			command.execute(request, response);

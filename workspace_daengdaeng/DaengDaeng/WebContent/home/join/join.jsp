@@ -21,7 +21,7 @@
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/ie/respond.min.js"></script>
 	<script src="../assets/js/main.js"></script> 
-
+	<script src="member.js" charset='euc-kr'></script> 
   <script type="text/javascript">
     function check() {
      var form = document.formjoin;
@@ -38,12 +38,12 @@
      if(!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(form.cpw.value)) {
       alert(" 영문/숫자포함 6자 이상");
       return false;
-     } else {
-      if(form.cpw.value != form.cpw2.value ) {
-       alert("비밀번호를 확인하세요.")
-       return false;
+     } 
+  
+     if(form.cemail.value.replace(/\s/ig, "") == "") {
+         alert("이메일은 필수 입력 사항입니다.");
+         return false;
       }
-     }
      
    return true;
      
@@ -86,7 +86,8 @@
 	<img src="../images/logo002.png" id="logo_img"/>
 </div>
 
-	
+
+
 <!-- Main -->
 
 <div id="main" >
@@ -95,10 +96,10 @@
 
 		<form name="formjoin" action="joinwrite.doj" method="post" onsubmit="return check();">
 			이름: <input type="text" name="cname" size="20"><Br>
-			아이디: <input type="text" name="cid" size="20"><Br>
+			아이디: <input type="text" name="cid" size="20" id="cid"><Br>
+		<!-- 	<span id="idchk"></span><br> -->
 			비밀번호:&nbsp; &nbsp; &nbsp;<b>*영문/숫자포함 6자이상</b> <input type="text" name="cpw" size="20"><Br>
 			
-			비밀번호확인: <input type="text" name="cpw2" size="20"><Br>
 			이메일: <input type="text" name="cemail" size="30"><br>
 			<center><input type="submit" value="입력"></center>
 		</form>

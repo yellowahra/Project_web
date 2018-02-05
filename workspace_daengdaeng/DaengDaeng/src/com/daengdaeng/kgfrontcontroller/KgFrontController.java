@@ -93,7 +93,7 @@ public class KgFrontController extends HttpServlet {
 			
 			command.execute(request, response);
 			
-			viewPage= "slist.dos";
+			viewPage= "wlist.dos";
 		}else if(comm.equals("sdelete.dos")){
 			command = new KgDeleteCommand();
 			command.execute(request, response);

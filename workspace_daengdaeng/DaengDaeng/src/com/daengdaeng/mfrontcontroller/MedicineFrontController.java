@@ -93,7 +93,7 @@ public class MedicineFrontController extends HttpServlet {
 			
 			command.execute(request, response);
 			
-			viewPage= "mlist.dom";
+			viewPage= "mmlist.dom";
 		}else if(comm.equals("mdelete.dom")){
 			command = new MedicineDeleteCommand();
 			command.execute(request, response);

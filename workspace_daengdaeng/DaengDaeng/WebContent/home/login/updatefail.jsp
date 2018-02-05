@@ -70,16 +70,16 @@
 	
 <!-- Main -->
 <div id="main">
-	
-회원정보 수정 실패하였습니다.
-비밀번호를 확인해 주세요
-<a href="modify.jsp"><button class="btn_sm">회원정보수정</button>
+<center>	
+회원정보 수정 실패하였습니다.<br>
+비밀번호를 확인해 주세요<br>
+<a href="modify.jsp"><button class="btn_sm">회원정보수정</button></a>
 <a href="../home.jsp"><button class="btn_sm">홈으로</button></a>
-
+</center>
 </div>
 
 		<!-- Footer -->
-			<div id="footer">
+			<div id="footer" style=" position:absolute; bottom:0;  width:100%;">
 
 				<!-- Copyright -->
 					<ul class="copyright">

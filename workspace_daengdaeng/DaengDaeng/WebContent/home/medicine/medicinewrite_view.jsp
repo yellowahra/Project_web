@@ -29,6 +29,24 @@
 	<!-- // jQuery 기본 js파일 -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
 	<!-- // jQuery UI 라이브러리 js파일 -->
+	<script type="text/javascript">
+	
+	
+    function check() {
+     var form = document.formmedicine;
+     
+     if(form.mname.value.replace(/\s/ig, "") == "") {
+      alert("약이름은 필수 입력 사항입니다.");
+      return false;
+     }
+     
+    
+     
+   return true;
+     
+    }
+ 
+  </script>
 </head>
 <body>
 <%
@@ -99,7 +117,7 @@
 	<%= dnamem %> --%>
 	<div>
 	<table class="mwrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; margin-left:auto; width: 50%; font-size: 20pt;" >
-		<form action="mwrite.dom" method="post">
+		<form name="formmedicine" action="mwrite.dom" method="post" onsubmit="return check();">
 			<tr>
 				<td id="head"  width="100" nowrap>반려인이름</td>
 
@@ -132,7 +150,7 @@
 				<td><textarea name="mmemo" cols="40"></textarea></td>
 			</tr>
 			<tr>
-				<td colspan="2">
+				<td colspan="2"><input value=<%=dnamem %> name="select" id="selectdog" type="hidden" >
 				<center><input type="submit" value="입력"></center>
 				</td>
 			</tr>

@@ -77,7 +77,7 @@
 </div>
 
 		<!-- Footer -->
-			<div id="footer">
+			<div id="footer" style=" position:absolute; bottom:0;  width:100%;">
 
 				<!-- Copyright -->
 					<ul class="copyright">

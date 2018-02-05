@@ -92,6 +92,8 @@
 			session.getAttribute("select");%>
 <%-- 	<%= select %> --%>
 	
+	<center style="color:red; font-size: 30pt;"><%= select %> 약복용</center>
+		<center><a href="mlist.dom">다른 반려견 선택</a></center>
 		<table class="mmlist" cellpadding="0" cellspacing="0"  width="50em">
 				<tr align="center" >
 					<td width="50" align="center">이름</td>
@@ -105,6 +107,7 @@
 			<c:forEach items="${mmlist}" var="dto">
 				<c:if test="${dto.dname==select}">
 					<c:if test="${dto.cid==cid}">
+					<c:if test="${dto.mname!=null}">
 					<tr>
 						<td align="center">${dto.dname}</td>
 						<td align="center">${dto.mname}</td>
@@ -115,6 +118,7 @@
 						<td align="center"><a href="mdelete.dom?mId=${dto.mId}">삭제하기</a></td>
 					</tr>	
 					</c:if>
+					</c:if>
 				</c:if>
 			</c:forEach>
 		</table>
@@ -123,7 +127,7 @@
 			<input value=<%= select %> name="dnamem" id="selectdog" style="border:none;">
 			<input type="submit" value="입력">
 		</form>
-		
+	
 		
 		
 	<% } else{ %>

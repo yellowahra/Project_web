@@ -10471,3 +10471,31 @@
 2월 02, 2018 18:33:40.00 NEW SESSION
 2월 02, 2018 18:33:40.00 
 2월 02, 2018 18:33:40.00 KLIB_SelfTest return : KLR_OK
+
+2월 05, 2018 10:38:44.22 NEW SESSION
+2월 05, 2018 10:38:44.22 [2876:8292:0205/103844.187:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 1.388 s
+2월 05, 2018 10:38:48.93 [2876:8292:0205/103848.937:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 1.388 s
+2월 05, 2018 10:38:50.64 [2876:8292:0205/103850.639:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 1.388 s
+2월 05, 2018 10:39:04.11 [2876:8292:0205/103904.116:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.154 s
+2월 05, 2018 10:39:12.60 [2876:8292:0205/103912.607:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.154 s
+2월 05, 2018 10:39:24.37 [2876:8292:0205/103924.369:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 3.154 s
+2월 05, 2018 11:00:25.57 
+2월 05, 2018 11:00:25.57 KLIB_SelfTest return : KLR_OK
+2월 05, 2018 11:00:55.88 
+2월 05, 2018 11:00:55.88 KLIB_SelfTest return : KLR_OK
+2월 05, 2018 11:09:36.74 [10584:11072:0205/110936.740:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 1.324 s
+2월 05, 2018 11:09:39.15 [10584:11072:0205/110939.150:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 1.324 s
+2월 05, 2018 11:09:40.52 [10584:11072:0205/110940.520:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 1.324 s
+2월 05, 2018 11:09:42.83 [10584:11072:0205/110942.831:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 1.324 s
+2월 05, 2018 11:22:27.89 
+2월 05, 2018 11:22:27.90 KLIB_SelfTest return : KLR_OK
+2월 05, 2018 11:24:44.23 
+2월 05, 2018 11:24:44.23 KLIB_SelfTest return : KLR_OK
+2월 05, 2018 11:25:46.97 
+2월 05, 2018 11:25:46.97 KLIB_SelfTest return : KLR_OK
+2월 05, 2018 11:44:48.50 
+2월 05, 2018 11:44:48.51 KLIB_SelfTest return : KLR_OK
+2월 05, 2018 11:48:38.00 
+2월 05, 2018 11:48:38.00 KLIB_SelfTest return : KLR_OK
+2월 05, 2018 12:26:53.46 
+2월 05, 2018 12:26:53.46 KLIB_SelfTest return : KLR_OK

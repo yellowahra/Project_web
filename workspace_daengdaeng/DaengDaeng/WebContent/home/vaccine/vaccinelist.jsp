@@ -80,7 +80,7 @@
 		<a href="vlist.dov"  style="color: red;" ><img src="../health/vaccine.png" width="50px"/>예방접종_Vaccine</a>
 		<br><br>
 		<a href="#" onclick="window.open('vaccineinfo.jsp', 'name', 'resizable= no width=700px height=800px'); return false" 
-				style="margin-left:10%;"><img src="../icons/info.png"/>꼭 필요한 예방접종</a>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+				style="margin-left:10%;"><img src="../icons/info.png"/>꼭 필요한 예방접종</a>&nbsp; &nbsp; &nbsp;
 	<a href="#" onclick="window.open('vaccinealert.jsp', 'name', 'resizable= no width=700px height=800px'); return false" 
 				style="margin-left:10%;"><img src="../icons/info.png"/>예방접종 전후 주의사항</a>&nbsp; &nbsp; &nbsp;
 	</div>
@@ -91,7 +91,9 @@
 			session.setAttribute("select", select);
 			session.getAttribute("select");%>
 <%-- 	<%= select %> --%>
-	
+<br>
+	<center style="color:red; font-size: 30pt;"><%= select %> 예방접종</center>
+		<center><a href="vlist.dov">다른 반려견 선택</a></center>
 		<table class="vvlist" cellpadding="0" cellspacing="0"  width="70%">
 				<tr align="center" >
 					<td width="20" align="center">이름</td>
@@ -104,6 +106,7 @@
 			<c:forEach items="${vvlist}" var="dto">
 				<c:if test="${dto.dname==select}">
 					<c:if test="${dto.cid==cid}">
+						<c:if test="${dto.vname!=null}">
 					<tr>
 						<td align="center">${dto.dname}</td>
 						<td align="center">${dto.vname}</td>
@@ -113,15 +116,16 @@
 						<td align="center"><a href="vdelete.dov?vId=${dto.vId}">삭제하기</a></td>
 					</tr>	
 					</c:if>
+					</c:if>
 				</c:if>
 			</c:forEach>
 		</table>
 
 		<form name="dnamev" method="post" action="vwrite_view.dov" style="margin-left:10%; margin-bottom:1em; font-size: 20pt; width: 50%;">
-			<input value=<%= select %> name="dnamev" id="selectdog" style="border:none;">
+			<input value=<%= select %> name="dnamev" id="selectdog" style="border:none;" type="hidden">
 			<input type="submit" value="입력">
 		</form>
-		
+	
 		
 		
 	<% } else{ %>

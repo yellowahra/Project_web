@@ -93,7 +93,7 @@ public class VaccineFrontController extends HttpServlet {
 			
 			command.execute(request, response);
 			
-			viewPage= "vlist.dov";
+			viewPage= "vvlist.dov";
 		}else if(comm.equals("vdelete.dov")){
 			command = new VaccineDeleteCommand();
 			command.execute(request, response);

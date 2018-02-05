@@ -90,7 +90,7 @@ $(function() {
 	
 	</script>
 	
-
+ 
 </head>
 <body>
 <%
@@ -152,7 +152,7 @@ $(function() {
 	<%-- <%= dnamen %> --%>
 	<div>
 	<table class="calendarwrite_view" cellpadding="0" cellspacing="0" style="margin-right:auto; width: 50%; font-size: 20pt;" >
-		<form action="calendarwrite.doc" method="post">
+		<form  name="formcalendar" action="calendarwrite.doc" method="post">
 			<tr>
 				<td id="head"  width="100"  nowrap>반려인이름</td>
 
@@ -179,6 +179,7 @@ $(function() {
 					  <option value="샤워">샤워</option>
 					  <option value="양치" >양치</option>
 					  <option value="산책">산책</option>
+					  <option value="배변">배변</option>
 					  <option value="투약">투약</option>
 					  <option value="병원">병원</option>
 					   <option value="미용">미용</option>
@@ -189,7 +190,7 @@ $(function() {
 				<td><textarea name="nmemo" cols="40"></textarea></td>
 			</tr>
 			<tr>
-				<td colspan="2">
+				<td colspan="2"><input value=<%=dnamen %> name="select" id="selectdog" type="hidden" >
 				<center><input type="submit" value="입력"></center>
 				</td>
 			</tr>

@@ -93,7 +93,7 @@ public class CalendarFrontController extends HttpServlet {
 			
 			command.execute(request, response);
 			
-			viewPage= "calendarlist.doc";
+			viewPage= "ccalendarlist.doc";
 		}else if(comm.equals("calendardelete.doc")){
 			command = new CalendarDeleteCommand();
 			command.execute(request, response);
