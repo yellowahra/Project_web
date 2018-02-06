@@ -10499,3 +10499,11 @@
 2월 05, 2018 11:48:38.00 KLIB_SelfTest return : KLR_OK
 2월 05, 2018 12:26:53.46 
 2월 05, 2018 12:26:53.46 KLIB_SelfTest return : KLR_OK
+
+2월 06, 2018 10:10:16.89 NEW SESSION
+2월 06, 2018 10:10:16.89 [9704:9888:0206/101016.730:ERROR:cache_util_win.cc(20)] Unable to move the cache: 5
+2월 06, 2018 10:10:16.96 [9704:9888:0206/101016.730:ERROR:cache_util.cc(134)] Unable to move cache folder C:\Users\user\AppData\Local\Google\Chrome\User Data\ShaderCache\GPUCache to C:\Users\user\AppData\Local\Google\Chrome\User Data\ShaderCache\old_GPUCache_000
+2월 06, 2018 10:10:16.96 [9704:9888:0206/101016.730:ERROR:disk_cache.cc(169)] Unable to create cache
+2월 06, 2018 10:10:16.96 [9704:9888:0206/101016.730:ERROR:shader_disk_cache.cc(601)] Shader Cache Creation failed: -2
+2월 06, 2018 10:10:35.65 
+2월 06, 2018 10:10:35.65 KLIB_SelfTest return : KLR_OK

@@ -38,7 +38,7 @@
 	String lessweight2=""; String moreweight2=""; 
 	String baby2=""; String toddler2=""; */
 	if(request.getMethod().equals("POST")){
-		int insertweight=Integer.parseInt(request.getParameter("insertweight"));
+		double insertweight= Double.parseDouble(request.getParameter("insertweight"));
 		calories= (30*insertweight) +70;
 		avgact = (calories)*1.5;
 		normalact = calories*2;

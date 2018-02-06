@@ -13723,3 +13723,19 @@
 2018-02-05 17:34:27,541 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
 2018-02-05 17:34:27,551 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\CodeLab\git_desktop\Project_web\workspace_daengdaeng\DaengDaeng\src\main\resources
 2018-02-05 17:34:27,554 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-05 17:34:27,555 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\CodeLab\git_desktop\Project_web\workspace_daengdaeng\DaengDaeng\src\test\resources
+2018-02-06 10:06:00,939 [Worker-4] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-02-06 10:06:26,419 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-06 10:06:26,421 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\CodeLab\git_desktop\Project_web\workspace_daengdaeng\DaengDaeng\src\main\resources
+2018-02-06 10:06:26,423 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-06 10:06:26,424 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\CodeLab\git_desktop\Project_web\workspace_daengdaeng\DaengDaeng\src\test\resources
+2018-02-06 10:36:55,977 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-06 10:36:56,123 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\CodeLab\git_desktop\Project_web\workspace_daengdaeng\DaengDaeng\src\main\resources
+2018-02-06 10:36:56,125 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-06 10:36:56,126 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\CodeLab\git_desktop\Project_web\workspace_daengdaeng\DaengDaeng\src\test\resources
+2018-02-06 10:37:45,103 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-06 10:37:45,105 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\CodeLab\git_desktop\Project_web\workspace_daengdaeng\DaengDaeng\src\main\resources
+2018-02-06 10:37:45,106 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-06 10:37:45,107 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\CodeLab\git_desktop\Project_web\workspace_daengdaeng\DaengDaeng\src\test\resources
+2018-02-06 10:49:11,445 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-06 10:49:11,448 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\CodeLab\git_desktop\Project_web\workspace_daengdaeng\DaengDaeng\src\main\resources
